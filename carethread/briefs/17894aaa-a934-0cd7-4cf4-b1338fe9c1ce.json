@@ -1,0 +1,114 @@
+{
+  "patient_summary": "Andra606 Prohaska837 is a 47-year-old female with chronic intractable migraine, chronic pain, dependent drug abuse, and obesity.",
+  "key_conditions": [
+    {
+      "condition": "Chronic intractable migraine without aura",
+      "since": "1993-02-01",
+      "relevance": "Long-standing neurological condition requiring ongoing management."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "1993-10-18",
+      "relevance": "Contributing to current NSAID use and functional limitations."
+    },
+    {
+      "condition": "Dependent drug abuse",
+      "since": "1994-02-07",
+      "relevance": "Critical history influencing medication safety and treatment choices."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2004-01-06",
+      "relevance": "Chronic metabolic risk factor; recent BMI 27.84 kg/m2."
+    },
+    {
+      "condition": "Injury of medial collateral ligament of knee",
+      "since": "2026-08-15",
+      "relevance": "Recent acute injury driving current orthopedic care and pain management."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2026-08-15 for recent knee injury."
+    },
+    {
+      "medication": "Natazia 28 Day (dienogest/estradiol valerate)",
+      "note": "Prescribed 2026-06-26."
+    },
+    {
+      "medication": "Ibuprofen 400 MG Oral Tablet [Ibu]",
+      "note": "Prescribed 2026-04-28."
+    },
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1982-10-12; long-standing active prescription."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "ibuprofen",
+        "naproxen"
+      ],
+      "recommendation": "Review concurrent use of two NSAIDs; consider discontinuing one to reduce GI and renal risk."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2026-04-28 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule immediate follow-up for positive depression screen.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Order mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 8 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform or order cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-05-13.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a recent ER visit (2026-08-15) and orthopedic/hospital admissions (2026-08-22, 2026-08-25) related to a knee injury. Prior to this, she had a consultation (2026-06-26) and a general exam (2026-04-28) where vitals included BP 89/74 mmHg, HR 75/min, and BMI 27.84 kg/m2. She is an ex-smoker and reported no fear of partner. Influenza vaccination is up to date (2026-04-28).",
+  "sdoh_flags": [
+    "Part-time employment",
+    "Stress",
+    "Educated to high school level"
+  ],
+  "priority_actions": [
+    "Address moderate drug interaction between ibuprofen and naproxen; recommend discontinuing one NSAID.",
+    "Follow up on positive PHQ-2 depression screen (score 6.0) from 2026-04-28.",
+    "Order overdue preventive screenings: colonoscopy, mammogram, and cervical screening.",
+    "Review recent hospitalization for knee injury and current pain management plan.",
+    "Schedule annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "17894aaa-a934-0cd7-4cf4-b1338fe9c1ce",
+    "patient_name": "Andra606 Prohaska837",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2524,
+    "output_tokens": 1386,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

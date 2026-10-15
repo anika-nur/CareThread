@@ -1,0 +1,78 @@
+{
+  "patient_summary": "Amanda238 Sara501 Dibbert990 is a 63-year-old female with obesity, osteoporosis, and a history of tubal ligation.",
+  "key_conditions": [
+    {
+      "condition": "Osteoporosis",
+      "since": "2023-07-11",
+      "relevance": "Active disorder requiring management with alendronic acid."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2000-08-01",
+      "relevance": "Chronic condition noted in history; recent BMI is 28.06 kg/m2."
+    },
+    {
+      "condition": "Housing unsatisfactory",
+      "since": "1981-07-07",
+      "relevance": "Long-standing social determinant affecting health stability."
+    },
+    {
+      "condition": "Limited social contact",
+      "since": "2024-07-16",
+      "relevance": "Recent finding indicating potential isolation or support needs."
+    },
+    {
+      "condition": "Stress",
+      "since": "2026-07-28",
+      "relevance": "Current finding noted during recent examination."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Alendronic acid 10 MG Oral Tablet",
+      "note": "Prescribed 2026-07-28 for osteoporosis."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 63 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 63, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 63, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2026-08-11 and a general examination on 2026-07-28. Labs from 2026-07-28 show BMI 28.06 kg/m2, BP 102/88 mmHg, and pain severity 2/10. Influenza vaccination was administered on 2026-07-28. Alendronic acid was prescribed on 2026-07-28.",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Limited social contact",
+    "Part-time employment"
+  ],
+  "priority_actions": [
+    "Address overdue cancer screenings (colonoscopy, mammogram, cervical screening).",
+    "Review osteoporosis management and alendronic acid adherence.",
+    "Assess social determinants: housing stability, social isolation, and stress."
+  ],
+  "_meta": {
+    "patient_id": "1522b9f4-b784-6cb7-6ee6-f2bd65bfb766",
+    "patient_name": "Amanda238 Sara501 Dibbert990",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2058,
+    "output_tokens": 889,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

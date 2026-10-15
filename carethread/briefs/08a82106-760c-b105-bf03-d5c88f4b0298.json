@@ -1,0 +1,74 @@
+{
+  "patient_summary": "Gertrudis163 Ina660 Klocko335 is a 58-year-old female with prediabetes, anemia, obesity, and a history of tubal ligation.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "1989-12-26",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1992-12-29",
+      "relevance": "Chronic disorder requiring ongoing management."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2001-03-06",
+      "relevance": "Chronic condition contributing to metabolic risk."
+    },
+    {
+      "condition": "History of tubal ligation",
+      "since": "1993-10-22",
+      "relevance": "Reproductive history."
+    },
+    {
+      "condition": "Stress",
+      "since": "2023-11-28",
+      "relevance": "Recent psychosocial finding."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Mammogram Overdue: Female patient, age 58, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 58, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2023-12-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had an encounter for symptom on 2026-01-08, preceded by a general examination on 2025-12-09. Urinalysis on 2026-01-08 showed Glucose 7.4318 mg/dL, Ketones not detected, Specific gravity 1.0208, pH 5.5392, Protein 9.8925 mg/dL, Nitrite detected, Hemoglobin +, Leukocyte esterase one plus, Leukocytes 37.669 /HPF, and Erythrocytes 1.2666 /HPF. Influenza vaccination was administered on 2025-12-09.",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Has a criminal record",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Address recent urinalysis findings from 2026-01-08.",
+    "Schedule overdue mammogram.",
+    "Schedule overdue cervical cancer screening.",
+    "Conduct annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "08a82106-760c-b105-bf03-d5c88f4b0298",
+    "patient_name": "Gertrudis163 Ina660 Klocko335",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2060,
+    "output_tokens": 862,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

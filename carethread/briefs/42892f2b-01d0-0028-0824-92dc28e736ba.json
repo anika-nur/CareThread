@@ -1,0 +1,83 @@
+{
+  "patient_summary": "Magda24 Teresia279 Pacocha935 is a 64-year-old female with obesity, prediabetes, anemia, and a history of intimate partner abuse.",
+  "key_conditions": [
+    {
+      "condition": "Obesity",
+      "since": "2006-03-17",
+      "relevance": "Chronic condition requiring monitoring; current BMI is 27.72 kg/m2."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2008-03-21",
+      "relevance": "Chronic condition requiring monitoring; recent HbA1c is 5.89%."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2008-03-21",
+      "relevance": "Chronic disorder requiring ongoing management."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "1987-05-08",
+      "relevance": "Historical finding relevant to psychosocial assessment and safety planning."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "doxycycline hyclate 100 MG",
+      "note": "Prescribed 1969-09-17."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1966-12-15."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 64, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2021-05-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-05-22 with labs showing HbA1c 5.89%, BMI 27.72 kg/m2, blood pressure 121/74 mmHg, and glucose 66.63 mg/dL. She received an influenza vaccination on 2026-05-22. A symptom encounter occurred on 2026-06-27.",
+  "sdoh_flags": [
+    "Limited social contact",
+    "Full-time employment"
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical screening.",
+    "Review prediabetes and obesity management given recent labs.",
+    "Assess limited social contact and psychosocial support needs.",
+    "Complete annual wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "42892f2b-01d0-0028-0824-92dc28e736ba",
+    "patient_name": "Magda24 Teresia279 Pacocha935",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2050,
+    "output_tokens": 955,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

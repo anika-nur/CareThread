@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Not found — CareThread{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Not found</h1>
+  <p class="muted">{{ message }}</p>
+  <p><a href="{{ url_for('dashboard') }}">← Back to the panel</a></p>
+</div>
+{% endblock %}

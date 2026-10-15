@@ -1,0 +1,89 @@
+{
+  "patient_summary": "Lekisha909 Vertie683 Botsford977 is a 46-year-old female with prediabetes, anemia, obesity, and a history of sepsis and intimate partner abuse.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "2005-06-30",
+      "relevance": "Chronic metabolic condition requiring monitoring; recent HbA1c 5.87%."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2005-06-30",
+      "relevance": "Chronic disorder requiring ongoing assessment."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2022-05-05",
+      "relevance": "Recent BMI 28.17 kg/m2 indicates overweight status, though coded as obesity."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "2024-05-09",
+      "relevance": "Recent safety concern requiring support and resource connection."
+    },
+    {
+      "condition": "Sepsis",
+      "since": "2019-04-25",
+      "relevance": "History of severe infection."
+    },
+    {
+      "condition": "Social isolation",
+      "since": "2014-07-10",
+      "relevance": "Social determinant affecting health outcomes."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 5.0 on 2017-07-13 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Conduct depression screening and follow-up.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 46 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 46, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Order mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 46, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Perform cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-05-23.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-05-14 with stable vitals (BP 119/81, HR 72). Labs showed HbA1c 5.87%, glucose 64.13 mg/dL, and BMI 28.17 kg/m2. Previous encounters in 2025 were for symptoms. Influenza vaccine administered in May 2026.",
+  "sdoh_flags": [
+    "Social isolation",
+    "Victim of intimate partner abuse",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Address intimate partner abuse safety and provide resources.",
+    "Screen for depression and address missing follow-up from 2017.",
+    "Order overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Review prediabetes management and lifestyle modifications for weight."
+  ],
+  "_meta": {
+    "patient_id": "0a2e403d-add0-bca5-03bc-3df3402e3df2",
+    "patient_name": "Lekisha909 Vertie683 Botsford977",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2008,
+    "output_tokens": 1066
+  }
+}

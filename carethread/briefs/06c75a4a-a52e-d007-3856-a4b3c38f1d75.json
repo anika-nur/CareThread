@@ -1,0 +1,130 @@
+{
+  "patient_summary": "Minerva230 Ora550 Swift555 is a 64-year-old female with a history of asthma, essential hypertension, prediabetes, and a recent diagnosis of malignant neoplasm of breast.",
+  "key_conditions": [
+    {
+      "condition": "Malignant neoplasm of breast",
+      "since": "2024-01-21",
+      "relevance": "Recent diagnosis with a lab qualifier indicating 'Worsening' response to treatment in April 2026."
+    },
+    {
+      "condition": "Asthma",
+      "since": "1982-02-07",
+      "relevance": "Chronic condition with a recent emergency hospital admission in June 2026."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2004-06-20",
+      "relevance": "Chronic condition managed with losartan; recent BP reading was 123/87 mmHg."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2009-07-19",
+      "relevance": "Chronic metabolic condition; HbA1c was 6.06% in October 2025."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2023-10-08",
+      "relevance": "BMI recorded as 30.19 kg/m2 in October 2025."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "budesonide 0.25 MG/ML Inhalation Suspension",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "losartan potassium 25 MG Oral Tablet",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "albuterol 0.83 MG/ML Inhalation Solution",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1966-10-29."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "diphenhydramine",
+        "losartan"
+      ],
+      "recommendation": "Monitor for potential interaction between diphenhydramine and losartan."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "budesonide",
+        "losartan"
+      ],
+      "recommendation": "Monitor for potential interaction between budesonide and losartan."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "budesonide",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for potential interaction between budesonide and albuterol (salbutamol)."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 3.0 on 2017-09-03 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Address history of positive depression screen and assess current mental health status.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 321 days ago (123 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Obtain current blood pressure measurement.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Discuss and schedule colonoscopy screening.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Discuss and schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a postoperative follow-up on 2026-07-31. In June 2026, she had an asthma follow-up and an emergency hospital admission for asthma. In April 2026, she had two follow-up visits, one of which noted a 'Worsening' response to cancer treatment. Labs from October 2025 show HbA1c 6.06%, BMI 30.19 kg/m2, and BP 123/87 mmHg. She received an influenza vaccine in October 2025.",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Transport problem",
+    "Lack of access to transportation",
+    "Social isolation",
+    "Limited social contact",
+    "Unemployed"
+  ],
+  "priority_actions": [
+    "Assess current status of breast cancer treatment given 'Worsening' response noted in April 2026.",
+    "Evaluate asthma control and recent emergency admission to optimize inhaler therapy.",
+    "Address medication review due status and moderate drug interactions involving losartan.",
+    "Obtain current blood pressure to address overdue monitoring gap.",
+    "Discuss and schedule overdue colonoscopy and cervical cancer screening.",
+    "Screen for depression given historical positive screen and current social isolation/unemployment."
+  ],
+  "_meta": {
+    "patient_id": "06c75a4a-a52e-d007-3856-a4b3c38f1d75",
+    "patient_name": "Minerva230 Ora550 Swift555",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2686,
+    "output_tokens": 1498,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "patient_summary": "Carlita746 Tenesha164 Pollich983 is a 49-year-old female with essential hypertension, obesity, hyperlipidemia, metabolic syndrome, and prediabetes.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2018-12-18",
+      "relevance": "Managed with multiple antihypertensives; recent BP data is outdated."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2019-12-24",
+      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2024-01-16",
+      "relevance": "Managed with simvastatin; requires monitoring for drug interactions."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2025-01-21",
+      "relevance": "Cluster of conditions including hypertension, obesity, and prediabetes."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2025-01-21",
+      "relevance": "Recent glucose level was low (64.89 mg/dL), requiring monitoring."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "NuvaRing (ethinyl estradiol/etonogestrel)",
+      "note": "Prescribed 2026-08-01."
+    },
+    {
+      "medication": "Simvastatin 10 MG",
+      "note": "Prescribed 2026-02-05; involved in major interaction with amlodipine."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG",
+      "note": "Prescribed 2026-01-27."
+    },
+    {
+      "medication": "Lisinopril 10 MG",
+      "note": "Prescribed 2026-01-27."
+    },
+    {
+      "medication": "Amlodipine 2.5 MG",
+      "note": "Prescribed 2026-01-27; involved in major interaction with simvastatin."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amlodipine",
+        "simvastatin"
+      ],
+      "recommendation": "Review combination due to increased risk of myopathy/rhabdomyolysis; consider alternative statin or dose adjustment."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2022-01-04 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Assess current mental health status and provide or refer for follow-up care.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 221 days ago (134 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure today.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy screening.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 49, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram screening.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 7 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform or refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2019-01-01.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit components.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a consultation on 2026-08-01 and a follow-up on 2026-02-05. Labs from 2026-02-05 show a glucose of 64.89 mg/dL, creatinine of 2.6778 mg/dL, and eGFR of 84.163 mL/min. Influenza vaccination was administered on 2026-01-27.",
+  "sdoh_flags": [
+    "Has a criminal record",
+    "Received higher education",
+    "Full-time employment"
+  ],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Measure blood pressure to address overdue monitoring gap.",
+    "Assess mental health status given high-severity depression follow-up gap.",
+    "Refer for overdue preventive screenings: colonoscopy, mammogram, and cervical screening.",
+    "Review recent lab results, particularly low glucose and elevated creatinine."
+  ],
+  "_meta": {
+    "patient_id": "8d81343a-05ac-3044-a16e-73955e310045",
+    "patient_name": "Carlita746 Tenesha164 Pollich983",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2268,
+    "output_tokens": 1468
+  }
+}

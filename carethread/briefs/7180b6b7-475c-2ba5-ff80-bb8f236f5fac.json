@@ -1,0 +1,96 @@
+{
+  "patient_summary": "Glenda787 Era940 Kuphal363 is a 45-year-old female with obesity, chronic sinusitis, and social determinants including unsatisfactory housing and limited education.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2003-08-11",
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "2008-04-28",
+      "relevance": "Chronic respiratory condition."
+    },
+    {
+      "condition": "Housing unsatisfactory",
+      "since": "1999-08-02",
+      "relevance": "Social determinant of health impacting overall well-being."
+    },
+    {
+      "condition": "Only received primary school education",
+      "since": "1999-08-02",
+      "relevance": "Social determinant of health potentially affecting health literacy."
+    },
+    {
+      "condition": "Not in labor force",
+      "since": "2025-06-23",
+      "relevance": "Social determinant of health."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-06-23",
+      "relevance": "Psychosocial factor."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1982-09-12."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 45 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 45, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 45, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 439 days ago (31.42 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had five encounters between 2025-11-24 and 2026-08-24. Most recent labs from 2025-06-23 show BMI 31.42 kg/m2, weight 84 kg, height 163.5 cm, BP 112/83 mmHg, heart rate 73 /min, respiratory rate 14 /min, pain severity 2/10, never smoked tobacco, and no fear of partner. Immunizations include influenza (2025-06-23, 2023-06-19, 2021-06-14), Td (2023-06-19), and Hep A (2023-06-19).",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Only received primary school education",
+    "Not in labor force",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Perform annual BMI screening and wellness visit.",
+    "Review social determinants of health (housing, education, employment, stress) and provide resources."
+  ],
+  "_meta": {
+    "patient_id": "7180b6b7-475c-2ba5-ff80-bb8f236f5fac",
+    "patient_name": "Glenda787 Era940 Kuphal363",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2000,
+    "output_tokens": 1155,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

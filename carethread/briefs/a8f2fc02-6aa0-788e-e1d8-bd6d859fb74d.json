@@ -1,0 +1,226 @@
+{
+  "patient_summary": "Deandre599 Gusikowski974 is a 69-year-old male with a history of ischemic heart disease, chronic kidney disease, hypertension, and prediabetes.",
+  "key_conditions": [
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2025-06-11",
+      "relevance": "Recent diagnosis requiring secondary prevention management."
+    },
+    {
+      "condition": "Chronic kidney disease stage 1",
+      "since": "2023-08-23",
+      "relevance": "Requires monitoring of renal function and medication dosing."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2007-05-23",
+      "relevance": "Chronic condition requiring ongoing blood pressure control."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1988-08-10",
+      "relevance": "Long-standing risk factor for metabolic complications."
+    },
+    {
+      "condition": "History of myocardial infarction",
+      "since": "2015-04-18",
+      "relevance": "Significant cardiovascular history impacting current therapy."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "Acetaminophen 325 MG Oral Tablet [Tylenol]",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2025-06-18."
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2025-06-18."
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-06-18."
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2025-06-18."
+    },
+    {
+      "medication": "aspirin 81 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18."
+    },
+    {
+      "medication": "atorvastatin 80 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18."
+    },
+    {
+      "medication": "lisinopril 5 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18."
+    },
+    {
+      "medication": "prasugrel 10 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "clopidogrel",
+        "prasugrel"
+      ],
+      "recommendation": "Review necessity of dual P2Y12 inhibitor therapy; significant bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amlodipine",
+        "simvastatin"
+      ],
+      "recommendation": "Monitor for myopathy; consider dose adjustment or alternative statin."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "lisinopril"
+      ],
+      "recommendation": "Monitor renal function and blood pressure."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "prasugrel"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "clopidogrel"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "amlodipine"
+      ],
+      "recommendation": "Monitor for potential increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "atorvastatin",
+        "clopidogrel"
+      ],
+      "recommendation": "Monitor for potential interaction effects."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "atorvastatin",
+        "simvastatin"
+      ],
+      "recommendation": "Review need for dual statin therapy; risk of myopathy."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "acetylsalicylic acid",
+        "metoprolol"
+      ],
+      "recommendation": "Monitor for potential effects on antiplatelet activity."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "acetylsalicylic acid",
+        "nitroglycerin"
+      ],
+      "recommendation": "Monitor for potential effects on nitroglycerin efficacy."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2023-08-23 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule follow-up for depression screening results.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 367 days ago (73 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure during today's visit.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was 451 days ago. Due annually.",
+      "severity": "low",
+      "action": "Administer or schedule annual influenza vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 367 days ago (31.22 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-09-17 and a general examination on 2025-09-03. Labs from 2025-09-03 show Glucose 68.83 mg/dL, Creatinine 1.4448 mg/dL, and eGFR 93.064 mL/min/{1.73_m2}. Urine appearance was noted as cloudy. Recent urgent care visits occurred in July and August 2025.",
+  "sdoh_flags": [
+    "Lack of access to transportation",
+    "Transport problem",
+    "Limited social contact",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Address major drug interactions: clopidogrel/prasugrel and amlodipine/simvastatin.",
+    "Measure blood pressure to address overdue monitoring gap.",
+    "Follow up on positive depression screen from 2023.",
+    "Administer or schedule annual influenza vaccine.",
+    "Perform annual BMI screening."
+  ],
+  "_meta": {
+    "patient_id": "a8f2fc02-6aa0-788e-e1d8-bd6d859fb74d",
+    "patient_name": "Deandre599 Gusikowski974",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3619,
+    "output_tokens": 2209,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

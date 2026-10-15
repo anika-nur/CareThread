@@ -1,0 +1,117 @@
+{
+  "patient_summary": "Fawn Hermann, a 58-year-old female, has prediabetes, obesity, hyperlipidemia, and chronic obstructive bronchitis.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "2002-10-06",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2012-08-05",
+      "relevance": "Chronic condition contributing to metabolic risk."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2018-07-22",
+      "relevance": "Chronic cardiovascular risk factor."
+    },
+    {
+      "condition": "Chronic obstructive bronchitis",
+      "since": "2020-07-26",
+      "relevance": "Chronic respiratory condition requiring maintenance therapy."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-15."
+    },
+    {
+      "medication": "albuterol 5 MG/ML Inhalation Solution",
+      "note": "Prescribed 2025-08-31."
+    },
+    {
+      "medication": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+      "note": "Prescribed 2025-08-31."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "salbutamol",
+        "salmeterol"
+      ],
+      "recommendation": "Review necessity of concurrent beta-agonist therapy."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "fluticasone",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for potential additive effects."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "fluticasone",
+        "salmeterol"
+      ],
+      "recommendation": "Monitor for potential additive effects."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Mammogram Overdue: Female patient, age 58, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 58, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 370 days ago (29.67 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-09-08.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a symptom encounter on 2025-11-04, a follow-up on 2025-09-15, and a general examination on 2025-08-31. Labs from 2025-09-15 show Glucose 88.41 mg/dL, Creatinine 2.7432 mg/dL, and GFR 80.531 mL/min. Influenza vaccination was administered on 2025-08-31.",
+  "sdoh_flags": [
+    "Part-time employment",
+    "Stress",
+    "Has a criminal record"
+  ],
+  "priority_actions": [
+    "Address moderate drug interaction between salbutamol and salmeterol.",
+    "Schedule overdue mammogram.",
+    "Schedule overdue cervical cancer screening.",
+    "Perform annual BMI screening.",
+    "Conduct annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "cd6f93d1-108a-b416-0a49-861dd69f2164",
+    "patient_name": "Sau887 Fawn386 Hermann103",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2516,
+    "output_tokens": 1200,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

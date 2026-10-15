@@ -1,0 +1,52 @@
+Running pipeline on 40 patients
+
+[1/40] Luisa710 Sosa986... ✅ PASS — 6 gaps, 1 alerts
+[2/40] Carlita746 Tenesha164 Pollich983... ✅ PASS — 6 gaps, 1 alerts
+[3/40] Trey250 Sal878 Schinner682... ✅ PASS — 6 gaps, 2 alerts
+[4/40] Ramon749 Cary869 Will178... ✅ PASS — 6 gaps, 4 alerts
+[5/40] Lekisha909 Vertie683 Botsford977... ✅ PASS — 5 gaps, 0 alerts
+[6/40] Kerry175 Elia719 O'Conner199... ✅ PASS — 5 gaps, 1 alerts
+[7/40] Andra606 Prohaska837... ❌ FAIL — 5 gaps, 1 alerts
+    [high] Brief mentions 'Natazia 28 Day (dienogest/estradiol valerate)' but not found in 
+[8/40] Alicia629 Pilar644 Colón139... ✅ PASS — 5 gaps, 0 alerts
+[9/40] Gabriela205 María Soledad68 Elizondo706... ✅ PASS — 5 gaps, 0 alerts
+[10/40] Emerita401 Rayna237 Reilly981... ✅ PASS — 5 gaps, 0 alerts
+[11/40] Carl856 Patti584 Auer97... ✅ PASS — 5 gaps, 0 alerts
+[12/40] Glenda787 Era940 Kuphal363... ✅ PASS — 5 gaps, 0 alerts
+[13/40] Myung778 Bogisich202... ✅ PASS — 5 gaps, 0 alerts
+[14/40] Maire384 Cremin516... ✅ PASS — 5 gaps, 0 alerts
+[15/40] Kam191 Nubia715 Wilkinson796... ✅ PASS — 5 gaps, 0 alerts
+[16/40] Robyn562 Winnifred2 Okuneva707... ✅ PASS — 5 gaps, 0 alerts
+[17/40] Minerva230 Ora550 Swift555... ✅ PASS — 4 gaps, 3 alerts
+[18/40] Magda24 Teresia279 Pacocha935... ✅ PASS — 4 gaps, 0 alerts
+[19/40] Dannielle300 Twanna669 Prosacco716... ✅ PASS — 4 gaps, 1 alerts
+[20/40] Darcel357 Randi364 Quigley282... ✅ PASS — 4 gaps, 4 alerts
+[21/40] Leslie90 Theron432 Toy286... ✅ PASS — 4 gaps, 0 alerts
+[22/40] Felice694 Padberg411... ✅ PASS — 4 gaps, 4 alerts
+[23/40] Marceline716 Judy192 Lowe577... ✅ PASS — 4 gaps, 2 alerts
+[24/40] Rosalia943 Jonell764 Haag279... ✅ PASS — 4 gaps, 0 alerts
+[25/40] Natalia964 Inés791 Zarate81... ✅ PASS — 4 gaps, 0 alerts
+[26/40] Yoshie761 Marcela739 Rath779... ❌ FAIL — 4 gaps, 0 alerts
+    [high] Brief mentions 'Natazia 28 Day (dienogest/estradiol valerate)' but not found in 
+[27/40] Deandre599 Gusikowski974... ERROR (JSON parse)
+[28/40] Sau887 Fawn386 Hermann103... ✅ PASS — 4 gaps, 3 alerts
+[29/40] Abbey813 Kirstin394 Yundt842... ✅ PASS — 4 gaps, 0 alerts
+[30/40] Marcela739 Sonia106 Marín855... ✅ PASS — 4 gaps, 0 alerts
+[31/40] Toby274 Lanette41 Grant908... ✅ PASS — 4 gaps, 0 alerts
+[32/40] Tamela350 Brianna665 Oberbrunner298... ✅ PASS — 4 gaps, 2 alerts
+[33/40] Kacy732 Cherrie404 Zulauf375... ✅ PASS — 4 gaps, 0 alerts
+[34/40] Kirsten270 Prosacco716... ✅ PASS — 3 gaps, 0 alerts
+[35/40] Gertrudis163 Ina660 Klocko335... ✅ PASS — 3 gaps, 0 alerts
+[36/40] Susana117 Valencia279 Kirlin939... ✅ PASS — 3 gaps, 1 alerts
+[37/40] Amanda238 Sara501 Dibbert990... ✅ PASS — 3 gaps, 0 alerts
+[38/40] Melania287 Welch179... ✅ PASS — 3 gaps, 1 alerts
+[39/40] Larraine124 Alycia285 Feil794... ✅ PASS — 3 gaps, 0 alerts
+[40/40] Dawna21 Elke785 Monahan736... ✅ PASS — 3 gaps, 0 alerts
+
+==================================================
+PIPELINE COMPLETE
+==================================================
+Patients processed: 40
+  PASS: 37  |  WARN: 0  |  FAIL: 2  |  ERROR: 1
+Total tokens: 91,058 in + 45,723 out = 136,781 total
+(backend: colby — no cost incurred)

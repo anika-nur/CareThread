@@ -1,0 +1,102 @@
+{
+  "patient_summary": "Susana117 Valencia279 Kirlin939 is a 64-year-old female with prediabetes, hypertension, hyperlipidemia, and obstructive sleep apnea.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "1993-10-13",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "1999-10-20",
+      "relevance": "Chronic cardiovascular risk factor."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2022-02-23",
+      "relevance": "Chronic cardiovascular risk factor."
+    },
+    {
+      "condition": "Obstructive sleep apnea syndrome",
+      "since": "1998-08-15",
+      "relevance": "Chronic respiratory and cardiovascular risk factor."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1993-10-13",
+      "relevance": "Chronic hematologic condition."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-03-25."
+    },
+    {
+      "medication": "losartan potassium 25 MG Oral Tablet",
+      "note": "Prescribed 2026-03-18."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2026-03-18."
+    },
+    {
+      "medication": "Vitamin B12 5 MG/ML Injectable Solution",
+      "note": "Prescribed 1993-10-20."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1965-06-26."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "diphenhydramine",
+        "losartan"
+      ],
+      "recommendation": "Monitor for potential interaction between diphenhydramine and losartan."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 64, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2026-04-01, a follow-up on 2026-03-25, and a general examination on 2026-03-18. Labs from 2026-03-25 show Glucose 86.12 mg/dL, Creatinine 3.2555 mg/dL, and GFR 79.58 mL/min. Influenza vaccination was administered on 2026-03-18.",
+  "sdoh_flags": [
+    "Part-time employment"
+  ],
+  "priority_actions": [
+    "Review medication interaction between diphenhydramine and losartan.",
+    "Address overdue colonoscopy, mammogram, and cervical screening.",
+    "Review recent lab results including Creatinine 3.2555 mg/dL and GFR 79.58 mL/min."
+  ],
+  "_meta": {
+    "patient_id": "14e22325-d564-a4f9-ccf4-330df1df656f",
+    "patient_name": "Susana117 Valencia279 Kirlin939",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2520,
+    "output_tokens": 1125,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

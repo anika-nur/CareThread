@@ -1,0 +1,19 @@
+# Secrets
+.env
+AccessAPI.txt
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Large / generated data
+synthea/
+*.db
+carethread/clh_2023_zipcode_2_0.xlsx
+.dist/
+
+# Local editor / OS files
+.DS_Store
+.claude/settings.local.json

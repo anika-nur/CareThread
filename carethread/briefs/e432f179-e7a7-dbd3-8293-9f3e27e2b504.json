@@ -1,0 +1,73 @@
+{
+  "patient_summary": "Toby274 Lanette41 Grant908 is a 59-year-old female with essential hypertension, stress, and a medication review due.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2013-10-09",
+      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Stress",
+      "since": "2024-12-11",
+      "relevance": "Psychosocial factor potentially impacting health outcomes and adherence."
+    },
+    {
+      "condition": "Medication review due",
+      "since": "2024-12-11",
+      "relevance": "Indicates need for current medication assessment."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-12-17."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 262 days ago (138 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Schedule or perform blood pressure monitoring.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 58 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 58, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 58, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-12-31 and a general examination on 2025-12-17. Labs from 2025-12-17 show BP 138/102 mm[Hg], BMI 28.19 kg/m2, Cholesterol 91.89 mg/dL, and Triglycerides 129.88 mg/dL. Influenza vaccination was administered on 2025-12-17.",
+  "sdoh_flags": [
+    "Part-time employment",
+    "Has a criminal record"
+  ],
+  "priority_actions": [
+    "Address overdue blood pressure monitoring and review current lisinopril therapy.",
+    "Initiate referrals for overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Conduct medication review as indicated by active condition."
+  ],
+  "_meta": {
+    "patient_id": "e432f179-e7a7-dbd3-8293-9f3e27e2b504",
+    "patient_name": "Toby274 Lanette41 Grant908",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 1958,
+    "output_tokens": 843,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

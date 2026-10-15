@@ -1,0 +1,141 @@
+{
+  "patient_summary": "Trey250 Sal878 Schinner682 is a 66-year-old male with a history of ischemic heart disease, type 2 diabetes, hypertension, and obesity.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2025-10-11",
+      "relevance": "Newly diagnosed; requires management and monitoring."
+    },
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2004-06-12",
+      "relevance": "Chronic condition with history of CABG; requires ongoing cardiac management."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "1997-05-03",
+      "relevance": "Chronic condition requiring blood pressure control."
+    },
+    {
+      "condition": "Obstructive sleep apnea syndrome",
+      "since": "2001-02-27",
+      "relevance": "Chronic condition contributing to cardiovascular risk."
+    },
+    {
+      "condition": "Misuses drugs",
+      "since": "2024-10-05",
+      "relevance": "Recent finding indicating substance use issues."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-10-11 for hypertension."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-10-11 for hypertension."
+    },
+    {
+      "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-10-11 for type 2 diabetes."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2004-06-19 for ischemic heart disease."
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2004-06-19 for lipid management."
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2004-06-19 for cardiac management."
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2004-06-19 for angina."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 20 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for signs of myopathy; consider alternative statin or dose adjustment."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Hydrochlorothiazide 25 MG Oral Tablet",
+        "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet"
+      ],
+      "recommendation": "Monitor renal function and electrolytes; ensure adequate hydration."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2021-09-18 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule follow-up for depression screening and management.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Diabetic Eye Exam Overdue: Diabetic patient with no eye exam on record. Diabetic retinopathy can cause preventable blindness.",
+      "severity": "high",
+      "action": "Refer for comprehensive dilated eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
+    },
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 329 days ago (value: 7.59%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 329 days ago (106 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 66 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2023-10-14.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-10-11, with labs showing HbA1c 7.59%, BMI 30.37, BP 106/53 mmHg, and glucose 98.92 mg/dL. Recent encounters include symptom visits in 2025 and 2024. Immunizations for influenza and pneumococcal disease were administered on 2025-10-11.",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Only received primary school education",
+    "Has a criminal record",
+    "Part-time employment"
+  ],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Refer for diabetic eye exam.",
+    "Order HbA1c and measure blood pressure.",
+    "Refer for colonoscopy.",
+    "Schedule follow-up for depression screening.",
+    "Schedule annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "a83dc114-ed29-167e-ed4c-9000898ff1fd",
+    "patient_name": "Trey250 Sal878 Schinner682",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2663,
+    "output_tokens": 1642
+  }
+}

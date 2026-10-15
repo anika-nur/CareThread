@@ -1,0 +1,157 @@
+{
+  "patient_summary": "Darcel357 Randi364 Quigley282 is a 61-year-old female with prediabetes, hypertension, hyperlipidemia, chronic pain, and newly diagnosed CKD stage 1.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "1995-06-07",
+      "relevance": "Long-standing metabolic risk factor; now on insulin."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2018-05-09",
+      "relevance": "Managed with amlodipine; contributes to CKD risk."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2015-04-22",
+      "relevance": "Managed with simvastatin; cardiovascular risk."
+    },
+    {
+      "condition": "Chronic kidney disease stage 1",
+      "since": "2026-06-24",
+      "relevance": "New diagnosis; requires monitoring and medication review."
+    },
+    {
+      "condition": "Disorder of kidney due to diabetes mellitus",
+      "since": "2026-06-24",
+      "relevance": "Etiology of CKD; linked to prediabetes/diabetes history."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-01-31",
+      "relevance": "Includes low back and neck pain; managed with naproxen."
+    },
+    {
+      "condition": "Obesity",
+      "since": "2009-05-06",
+      "relevance": "BMI 30+; contributes to metabolic syndrome and pain."
+    },
+    {
+      "condition": "Sleep apnea",
+      "since": "2017-05-11",
+      "relevance": "Comorbid with metabolic syndrome and hypertension."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-06-25 for hyperlipidemia."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2026-06-24 for hypertension."
+    },
+    {
+      "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
+      "note": "Prescribed 2026-06-24 for glycemic control."
+    },
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2023-03-04 for chronic pain/osteoarthritis."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2013-05-22; long-term use."
+    },
+    {
+      "medication": "Alteplase 100 MG Injection",
+      "note": "Prescribed 2013-05-22; long-term use."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 10 MG Oral Tablet"
+      ],
+      "recommendation": "Review for potential increased risk of myopathy/rhabdomyolysis; consider alternative statin or dose adjustment."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Clopidogrel 75 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Clopidogrel 75 MG Oral Tablet",
+        "Naproxen sodium 220 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased risk of GI bleeding; consider gastroprotection."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Naproxen sodium 220 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 61 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 61, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 61, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-02.",
+      "severity": "low",
+      "action": "Conduct or schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a follow-up encounter on 2026-06-25 and a general examination on 2026-06-24. Recent labs from 2026-06-25 include social determinant screenings (food insecurity reported, no transportation barriers, safe housing, no recent fear of partner) and income data ($41,326/year). Immunizations for influenza and Td were administered on 2026-06-24. New diagnoses of CKD stage 1 and diabetic kidney disorder were recorded on 2026-06-24, with new prescriptions for amlodipine and insulin.",
+  "sdoh_flags": [
+    "Food insecurity: Unable to get food when needed in past 1 year.",
+    "Income: $41,326/year (below 200% FPL for family of 1 in MA)."
+  ],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin; consider statin switch or dose adjustment.",
+    "Review new CKD stage 1 diagnosis and diabetic kidney disorder; assess need for nephrology referral or medication adjustments (e.g., naproxen use in CKD).",
+    "Address moderate drug interactions involving alteplase, clopidogrel, and naproxen; evaluate bleeding risk and need for gastroprotection.",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Address food insecurity with social work or community resource referral."
+  ],
+  "_meta": {
+    "patient_id": "50398546-dde2-e1c0-e45d-11e2184a0ba6",
+    "patient_name": "Darcel357 Randi364 Quigley282",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2892,
+    "output_tokens": 1724,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

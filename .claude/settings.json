@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venv/bin/python -m py_compile drug_interactions.py validate.py)",
+      "Bash(venv/bin/python -c ' *)",
+      "Bash(PYTHONHASHSEED=1 venv/bin/python drug_interactions.py)",
+      "Bash(PYTHONHASHSEED=99 venv/bin/python drug_interactions.py)",
+      "Bash(sqlite3 -column carethread.db \"SELECT drug_a_matched, drug_b_matched, COUNT\\(*\\) n FROM drug_interactions WHERE severity='major' GROUP BY 1,2 ORDER BY n DESC;\")"
+    ]
+  }
+}

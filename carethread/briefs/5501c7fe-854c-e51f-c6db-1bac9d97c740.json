@@ -1,0 +1,95 @@
+{
+  "patient_summary": "Emerita401 Rayna237 Reilly981 is a 47-year-old female with obesity, chronic pain, prediabetes, and anemia.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2003-10-28",
+      "relevance": "Chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-02-06",
+      "relevance": "Long-standing condition affecting quality of life and function."
+    },
+    {
+      "condition": "Chronic low back pain",
+      "since": "2014-02-06",
+      "relevance": "Specific site of chronic pain."
+    },
+    {
+      "condition": "Chronic neck pain",
+      "since": "2014-02-06",
+      "relevance": "Specific site of chronic pain."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2016-03-22",
+      "relevance": "Risk factor for type 2 diabetes requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2016-03-22",
+      "relevance": "Chronic disorder requiring monitoring."
+    },
+    {
+      "condition": "Lack of access to transportation",
+      "since": "1997-02-25",
+      "relevance": "Social determinant impacting care access."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 47, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 592 days ago (29.56 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-02-04.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-02-04 and a general examination on 2025-01-21. Labs from 2025-01-21 show Hemoglobin A1c 6.26 %, Body Weight 82.5 kg, BMI 29.56 kg/m2, Systolic BP 117 mm[Hg], Diastolic BP 81 mm[Hg], Heart rate 68 /min, Respiratory rate 16 /min, Glucose 71.12 mg/dL, and Pain severity 1 {score}. Influenza vaccination was administered on 2025-01-21.",
+  "sdoh_flags": [
+    "Lack of access to transportation",
+    "Transport problem"
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Review chronic pain management and current status.",
+    "Monitor prediabetes and obesity with recent lab values.",
+    "Assess transportation barriers impacting care access."
+  ],
+  "_meta": {
+    "patient_id": "5501c7fe-854c-e51f-c6db-1bac9d97c740",
+    "patient_name": "Emerita401 Rayna237 Reilly981",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2252,
+    "output_tokens": 1112,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

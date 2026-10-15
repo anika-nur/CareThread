@@ -1,0 +1,85 @@
+{
+  "patient_summary": "Abbey813 Kirstin394 Yundt842 is a 67-year-old female with type 2 diabetes, essential hypertension, obesity, and a history of intimate partner abuse.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2007-11-01",
+      "relevance": "Chronic metabolic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2007-11-01",
+      "relevance": "Chronic cardiovascular risk factor requiring blood pressure monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "1987-12-16",
+      "relevance": "Long-standing weight-related condition contributing to metabolic syndrome."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "2023-01-26",
+      "relevance": "Social determinant of health impacting safety and care planning."
+    },
+    {
+      "condition": "Medication review due",
+      "since": "2025-02-05",
+      "relevance": "Indicates need for current medication assessment."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2026-02-11."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 206 days ago (value: 6.86%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 206 days ago (133 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 66 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 66, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2026-02-25 and a general examination on 2026-02-11 where lisinopril was prescribed. Recent social determinants screening on 2026-02-12 indicated food insecurity but no current fear of partner or transportation barriers. Immunizations for influenza and pneumococcal disease were administered in February 2026.",
+  "sdoh_flags": [
+    "Food insecurity: Unable to get food when really needed in past 1 year",
+    "History of intimate partner abuse",
+    "Limited social contact"
+  ],
+  "priority_actions": [
+    "Address food insecurity with social work referral or resource list.",
+    "Order overdue HbA1c and measure blood pressure.",
+    "Discuss and refer for overdue colonoscopy and mammogram.",
+    "Review current medications and assess for medication review needs."
+  ],
+  "_meta": {
+    "patient_id": "d6a95bf9-a19f-2c1c-75fc-ed2f332b0440",
+    "patient_name": "Abbey813 Kirstin394 Yundt842",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2340,
+    "output_tokens": 971,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

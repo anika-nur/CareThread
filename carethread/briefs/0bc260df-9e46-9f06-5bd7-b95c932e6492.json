@@ -1,0 +1,104 @@
+{
+  "patient_summary": "Kerry175 Elia719 O'Conner199 is a 47-year-old female with asthma, prediabetes, and a recent pregnancy status of pregnant.",
+  "key_conditions": [
+    {
+      "condition": "Asthma",
+      "since": "1999-10-23",
+      "relevance": "Chronic respiratory condition requiring ongoing management and recent emergency admission."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2023-03-04",
+      "relevance": "Metabolic condition requiring monitoring, especially in the context of pregnancy."
+    },
+    {
+      "condition": "Pregnancy",
+      "since": "2026-08-08",
+      "relevance": "Current physiological state identified in recent lab results."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2018-06-11",
+      "relevance": "Reproductive history relevant to current pregnancy care."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "budesonide 0.25 MG/ML Inhalation Suspension",
+      "note": "Prescribed 2026-03-21."
+    },
+    {
+      "medication": "albuterol 0.83 MG/ML Inhalation Solution",
+      "note": "Prescribed 2026-03-21."
+    },
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1979-10-26."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "budesonide",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for potential interaction between budesonide and salbutamol (albuterol)."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2019-02-09 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule follow-up for positive depression screen.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 4 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-03-29.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had an emergency hospital admission for asthma on 2026-07-02, followed by an asthma follow-up on 2026-07-04 and a general encounter on 2026-08-15. Recent labs from 2026-08-08 indicate pregnancy status. Labs from 2026-03-21 show Hemoglobin A1c 6.25 %, BMI 29.11 kg/m2, and blood pressure 104/80 mmHg. Influenza vaccination was administered on 2026-03-21.",
+  "sdoh_flags": [
+    "Not in labor force",
+    "Educated to high school level"
+  ],
+  "priority_actions": [
+    "Address current pregnancy status and review asthma management in the context of pregnancy.",
+    "Follow up on the 2019 positive depression screen (PHQ-2 score 4.0).",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical screening.",
+    "Review medication safety, specifically the minor interaction between budesonide and albuterol/salbutamol.",
+    "Schedule annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "0bc260df-9e46-9f06-5bd7-b95c932e6492",
+    "patient_name": "Kerry175 Elia719 O'Conner199",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2097,
+    "output_tokens": 1243,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

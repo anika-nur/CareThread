@@ -1,0 +1,68 @@
+{
+  "patient_summary": "Kacy732 Cherrie404 Zulauf375 is a 43-year-old female with a history of stress, past miscarriage, and risk activity involvement.",
+  "key_conditions": [
+    {
+      "condition": "Stress",
+      "since": "2025-03-13",
+      "relevance": "Active finding requiring monitoring and potential intervention."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2006-08-08",
+      "relevance": "Relevant obstetric history for future reproductive health discussions."
+    },
+    {
+      "condition": "Risk activity involvement",
+      "since": "2000-04-20",
+      "relevance": "Long-standing finding indicating potential exposure to risk factors."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Mammogram Overdue: Female patient, age 43, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 3 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 541 days ago (28.07 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Update BMI measurement.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2023-03-30.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient has had five recent encounters between August 2025 and August 2026. Most recent labs from March 2025 show BMI 28.07 kg/m2, blood pressure 108/85 mmHg, heart rate 67 /min, cholesterol 162.56 mg/dL, and triglycerides 118.72 mg/dL. Immunizations for Influenza, Td, and Hep A were administered in March 2025.",
+  "sdoh_flags": [
+    "Full-time employment",
+    "Received higher education"
+  ],
+  "priority_actions": [
+    "Address overdue mammogram and cervical screening.",
+    "Update BMI and conduct annual wellness visit.",
+    "Monitor stress levels and provide appropriate support or referral."
+  ],
+  "_meta": {
+    "patient_id": "f8155a33-4c2d-bb73-775a-dcba8371ab1e",
+    "patient_name": "Kacy732 Cherrie404 Zulauf375",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 1854,
+    "output_tokens": 763,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

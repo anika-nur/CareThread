@@ -1,0 +1,108 @@
+{
+  "patient_summary": "Marcela739 Sonia106 Mar\u00edn855 is a 49-year-old female with essential hypertension, prediabetes, obesity, osteoarthritis, anemia, and a history of intimate partner abuse.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2019-08-13",
+      "relevance": "Primary reason for current antihypertensive regimen."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1999-10-12",
+      "relevance": "Requires monitoring and lifestyle intervention."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2023-09-05",
+      "relevance": "Contributes to cardiovascular and metabolic risk."
+    },
+    {
+      "condition": "Osteoarthritis of knee",
+      "since": "2016-11-07",
+      "relevance": "Chronic pain management with NSAIDs."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2005-10-18",
+      "relevance": "Long-standing condition requiring iron supplementation."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "2025-09-17",
+      "relevance": "Safety and social support needs."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-09-16 for hypertension."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-16 for hypertension."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-09-16 for hypertension."
+    },
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2016-11-07 for osteoarthritis."
+    },
+    {
+      "medication": "ferrous sulfate 325 MG Oral Tablet",
+      "note": "Prescribed 2005-10-26 for anemia."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 354 days ago (112 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Obtain blood pressure measurement today.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 49, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 4 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform or refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-09-30 and subsequent encounters in 2025-11-11, 2026-02-10, 2026-05-12, and 2026-08-11. Recent social determinants screening on 2025-09-17 confirmed refugee status, part-time employment, and transportation barriers affecting medical access. Annual influenza vaccination was administered on 2025-09-16.",
+  "sdoh_flags": [
+    "Transport problem",
+    "Lack of access to transportation",
+    "Refugee",
+    "Part-time employment",
+    "Victim of intimate partner abuse"
+  ],
+  "priority_actions": [
+    "Address safety and support needs related to intimate partner abuse history.",
+    "Obtain blood pressure measurement to address overdue monitoring.",
+    "Initiate referrals for overdue colonoscopy, mammogram, and cervical screening.",
+    "Review medication adherence and transportation barriers affecting access to care."
+  ],
+  "_meta": {
+    "patient_id": "dbb70148-dea1-e1c4-5ce1-42e9bb4dd3d2",
+    "patient_name": "Marcela739 Sonia106 Mar\u00edn855",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2520,
+    "output_tokens": 1142,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "patient_summary": "Natalia964 In\u00e9s791 Zarate81 is a 68-year-old female with obesity, social isolation, and a recent positive depression screen.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2002-01-22",
+      "relevance": "Chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Social isolation",
+      "since": "2024-04-09",
+      "relevance": "Significant psychosocial factor impacting health outcomes."
+    },
+    {
+      "condition": "Stress",
+      "since": "2026-04-21",
+      "relevance": "Recent finding associated with current visit and positive depression screen."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "2021-10-12",
+      "relevance": "Historical trauma and safety consideration."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 5.0 on 2026-04-21 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Arrange follow-up for positive depression screen.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 68 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 68, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-04-23.",
+      "severity": "low",
+      "action": "Conduct or schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-04-21 where vitals included BP 102/72 mmHg, HR 83/min, and weight 79 kg (BMI 30.1 kg/m2). Labs showed Cholesterol 168.25 mg/dL and Triglycerides 101.43 mg/dL. Pain severity was reported as 4/10. She received an influenza vaccine on this date. Previous visits include general examinations in 2025 and 2024.",
+  "sdoh_flags": [
+    "Refugee status",
+    "Social isolation",
+    "History of intimate partner abuse"
+  ],
+  "priority_actions": [
+    "Address positive depression screen (PHQ-2 5.0) and arrange follow-up within 30 days.",
+    "Discuss and schedule overdue colonoscopy.",
+    "Discuss and schedule overdue mammogram.",
+    "Address social isolation and stress factors.",
+    "Monitor obesity management."
+  ],
+  "_meta": {
+    "patient_id": "82da0134-3bac-6b6e-c569-af99176c5e78",
+    "patient_name": "Natalia964 In\u00e9s791 Zarate81",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2032,
+    "output_tokens": 886,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "patient_summary": "Larraine124 Alycia285 Feil794 is a 24-year-old female with severe anxiety, social isolation, and lack of transportation, currently pregnant.",
+  "key_conditions": [
+    {
+      "condition": "Severe anxiety (panic)",
+      "since": "2024-01-03",
+      "relevance": "Active mental health condition requiring management during pregnancy."
+    },
+    {
+      "condition": "Lack of access to transportation",
+      "since": "2019-12-25",
+      "relevance": "Social determinant impacting ability to attend prenatal and follow-up appointments."
+    },
+    {
+      "condition": "Social isolation",
+      "since": "2019-12-25",
+      "relevance": "Social determinant contributing to stress and potential barriers to care."
+    },
+    {
+      "condition": "Unemployed",
+      "since": "2025-07-16",
+      "relevance": "Recent change in employment status affecting financial stability and insurance coverage."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-07-16",
+      "relevance": "Current psychosocial stressor."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 8 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 416 days ago (23.62 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-30.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a prenatal initial visit on 2025-11-05 and a subsequent prenatal visit on 2025-11-28. Pregnancy status was confirmed as 'Pregnant' on 2025-09-10 and 2026-07-22. Most recent vitals from 2025-07-16 show Systolic Blood Pressure 131 mm[Hg], Diastolic Blood Pressure 74 mm[Hg], Heart rate 88 /min, Respiratory rate 14 /min, Weight 64.9 kg, Height 165.8 cm, and BMI 23.62 kg/m2. Pain severity was reported as 1 {score} on 2025-07-16.",
+  "sdoh_flags": [
+    "Lack of access to transportation",
+    "Social isolation",
+    "Unemployed"
+  ],
+  "priority_actions": [
+    "Address severe anxiety and stress in the context of current pregnancy.",
+    "Assess and mitigate barriers to care related to lack of transportation and social isolation.",
+    "Schedule overdue cervical cancer screening.",
+    "Perform annual BMI screening and wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "228af19b-f84f-643e-b529-70b05154733a",
+    "patient_name": "Larraine124 Alycia285 Feil794",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 1800,
+    "output_tokens": 870,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

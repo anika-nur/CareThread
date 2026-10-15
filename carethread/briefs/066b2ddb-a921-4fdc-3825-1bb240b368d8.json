@@ -1,0 +1,78 @@
+{
+  "patient_summary": "Kirsten270 Prosacco716 is a 68-year-old female with obesity, prediabetes, anemia, osteoarthritis of the knee, and stress.",
+  "key_conditions": [
+    {
+      "condition": "Obesity",
+      "since": "1995-09-05",
+      "relevance": "Chronic condition requiring monitoring; current BMI 28.21 kg/m2."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1998-06-23",
+      "relevance": "Chronic condition; recent HbA1c 6.19%."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2000-06-27",
+      "relevance": "Chronic disorder requiring ongoing management."
+    },
+    {
+      "condition": "Osteoarthritis of knee",
+      "since": "2024-09-24",
+      "relevance": "Active pain management; current pain score 0."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-09-23",
+      "relevance": "Recent finding noted during general examination."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2024-09-24."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2022-09-06 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Address history of positive depression screen and assess current mental health status.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 68 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule or refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 68, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule or refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-10-07 and a general examination on 2025-09-23. Labs from 2025-09-23 show HbA1c 6.19%, BMI 28.21 kg/m2, blood pressure 134/75 mmHg, heart rate 99/min, and glucose 89.28 mg/dL. Pain severity was reported as 0. Influenza vaccine was administered on 2025-09-23.",
+  "sdoh_flags": [
+    "Only received primary school education",
+    "Full-time employment"
+  ],
+  "priority_actions": [
+    "Address high-severity care gap: Depression follow-up missing since 2022.",
+    "Address medium-severity care gap: Colonoscopy overdue.",
+    "Address medium-severity care gap: Mammogram overdue.",
+    "Review recent labs and vitals from 2025-09-23."
+  ],
+  "_meta": {
+    "patient_id": "066b2ddb-a921-4fdc-3825-1bb240b368d8",
+    "patient_name": "Kirsten270 Prosacco716",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 1986,
+    "output_tokens": 925,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

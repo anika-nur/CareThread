@@ -1,0 +1,97 @@
+{
+  "patient_summary": "Yoshie761 Marcela739 Rath779 is a 45-year-old female with type 2 diabetes, essential hypertension, metabolic syndrome, and a history of prediabetes and anemia.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2023-07-31",
+      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2023-07-31",
+      "relevance": "Comorbid cardiovascular risk factor managed with antihypertensives."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2024-08-05",
+      "relevance": "Cluster of conditions including hypertriglyceridemia and obesity increasing cardiovascular risk."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2024-08-05",
+      "relevance": "Lipid disorder associated with metabolic syndrome."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2015-10-05",
+      "relevance": "Chronic disorder requiring periodic monitoring."
+    },
+    {
+      "condition": "Unhealthy alcohol drinking behavior",
+      "since": "2026-08-17",
+      "relevance": "Recent behavioral health flag impacting overall health and medication adherence."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2026-08-17 for hypertension."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2026-08-17 for hypertension."
+    },
+    {
+      "medication": "Natazia 28 Day (dienogest/estradiol valerate)",
+      "note": "Prescribed 2026-02-16 for hormonal therapy."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 45 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 45, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 45, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-08-25.",
+      "severity": "low",
+      "action": "Conduct or schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-08-17 where HbA1c was 6.91%, glucose was 101.85 mg/dL, BP was 116/90 mmHg, and BMI was 27.64 kg/m2. Lisinopril and amlodipine were prescribed on this date. Previous visits include an ophthalmic exam in July 2026 and a consultation in February 2026. Influenza vaccination was administered in August 2026.",
+  "sdoh_flags": [
+    "Limited social contact",
+    "Unhealthy alcohol drinking behavior"
+  ],
+  "priority_actions": [
+    "Address unhealthy alcohol drinking behavior identified in recent visit.",
+    "Review and manage hypertension and diabetes control based on recent labs (HbA1c 6.91%, BP 116/90 mmHg).",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Complete annual wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "904e419d-908a-1112-0180-bcd607b82077",
+    "patient_name": "Yoshie761 Marcela739 Rath779",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2481,
+    "output_tokens": 1162,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

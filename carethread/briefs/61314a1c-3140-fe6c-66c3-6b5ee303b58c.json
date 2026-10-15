@@ -1,0 +1,100 @@
+{
+  "patient_summary": "Leslie90 Theron432 Toy286 is a 49-year-old male with type 2 diabetes, hypertension, hypertriglyceridemia, metabolic syndrome, and diabetic neuropathy.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2014-07-22",
+      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2014-07-22",
+      "relevance": "Comorbid cardiovascular risk factor."
+    },
+    {
+      "condition": "Neuropathy due to type 2 diabetes mellitus",
+      "since": "2020-08-25",
+      "relevance": "Diabetic complication affecting quality of life and pain management."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2015-07-28",
+      "relevance": "Cardiometabolic risk factor."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2015-07-28",
+      "relevance": "Cluster of conditions increasing cardiovascular risk."
+    },
+    {
+      "condition": "Osteoarthritis of hip",
+      "since": "2020-10-17",
+      "relevance": "Chronic pain source impacting mobility."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1995-06-27",
+      "relevance": "Chronic condition requiring monitoring."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-23 for hypertension."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-09-23 for hypertension."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 347 days ago (value: 6.83%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 347 days ago (121 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-10-01.",
+      "severity": "low",
+      "action": "Schedule or conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-09-23 with HbA1c 6.83%, weight 84.5 kg, and pain score 3/10. Ophthalmic exams on 2025-11-26 and 2024-12-31 showed no apparent retinopathy and intraocular pressure of 16 mmHg in both eyes. Most recent encounter was 2026-06-30 for a symptom.",
+  "sdoh_flags": [
+    "Not in labor force",
+    "Stress",
+    "Reports of violence in the environment"
+  ],
+  "priority_actions": [
+    "Address social determinant of health flags: violence in environment, stress, and unemployment.",
+    "Order HbA1c and measure blood pressure to close overdue monitoring gaps.",
+    "Refer for colonoscopy screening.",
+    "Review current antihypertensive regimen (lisinopril, amlodipine) given recent prescription dates and lack of recent BP data.",
+    "Assess pain management for osteoarthritis and diabetic neuropathy."
+  ],
+  "_meta": {
+    "patient_id": "61314a1c-3140-fe6c-66c3-6b5ee303b58c",
+    "patient_name": "Leslie90 Theron432 Toy286",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2377,
+    "output_tokens": 1154,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

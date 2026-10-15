@@ -1,0 +1,165 @@
+{
+  "patient_summary": "Ramon749 Cary869 Will178 is a 79-year-old male with a complex history including type 2 diabetes, renal transplant, ischemic heart disease, and asthma.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "1976-11-03",
+      "relevance": "Primary driver for metabolic management and screening requirements."
+    },
+    {
+      "condition": "History of renal transplant",
+      "since": "2023-08-02",
+      "relevance": "Requires immunosuppression and monitoring for drug interactions."
+    },
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2007-11-07",
+      "relevance": "Requires cardiovascular risk management and antiplatelet therapy."
+    },
+    {
+      "condition": "Asthma",
+      "since": "1967-09-13",
+      "relevance": "Chronic respiratory condition requiring maintenance and rescue inhalers."
+    },
+    {
+      "condition": "Disorder of kidney due to diabetes mellitus",
+      "since": "2003-02-12",
+      "relevance": "Long-standing complication requiring nephropathy screening."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "24 HR tacrolimus 1 MG Extended Release Oral Tablet [Envarsus]",
+      "note": "Prescribed 2025-09-03; immunosuppressant for renal transplant."
+    },
+    {
+      "medication": "120 ACTUAT fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler [Flovent]",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "albuterol 0.21 MG/ML Inhalation Solution",
+      "note": "Prescribed 2025-09-03."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2007-11-14."
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2007-11-14."
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2007-11-14."
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2007-11-14."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "simvastatin",
+        "tacrolimus"
+      ],
+      "recommendation": "Monitor for increased tacrolimus levels or statin-related adverse effects."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "metoprolol",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for reduced bronchodilator efficacy or increased heart rate."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "salbutamol",
+        "tacrolimus"
+      ],
+      "recommendation": "Monitor for potential electrolyte disturbances or increased tacrolimus levels."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "fluticasone",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for local or systemic corticosteroid effects."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 367 days ago (value: 3.98%). Due every 180 days.",
+      "severity": "high",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Lipid Panel Overdue: Last lipid panel was 367 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order lipid panel.",
+      "source": "HEDIS CDC: Annual lipid panel for diabetic patients"
+    },
+    {
+      "gap": "Nephropathy Screening Overdue: Last urine microalbumin was 367 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order urine microalbumin test.",
+      "source": "HEDIS CDC-NP: Annual nephropathy screening for diabetic patients"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was 367 days ago. Due annually.",
+      "severity": "low",
+      "action": "Administer influenza vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 367 days ago (27.93 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure and record BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-09-11.",
+      "severity": "low",
+      "action": "Schedule or conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had an ophthalmic examination on 2026-08-09 showing LogMAR visual acuity of 0 for both eyes, intraocular pressure of 16 mm[Hg] for both eyes, and no apparent retinopathy. Previous ophthalmic exam on 2025-09-13 showed similar visual acuity and intraocular pressure of 15 mm[Hg]. Recent encounters include a follow-up on 2026-06-17 and a general examination on 2025-09-03.",
+  "sdoh_flags": [
+    "Limited social contact",
+    "Unemployed",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Order HbA1c test (High severity care gap).",
+    "Order lipid panel (Medium severity care gap).",
+    "Order urine microalbumin test (Medium severity care gap).",
+    "Administer influenza vaccine (Low severity care gap).",
+    "Measure and record BMI (Low severity care gap).",
+    "Schedule or conduct annual wellness visit (Low severity care gap).",
+    "Review medication interactions, particularly simvastatin and tacrolimus."
+  ],
+  "_meta": {
+    "patient_id": "e78a9d8e-13e4-b7c9-abc6-c1ba02c646af",
+    "patient_name": "Ramon749 Cary869 Will178",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3254,
+    "output_tokens": 1681,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

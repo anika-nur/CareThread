@@ -1,0 +1,85 @@
+{
+  "patient_summary": "Robyn562 Winnifred2 Okuneva707 is a 56-year-old female with obesity, stress, and a history of miscarriage.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2010-07-14",
+      "relevance": "Chronic condition requiring monitoring; recent BMI is 28.01 kg/m2."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-08-06",
+      "relevance": "Recent finding associated with a prior positive depression screen."
+    },
+    {
+      "condition": "Loss of teeth",
+      "since": "2023-08-16",
+      "relevance": "Dental health issue."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2002-04-12",
+      "relevance": "Historical obstetric event."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1973-07-25."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2020-07-08 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Follow-up within 30 days of positive depression screen",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 56 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Colonoscopy every 10 years for ages 45-75",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 56, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Mammography every 2 years for women 40-74",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 56, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Cervical cancer screening every 3 years for women 21-65",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-08-20.",
+      "severity": "low",
+      "action": "Annual wellness visit recommended for all adults",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-08-12 with vitals including BP 93/81 mmHg, HR 95/min, and BMI 28.01 kg/m2. Labs from the same date show Cholesterol 204.67 mg/dL and Triglycerides 106.06 mg/dL. She received an influenza vaccination on 2026-08-12, following annual vaccinations in 2025, 2024, 2023, and 2022.",
+  "sdoh_flags": [
+    "Part-time employment",
+    "Received higher education"
+  ],
+  "priority_actions": [
+    "Address missing depression follow-up from 2020 positive screen.",
+    "Schedule overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Review current stress levels and part-time employment status.",
+    "Confirm annual wellness visit completion."
+  ],
+  "_meta": {
+    "patient_id": "e4fe6968-2c81-a4b1-8a20-270e806a773f",
+    "patient_name": "Robyn562 Winnifred2 Okuneva707",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2030,
+    "output_tokens": 1058,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

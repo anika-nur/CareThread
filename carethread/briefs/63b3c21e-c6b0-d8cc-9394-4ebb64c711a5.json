@@ -1,0 +1,92 @@
+{
+  "patient_summary": "Carl856 Patti584 Auer97 is a 54-year-old female with essential hypertension, chronic sinusitis, and a history of tubal ligation.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2009-08-16",
+      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1976-11-17",
+      "relevance": "Long-standing respiratory condition."
+    },
+    {
+      "condition": "Housing unsatisfactory",
+      "since": "1990-07-22",
+      "relevance": "Social determinant of health impacting overall well-being."
+    },
+    {
+      "condition": "Limited social contact",
+      "since": "2017-10-01",
+      "relevance": "Social determinant of health impacting mental health and support systems."
+    },
+    {
+      "condition": "Medication review due",
+      "since": "2025-11-16",
+      "relevance": "Current administrative flag for today's visit."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-11-16."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 5.0 on 2020-10-18 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Address history of positive depression screen and assess current mental health status.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 293 days ago (125 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Verify current blood pressure control and update monitoring schedule.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 54, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Order or refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 54, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Order or refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-11-24.",
+      "severity": "low",
+      "action": "Conduct or schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-11-16 where vitals were recorded: BP 125/98 mmHg, HR 61/min, RR 15/min, Weight 61.6 kg, Height 150 cm, BMI 27.38 kg/m2, and pain score 4/10. She received an influenza vaccine on 2025-11-16. Previous visits occurred in 2024, 2023, and 2022 for check-ups and general examinations. She received a zoster vaccine and Td booster in 2023.",
+  "sdoh_flags": [
+    "Housing unsatisfactory",
+    "Limited social contact",
+    "Has a criminal record"
+  ],
+  "priority_actions": [
+    "Address high-severity care gap: Follow up on 2020 positive depression screen (PHQ-2 score 5.0).",
+    "Review and update blood pressure management plan given the medium-severity gap for overdue BP monitoring.",
+    "Order or refer for overdue mammogram and cervical cancer screening.",
+    "Conduct medication review as flagged on 2025-11-16.",
+    "Address social determinants of health: housing and social isolation."
+  ],
+  "_meta": {
+    "patient_id": "63b3c21e-c6b0-d8cc-9394-4ebb64c711a5",
+    "patient_name": "Carl856 Patti584 Auer97",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2162,
+    "output_tokens": 1139,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

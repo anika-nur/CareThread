@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Coordinator dashboard — CareThread{% endblock %}
+
+{% block content %}
+<section class="stats">
+  <div class="stat"><span class="num">{{ totals.patients }}</span>briefs ready</div>
+  <div class="stat"><span class="num sev-high">{{ totals.high_gaps }}</span>high-severity gaps</div>
+  <div class="stat"><span class="num sev-major">{{ totals.major_alerts }}</span>major interactions</div>
+  <div class="stat"><span class="num {{ 'sev-high' if totals.flagged else 'ok' }}">{{ totals.flagged }}</span>flagged by verification</div>
+</section>
+
+<h1>Today's panel</h1>
+<p class="lede">Ranked by clinical urgency: high-severity care gaps first, then
+major drug interactions. Click a patient to open their brief.</p>
+
+<table class="worklist">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Care gaps</th>
+      <th>Interactions</th>
+      <th>Verification</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in rows %}
+    <tr class="{{ 'row-flagged' if r.verdict != 'PASS' }}">
+      <td>
+        <a class="patient-link" href="{{ url_for('patient', patient_id=r.patient_id) }}">{{ r.name }}</a>
+        <span class="muted">{{ r.age }}, {{ r.gender }}</span>
+        <code class="pid">{{ r.patient_id }}</code>
+      </td>
+      <td class="gapcells">
+        {% if r.gap_counts.high %}<span class="pill sev-high">{{ r.gap_counts.high }} high</span>{% endif %}
+        {% if r.gap_counts.medium %}<span class="pill sev-med">{{ r.gap_counts.medium }} med</span>{% endif %}
+        {% if r.gap_counts.low %}<span class="pill sev-low">{{ r.gap_counts.low }} low</span>{% endif %}
+        {% if not r.gap_total %}<span class="muted">none</span>{% endif %}
+      </td>
+      <td>
+        {% if r.major_alerts %}<span class="pill sev-major">{{ r.major_alerts }} major</span>{% endif %}
+        {% if r.alerts - r.major_alerts %}<span class="pill sev-low">{{ r.alerts - r.major_alerts }} other</span>{% endif %}
+        {% if not r.alerts %}<span class="muted">none</span>{% endif %}
+      </td>
+      <td>
+        {% if r.verdict == 'PASS' %}
+          <span class="verdict pass">verified</span>
+        {% else %}
+          <span class="verdict fail">{{ r.verdict }} — {{ r.issues }} issue{{ '' if r.issues == 1 else 's' }}</span>
+        {% endif %}
+      </td>
+      <td class="muted small">{{ r.model }}</td>
+    </tr>
+  {% else %}
+    <tr><td colspan="5" class="muted">No briefs yet. Run <code>run_pipeline.py</code>.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

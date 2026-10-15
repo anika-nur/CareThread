@@ -1,0 +1,121 @@
+{
+  "patient_summary": "Luisa710 Sosa986 is a 59-year-old female with type 2 diabetes, hypertension, obesity, and a history of social isolation and intimate partner abuse.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "1992-09-13",
+      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2007-07-15",
+      "relevance": "Cardiovascular risk factor requiring blood pressure monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2007-07-15",
+      "relevance": "Contributes to metabolic syndrome and diabetes management challenges."
+    },
+    {
+      "condition": "Severe anxiety (panic)",
+      "since": "2024-10-20",
+      "relevance": "Recent mental health diagnosis impacting quality of life and care adherence."
+    },
+    {
+      "condition": "Victim of intimate partner abuse",
+      "since": "2018-09-16",
+      "relevance": "Significant social determinant affecting safety and healthcare access."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2025-11-02 for hyperlipidemia."
+    },
+    {
+      "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-10-26 for type 2 diabetes."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-10-26 for hypertension."
+    },
+    {
+      "medication": "ferrous sulfate 325 MG Oral Tablet",
+      "note": "Prescribed 1992-09-20 for anemia."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "lisinopril",
+        "metformin"
+      ],
+      "recommendation": "Monitor for potential interaction between lisinopril and metformin."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Diabetic Eye Exam Overdue: Diabetic patient with no eye exam on record. Diabetic retinopathy can cause preventable blindness.",
+      "severity": "high",
+      "action": "Schedule annual eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
+    },
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 314 days ago (value: 5.47%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 314 days ago (109 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 59, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 59, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2022-10-23.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a follow-up encounter on 2025-11-02 where labs showed elevated glucose (181.39 mg/dL) and creatinine (2.7633 mg/dL) with an eGFR of 68.798 mL/min. Previous visits in October 2025 and 2024 included general examinations and follow-ups. Influenza vaccination is up to date as of 2025-10-26.",
+  "sdoh_flags": [
+    "Social isolation",
+    "Refugee status",
+    "Victim of intimate partner abuse",
+    "Limited social contact",
+    "Not in labor force",
+    "Stress"
+  ],
+  "priority_actions": [
+    "Address elevated creatinine and eGFR (68.798 mL/min) to assess renal function and adjust medications if necessary.",
+    "Schedule overdue diabetic eye exam (high severity care gap).",
+    "Order HbA1c and measure blood pressure to address medium severity care gaps.",
+    "Schedule mammogram and cervical cancer screening.",
+    "Discuss and manage severe anxiety and social isolation/intimate partner abuse history."
+  ],
+  "_meta": {
+    "patient_id": "66fedaf6-b81d-b6cf-aa4d-89dec42f6306",
+    "patient_name": "Luisa710 Sosa986",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2580,
+    "output_tokens": 1420
+  }
+}

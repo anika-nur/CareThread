@@ -1,0 +1,105 @@
+{
+  "patient_summary": "Kam191 Nubia715 Wilkinson796 is a 47-year-old female with obesity, social isolation, and stress.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2023-01-20",
+      "relevance": "Chronic condition requiring monitoring and management."
+    },
+    {
+      "condition": "Social isolation",
+      "since": "2025-01-24",
+      "relevance": "Social determinant affecting health outcomes and care engagement."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-01-24",
+      "relevance": "Psychosocial factor impacting overall well-being."
+    },
+    {
+      "condition": "Not in labor force",
+      "since": "2025-01-24",
+      "relevance": "Employment status affecting socioeconomic stability."
+    },
+    {
+      "condition": "Risk activity involvement",
+      "since": "1996-02-23",
+      "relevance": "Historical finding regarding risk behaviors."
+    },
+    {
+      "condition": "Only received primary school education",
+      "since": "1997-02-28",
+      "relevance": "Educational level impacting health literacy."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "1998-08-15",
+      "relevance": "Reproductive history."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Vitamin B12 5 MG/ML Injectable Solution",
+      "note": "Prescribed 2008-08-22."
+    },
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1980-04-02."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 4 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 589 days ago (28.2 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-02-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a procedure on 2026-07-10 and consultations on 2026-04-01 and 2025-04-06. Most recent labs from 2025-01-24 show BMI 28.2 kg/m2, Cholesterol 273.21 mg/dL, and Triglycerides 108.11 mg/dL. Influenza vaccination was administered on 2025-01-24.",
+  "sdoh_flags": [
+    "Social isolation",
+    "Not in labor force",
+    "Only received primary school education"
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical screening.",
+    "Assess and manage obesity and stress.",
+    "Update BMI and conduct annual wellness visit.",
+    "Review social determinants of health including isolation and employment status."
+  ],
+  "_meta": {
+    "patient_id": "b8d0afb2-163b-6a8c-fc56-4431b24026d3",
+    "patient_name": "Kam191 Nubia715 Wilkinson796",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2109,
+    "output_tokens": 1154,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}
