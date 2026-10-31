@@ -1,0 +1,75 @@
+{# Shared by brief.html and record.html #}
+
+{% set source_labels = {
+  'care_gaps': 'Rule result',
+  'brief': 'In the brief',
+  'medications': 'Prescription',
+  'drug_interactions': 'Interaction database',
+  'conditions': 'Diagnosis',
+  'observations': 'Test result',
+  'encounters': 'Visit',
+  'procedures': 'Procedure',
+  'immunizations': 'Vaccination',
+  'care_plan_activities': 'Care plan'
+} %}
+
+{% macro source_chip(sources) -%}
+  {%- for s in sources if s.org -%}
+    {%- if loop.first %}<span class="source-chip" title="Recorded at {{ s.org }}">{{ 'Clinic' if s.at_home else s.short_org or s.org }}</span>{% endif -%}
+  {%- endfor -%}
+{%- endmacro %}
+
+{% macro cite(sources, note=None, search_note=None) %}
+  {% if sources or note or search_note %}
+  <button class="cite" aria-expanded="false">source</button>
+  <div class="sources" hidden>
+    {% for s in sources %}
+      <div class="source-row">
+        <span class="tbl">{{ source_labels.get(s.table, s.table | replace('_', ' ') | title) }}</span>
+        <strong>{{ s.label }}</strong>
+        {% if s.detail %}<span class="detail">{{ s.detail }}</span>{% endif %}
+        {% if s.org %}<span class="src-org">{{ s.org }} · {{ s.role }}</span>{% endif %}
+        {% if s.code %}<code>{{ s.code }}</code>{% endif %}
+      </div>
+    {% endfor %}
+    {% if search_note %}
+      <div class="source-row"><span class="tbl tbl-search">Search</span>{{ search_note }}</div>
+    {% endif %}
+    {% for text in note or [] %}
+      <div class="source-row"><span class="tbl tbl-brief">In the brief</span>{{ text }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if not sources and not note and not search_note %}
+  <span class="cite untraced" title="No matching source row found">unverified</span>
+  {% endif %}
+{% endmacro %}
+
+{# A drug last prescribed over 5 years ago and never re-prescribed #}
+{% macro confirm_tag(year) -%}
+  <span class="confirm-tag" title="Last prescribed in {{ year }} and not prescribed since. The patient may no longer take it.">confirm still taking — last prescribed {{ year }}</span>
+{%- endmacro %}
+
+{# An interaction's drugs, from [(drug, year or None)], each old one tagged #}
+{% macro drug_list(tags) -%}
+  {%- for drug, year in tags -%}
+    <strong>{{ drug }}</strong>{% if year %} {{ confirm_tag(year) }}{% endif %}
+    {%- if not loop.last %} <span class="ix-sep">↔</span> {% endif -%}
+  {%- endfor -%}
+{%- endmacro %}
+
+{# Toggle a source panel. One open at a time keeps the screen readable. #}
+{% macro cite_script() %}
+  document.querySelectorAll("button.cite").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = btn.nextElementSibling;
+      var open = !panel.hidden;
+      document.querySelectorAll(".sources").forEach(function (p) { p.hidden = true; });
+      document.querySelectorAll("button.cite").forEach(function (b) {
+        b.setAttribute("aria-expanded", "false");
+      });
+      panel.hidden = open;
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  });
+{% endmacro %}

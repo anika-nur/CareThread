@@ -1,29 +1,83 @@
 {% extends "base.html" %}
 {% block title %}{{ brief.meta.patient_name }} — CareThread{% endblock %}
+{% from "macros.html" import cite, cite_script, confirm_tag, drug_list, source_chip %}
 
-{% macro cite(sources) %}
-  {% if sources %}
-  <button class="cite" aria-expanded="false">source</button>
-  <div class="sources" hidden>
-    {% for s in sources %}
-      <div class="source-row">
-        <span class="tbl">{{ s.table }}</span>
-        <strong>{{ s.label }}</strong>
-        {% if s.detail %}<span class="detail">{{ s.detail }}</span>{% endif %}
-        {% if s.code %}<code>{{ s.code }}</code>{% endif %}
-      </div>
+{% macro prose(segments) %}
+  {%- for seg in segments -%}
+    {%- if seg.source -%}
+      <span class="traced" data-src="{{ seg.source.table }}: {{ seg.source.label }}{% if seg.source.detail %} · {{ seg.source.detail }}{% endif %}">
+        {{- seg.text | lab_round(seg.source.label) if seg.source.table == 'observations' else seg.text -}}
+      </span>
+    {%- else -%}{{ seg.text }}{%- endif -%}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro feedback_buttons(item_type, item_text) %}
+  {% set current = feedback.get((item_type, item_text)) %}
+  <div class="fb" role="group" aria-label="Clinician feedback"
+       data-type="{{ item_type }}" data-text="{{ item_text }}">
+    {% for key, label in feedback_responses.items() %}
+    <button type="button" class="fb-btn fb-{{ key }}" data-response="{{ key }}"
+            aria-pressed="{{ 'true' if current == key else 'false' }}">{{ label }}</button>
     {% endfor %}
+    <span class="fb-status" role="status"></span>
   </div>
-  {% else %}
-  <span class="cite untraced" title="No matching source row found">unverified</span>
+{% endmacro %}
+
+{% macro frag_tag(key, text=None) -%}
+  {%- if key %}<span class="frag-tag frag-{{ key }}">{{ text or frag_tags[key] }}</span>{% endif -%}
+{%- endmacro %}
+
+{% macro alert_item(a) %}
+  {% if clinic_only %}{{ rule_alert_item(a) }}{% else %}
+  <div class="item">
+    <div class="item-head">
+      <span class="pill sev-{{ 'major' if a.severity == 'major' else 'med' }}">{{ a.severity }}</span>
+      {{ drug_list(a.drug_tags) }}
+      {% for drug, year in a.extra_tags %}<span class="muted small">{{ drug }}:</span> {{ confirm_tag(year) }}{% endfor %}
+      {{ frag_tag(a.frag) }}
+      {{ cite(a.sources) }}
+    </div>
+    <div class="item-body">{{ a.recommendation }}</div>
+    {{ feedback_buttons('medication_alert', a.drugs | join(' ↔ ')) }}
+  </div>
   {% endif %}
+{% endmacro %}
+
+{# Clinic-only view: interactions straight from the rules, no brief text #}
+{% macro rule_alert_item(a) %}
+  <div class="item{{ ' frag-absent' if a.frag }}">
+    <div class="item-head">
+      <span class="pill sev-{{ 'major' if a.severity == 'major' else 'med' }}">{{ a.severity }}</span>
+      {{ drug_list(a.drug_tags) }}
+      {{ frag_tag(a.frag) }}
+      {{ cite(a.sources) }}
+    </div>
+  </div>
 {% endmacro %}
 
 {% block content %}
 <a class="back" href="{{ url_for('dashboard') }}">← panel</a>
 
-<div class="brief-head">
-  <h1>{{ brief.meta.patient_name }}</h1>
+<header class="brief-head">
+  <div class="head-row">
+    <div>
+      <h1>{{ brief.meta.patient_name }}</h1>
+      <div class="ident">
+        <span>{{ data.demographics.age }} y</span>
+        <span>{{ data.demographics.gender | capitalize }}</span>
+        <span>DOB {{ data.demographics.birth_date }}</span>
+        <span><code>{{ mrn }}</code></span>
+      </div>
+    </div>
+    <div class="head-side">
+      <div class="appt">
+        <span class="appt-time">{{ appt.time }}</span>
+        <span class="appt-type">{{ appt.visit_type }} · {{ appt.provider }}</span>
+      </div>
+      <button class="print-btn" type="button">Print brief</button>
+    </div>
+  </div>
   <div class="badges">
     {% if report.verdict == 'PASS' %}
       <span class="verdict pass">verification passed — {{ report.checks_run }} checks</span>
@@ -31,9 +85,53 @@
       <span class="verdict fail">{{ report.verdict }} — {{ report.issues_found }} issue(s)</span>
     {% endif %}
     <span class="verdict trace">{{ brief.coverage.traced }}/{{ brief.coverage.total }} claims traced ({{ brief.coverage.percent }}%)</span>
-    <span class="muted small">{{ brief.meta.model }}</span>
   </div>
-</div>
+  <p class="legend">Underlined text and 'source' buttons link each claim to the record it came from.</p>
+  {% if not clinic_only %}<p class="summary">{{ prose(brief.summary) }}</p>{% endif %}
+</header>
+
+{% if frag %}
+{% set n_done, n_unknown, n_missed, n_history = frag.done_elsewhere | length, frag.unknown | length, frag.missed | length, frag.history | length %}
+<section class="card record-view" aria-label="Record view">
+  <nav class="view-toggle" aria-label="Which records to use">
+    <a href="{{ url_for('patient', patient_id=data.patient_id) }}"
+       {% if not clinic_only %}aria-current="page"{% endif %}>CareThread view <span class="sub">all sources</span></a>
+    <a href="{{ url_for('patient', patient_id=data.patient_id, view='clinic') }}"
+       {% if clinic_only %}aria-current="page"{% endif %}>Clinic-only view <span class="sub">home clinic's records</span></a>
+  </nav>
+  <p class="frag-summary">
+    With only <strong>{{ frag.home.name }}</strong>'s records:
+    <span class="{{ 'zero' if not n_done }}"><b>{{ n_done }}</b> gap{{ '' if n_done == 1 else 's' }} done elsewhere</span> ·
+    <span class="{{ 'zero' if not n_unknown }}"><b>{{ n_unknown }}</b> interaction{{ '' if n_unknown == 1 else 's' }} unknown to the clinic</span> ·
+    <span class="{{ 'zero' if not n_missed }}"><b>{{ n_missed }}</b> gap{{ '' if n_missed == 1 else 's' }} missed by the clinic</span> ·
+    <span class="{{ 'zero' if not n_history }}"><b>{{ n_history }}</b> gap{{ '' if n_history == 1 else 's' }} with history elsewhere</span>
+  </p>
+  {% if clinic_only %}
+  <p class="frag-scope">Care gaps and interactions below are recomputed by the same rules from the home clinic's records only. The rest of the brief still uses all sources.</p>
+  {% endif %}
+  <p class="muted small frag-note">{{ source_note }}</p>
+</section>
+{% endif %}
+
+{% if clinic_only %}
+{# The AI brief was written from every source, so it stays out of the way here #}
+<details class="card ai-collapsed">
+  <summary>AI brief uses all sources: <a href="{{ url_for('patient', patient_id=data.patient_id) }}">switch to CareThread view</a></summary>
+  <p class="summary">{{ prose(brief.summary) }}</p>
+  <h2>Priority actions</h2>
+  <ol class="actions">
+    {% for a in brief.priority_actions %}<li>{{ a.text }} {{ cite(a.sources) }}</li>{% endfor %}
+  </ol>
+</details>
+{% endif %}
+
+{# In the clinic-only view, alerts only outside records show stay listed but don't count #}
+{% set seen_majors = major_alerts | rejectattr('frag') | list if clinic_only else major_alerts %}
+<section class="card safety {{ 'has-alerts' if seen_majors }}">
+  <h2>Safety alerts{% if clinic_only %} <span class="h2-note">· clinic-only records</span>{% endif %}</h2>
+  {% if not seen_majors %}<p class="muted">No major drug interactions{{ " in the clinic's records" if clinic_only }}.</p>{% endif %}
+  {% for a in major_alerts %}{{ alert_item(a) }}{% endfor %}
+</section>
 
 {% if report.issues %}
 <div class="card alertbox">
@@ -49,56 +147,36 @@
 </div>
 {% endif %}
 
-<div class="card">
-  <h2>Summary</h2>
-  <p class="prose">
-    {%- for seg in brief.summary -%}
-      {%- if seg.source -%}
-        <span class="traced" data-src="{{ seg.source.table }}: {{ seg.source.label }}{% if seg.source.detail %} · {{ seg.source.detail }}{% endif %}">{{ seg.text }}</span>
-      {%- else -%}{{ seg.text }}{%- endif -%}
-    {%- endfor -%}
-  </p>
-</div>
-
-<div class="card">
+{% if not clinic_only %}
+<section class="card">
   <h2>Priority actions</h2>
   <ol class="actions">
     {% for a in brief.priority_actions %}
     <li>{{ a.text }} {{ cite(a.sources) }}</li>
     {% endfor %}
   </ol>
-</div>
+</section>
+{% endif %}
 
-<div class="card">
-  <h2>Care gaps</h2>
-  {% for g in brief.care_gaps %}
-  <div class="item sev-{{ g.severity }}">
-    <div class="item-head">
-      <span class="pill sev-{{ g.severity }}">{{ g.severity }}</span>
-      <strong>{{ g.gap }}</strong>
-      {{ cite(g.sources) }}
+<section class="card">
+  <h2>Care gaps{% if clinic_only %} <span class="h2-note">· clinic-only records</span>{% endif %}</h2>
+  {% for g in gaps %}
+  <div class="gap-row{{ ' frag-absent' if clinic_only and g.frag == 'missed' }}">
+    <span class="pill sev-{{ g.severity }}">{{ g.severity }}</span>
+    <div class="gap-main">
+      <strong>{{ g.name }}</strong> {{ frag_tag(g.frag, g.frag_text) }}
+      {% if g.last_done %}{{ source_chip(g.sources) }}{% endif %}
+      {% if g.guideline %}<span class="guideline">{{ g.guideline | guideline_tooltips }}</span>{% endif %}
     </div>
-    <div class="item-body">{{ g.action }}</div>
+    <span class="gap-when {{ 'never' if g.when == 'never on record' }}">{{ g.when }}</span>
+    <div class="gap-cite">{{ cite(g.sources, g.note, g.search_note) }}</div>
+    {% if not clinic_only %}{{ feedback_buttons('care_gap', g.name) }}{% endif %}
   </div>
   {% else %}<p class="muted">No care gaps detected.</p>{% endfor %}
-</div>
-
-<div class="card">
-  <h2>Medication alerts</h2>
-  {% for a in brief.medication_alerts %}
-  <div class="item sev-{{ a.severity }}">
-    <div class="item-head">
-      <span class="pill sev-{{ 'major' if a.severity == 'major' else 'med' }}">{{ a.severity }}</span>
-      <strong>{{ a.drugs | join(' ↔ ') }}</strong>
-      {{ cite(a.sources) }}
-    </div>
-    <div class="item-body">{{ a.recommendation }}</div>
-  </div>
-  {% else %}<p class="muted">No interactions detected.</p>{% endfor %}
-</div>
+</section>
 
 <div class="two-col">
-  <div class="card">
+  <section class="card compact-list">
     <h2>Key conditions</h2>
     {% for c in brief.key_conditions %}
     <div class="item">
@@ -106,50 +184,125 @@
       <div class="item-body">{{ c.relevance }}</div>
     </div>
     {% endfor %}
-  </div>
-  <div class="card">
+  </section>
+  <section class="card compact-list">
     <h2>Current medications</h2>
     {% for m in brief.current_medications %}
-    <div class="item">
-      <div class="item-head"><strong>{{ m.medication }}</strong> {{ cite(m.sources) }}</div>
+    {% set outside = clinic_only and m.outside_org %}
+    <div class="item{{ ' frag-absent' if outside }}">
+      <div class="item-head">
+        <strong>{{ m.medication }}</strong>
+        {{ source_chip(m.sources) }}
+        {% if loop.index0 in stale_meds %}{{ confirm_tag(stale_meds[loop.index0]) }}{% endif %}
+        {% if outside %}{{ frag_tag('outside', 'not in clinic records · prescribed at ' ~ m.outside_org) }}{% endif %}
+        {{ cite(m.sources) }}
+      </div>
       <div class="item-body">{{ m.note }}</div>
     </div>
     {% endfor %}
-  </div>
+  </section>
 </div>
 
-<div class="card">
+<section class="card">
   <h2>Recent activity</h2>
-  <p class="prose">
-    {%- for seg in brief.recent_activity -%}
-      {%- if seg.source -%}
-        <span class="traced" data-src="{{ seg.source.table }}: {{ seg.source.label }}{% if seg.source.detail %} · {{ seg.source.detail }}{% endif %}">{{ seg.text }}</span>
-      {%- else -%}{{ seg.text }}{%- endif -%}
-    {%- endfor -%}
-  </p>
-</div>
+  <p class="prose">{{ prose(brief.recent_activity) }}</p>
+</section>
 
-{% if brief.sdoh_flags %}
-<div class="card">
-  <h2>Social determinants</h2>
-  <ul>{% for f in brief.sdoh_flags %}<li>{{ f }}</li>{% endfor %}</ul>
-  <p class="muted small">Community-level indicators for ZIP {{ data.demographics.zip_code }} (AHRQ SDOH).</p>
-</div>
+{% if other_alerts %}
+<details class="card other-ix">
+  <summary><h2>Other interactions ({{ other_alerts | length }})</h2></summary>
+  {% for a in other_alerts %}{{ alert_item(a) }}{% endfor %}
+</details>
 {% endif %}
 
+{% set sensitive_count = social | selectattr('sensitive') | list | length %}
+<div class="sdoh-cols">
+  <section class="card sdoh social">
+    <div class="social-head">
+      <h2>Social history (from record)</h2>
+      {% if sensitive_count %}
+      <button class="sensitive-toggle" type="button" aria-expanded="false"
+              data-show="Show sensitive items ({{ sensitive_count }})"
+              data-hide="Hide sensitive items">Show sensitive items ({{ sensitive_count }})</button>
+      {% endif %}
+    </div>
+    {% if social %}
+      <ul>
+        {% for s in social %}
+        <li{% if s.sensitive %} class="sensitive" hidden{% endif %}>{{ s.text }} {% if not social_legacy %}{{ cite(s.sources) }}{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% if sensitive_count %}
+      <p class="muted small sensitive-note">{{ sensitive_count }} sensitive item{{ '' if sensitive_count == 1 else 's' }} hidden.</p>
+      {% endif %}
+      {% if social_legacy %}
+      <p class="muted small">From an older brief that didn't separate patient and
+      community data. Regenerate to split them.</p>
+      {% endif %}
+    {% else %}
+      <p class="muted">None recorded.</p>
+    {% endif %}
+  </section>
+  <section class="card sdoh">
+      <h2>Neighborhood <span class="h2-note">· ZIP-level, not about this patient</span></h2>
+      {% if not zip_ok %}
+        <p class="muted">Neighborhood data unavailable (no valid ZIP).</p>
+      {% elif not sdoh_rows %}
+        <p class="muted">Neighborhood data unavailable (ZIP {{ data.demographics.zip_code }} not in AHRQ data).</p>
+      {% else %}
+        <table class="sdoh-table">
+          <thead><tr><th>Indicator</th><th>Value</th></tr></thead>
+          <tbody>
+          {% for label, value in sdoh_rows %}<tr><td>{{ label }}</td><td>{{ value }}</td></tr>{% endfor %}
+          </tbody>
+        </table>
+        <p class="muted small">ZIP {{ data.demographics.zip_code }} · AHRQ SDOH 2023, shown directly from the source table.</p>
+      {% endif %}
+  </section>
+</div>
+
 <script>
-  // Toggle a source panel. One open at a time keeps the screen readable.
-  document.querySelectorAll("button.cite").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var panel = btn.nextElementSibling;
-      var open = !panel.hidden;
-      document.querySelectorAll(".sources").forEach(function (p) { p.hidden = true; });
-      document.querySelectorAll("button.cite").forEach(function (b) {
-        b.setAttribute("aria-expanded", "false");
+{{ cite_script() }}
+  document.querySelector(".print-btn").addEventListener("click", function () {
+    window.print();
+  });
+  // Clinician feedback: one response per item; clicking the chosen one clears it
+  var PATIENT_ID = {{ data.patient_id | tojson }};
+  document.querySelectorAll(".fb").forEach(function (group) {
+    var status = group.querySelector(".fb-status");
+    group.querySelectorAll(".fb-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var wasOn = btn.getAttribute("aria-pressed") === "true";
+        var response = wasOn ? "cleared" : btn.dataset.response;
+        status.textContent = "Saving…";
+        fetch("{{ url_for('api_feedback') }}", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({patient_id: PATIENT_ID, item_type: group.dataset.type,
+                                item_text: group.dataset.text, response: response})
+        }).then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          group.querySelectorAll(".fb-btn").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b === btn && !wasOn));
+          });
+          status.textContent = wasOn ? "Cleared" : "Saved";
+        }).catch(function () {
+          status.textContent = "Not saved — try again";
+        });
       });
-      panel.hidden = open;
-      btn.setAttribute("aria-expanded", String(!open));
     });
   });
+
+  // Sensitive social history stays hidden until a clinician asks for it
+  var toggle = document.querySelector(".sensitive-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var show = toggle.getAttribute("aria-expanded") !== "true";
+      document.querySelectorAll("li.sensitive").forEach(function (li) { li.hidden = !show; });
+      document.querySelector(".sensitive-note").hidden = show;
+      toggle.setAttribute("aria-expanded", String(show));
+      toggle.textContent = show ? toggle.dataset.hide : toggle.dataset.show;
+    });
+  }
 </script>
 {% endblock %}

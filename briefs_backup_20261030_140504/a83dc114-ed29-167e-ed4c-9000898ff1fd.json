@@ -1,0 +1,194 @@
+{
+  "patient_summary": "Trey250 Sal878 Schinner682 is a 66-year-old male with a history of type 2 diabetes, ischemic heart disease, hypertension, and obesity.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2025-10-11",
+      "relevance": "New diagnosis requiring management and screening."
+    },
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2004-06-12",
+      "relevance": "History of CAD and CABG; requires secondary prevention."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "1997-05-03",
+      "relevance": "Chronic condition requiring blood pressure monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "1999-05-15",
+      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2000-05-20",
+      "relevance": "Cluster of risk factors including diabetes and hypertension."
+    },
+    {
+      "condition": "Obstructive sleep apnea syndrome",
+      "since": "2001-02-27",
+      "relevance": "Comorbid condition affecting cardiovascular and metabolic health."
+    },
+    {
+      "condition": "Misuses drugs",
+      "since": "2024-10-05",
+      "relevance": "Recent finding indicating potential substance use issues."
+    },
+    {
+      "condition": "Anemia (disorder)",
+      "since": "1994-04-30",
+      "relevance": "Chronic condition requiring monitoring."
+    },
+    {
+      "condition": "Prediabetes (finding)",
+      "since": "1994-04-30",
+      "relevance": "Historical finding, now superseded by Type 2 Diabetes diagnosis."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-10-11."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-10-11."
+    },
+    {
+      "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-10-11."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2004-06-19; confirm the patient still takes it."
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2004-06-19; confirm the patient still takes it."
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2004-06-19; confirm the patient still takes it."
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2004-06-19; confirm the patient still takes it."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 20 MG Oral Tablet"
+      ],
+      "recommendation": "Confirm the patient still takes Simvastatin 20 MG Oral Tablet before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Hydrochlorothiazide 25 MG Oral Tablet",
+        "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet"
+      ],
+      "recommendation": "Monitor for potential interaction effects."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 383 days ago (value: 7.59%). Due every 180 days.",
+      "severity": "high",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Diabetic Eye Exam Overdue: Diabetic patient with no eye exam on record. Diabetic retinopathy can cause preventable blindness.",
+      "severity": "high",
+      "action": "Refer for dilated eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 383 days ago (106 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 66 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Lipid Panel Overdue: Last lipid panel was 383 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order lipid panel.",
+      "source": "HEDIS CDC: Annual lipid panel for diabetic patients"
+    },
+    {
+      "gap": "Nephropathy Screening Overdue: Last urine microalbumin was 383 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order urine microalbumin test.",
+      "source": "HEDIS CDC-NP: Annual nephropathy screening for diabetic patients"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was 383 days ago. Due annually.",
+      "severity": "low",
+      "action": "Administer flu vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 383 days ago (30.37 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-10-11.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-10-11 where HbA1c was 7.59%, BMI 30.37 kg/m2, BP 106/53 mmHg, and glucose 98.92 mg/dL. Previous visits include symptom encounters in 2025-07-02 and 2024-09-15, and check-ups in 2024-10-05 and 2023-10-14. Immunizations for influenza and PCV13 were administered on 2025-10-11.",
+  "social_history": [
+    "Risk activity involvement (recorded 1974-03-16)",
+    "Housing unsatisfactory (recorded 1978-04-08)",
+    "Only received primary school education (recorded 1978-04-08)",
+    "Has a criminal record (recorded 2007-06-30)",
+    "Part-time employment (recorded 2025-10-11)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 19.18% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $54,525.",
+    "In the patient's ZIP code, 5.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 10.27% of the labor force is unemployed.",
+    "In the patient's ZIP code, 49.69% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 30.13% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.82% of households have no vehicle.",
+    "In the patient's ZIP code, 63.33% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm if patient still takes Simvastatin, Clopidogrel, Metoprolol, and Nitroglycerin.",
+    "Address major drug interaction between amlodipine and simvastatin if simvastatin is still being taken.",
+    "Order HbA1c and refer for diabetic eye exam.",
+    "Order lipid panel and urine microalbumin test.",
+    "Measure blood pressure and BMI.",
+    "Refer for colonoscopy.",
+    "Administer flu vaccine if not already given this season.",
+    "Discuss substance use history and provide resources if needed."
+  ],
+  "_meta": {
+    "patient_id": "a83dc114-ed29-167e-ed4c-9000898ff1fd",
+    "patient_name": "Trey250 Sal878 Schinner682",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3640,
+    "output_tokens": 2299,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

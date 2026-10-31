@@ -1,0 +1,11 @@
+Running pipeline on 1 patients
+
+[1/1] Kerry175 Elia719 O'Conner199... ✅ PASS — 4 gaps, 1 alerts
+
+==================================================
+PIPELINE COMPLETE
+==================================================
+Patients processed: 1
+  PASS: 1  |  WARN: 0  |  FAIL: 0  |  ERROR: 0
+Total tokens: 2,646 in + 1,342 out = 3,988 total
+(backend: colby — no cost incurred)

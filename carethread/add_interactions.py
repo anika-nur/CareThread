@@ -14,6 +14,7 @@ them from DDInter-derived rows.
 
 import sqlite3
 import sys
+from config import DB_PATH
 
 # (generic_a, generic_b, severity, citation)
 #
@@ -72,7 +73,7 @@ def main():
               "Verify each pair, paste its citation, and uncomment it first.")
         return
 
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
     if apply_changes:
         ensure_source_column(conn)
 

@@ -1,0 +1,236 @@
+{
+  "patient_summary": "Deandre599 Gusikowski974 is a 69-year-old male with a history of ischemic heart disease, chronic kidney disease, and hypertension.",
+  "key_conditions": [
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2025-06-11",
+      "relevance": "Recent diagnosis requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Chronic kidney disease stage 1",
+      "since": "2023-08-23",
+      "relevance": "Requires monitoring of renal function and medication adjustments."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2007-05-23",
+      "relevance": "Chronic condition managed with multiple antihypertensives."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1988-08-10",
+      "relevance": "Long-standing risk factor for metabolic complications."
+    },
+    {
+      "condition": "Obesity",
+      "since": "1979-08-01",
+      "relevance": "Contributing factor to metabolic syndrome and cardiovascular risk."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
+      "note": "Prescribed 2025-09-03"
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03"
+    },
+    {
+      "medication": "Acetaminophen 325 MG Oral Tablet [Tylenol]",
+      "note": "Prescribed 2025-09-03"
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03"
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-09-03"
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2025-06-18"
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2025-06-18"
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-06-18"
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2025-06-18"
+    },
+    {
+      "medication": "aspirin 81 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18; confirm if still taking"
+    },
+    {
+      "medication": "atorvastatin 80 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18; confirm if still taking"
+    },
+    {
+      "medication": "lisinopril 5 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18; confirm if still taking"
+    },
+    {
+      "medication": "prasugrel 10 MG Oral Tablet",
+      "note": "Prescribed 2015-04-18; confirm if still taking"
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "clopidogrel",
+        "prasugrel"
+      ],
+      "recommendation": "Confirm the patient still takes prasugrel before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amlodipine",
+        "simvastatin"
+      ],
+      "recommendation": "Monitor for myopathy; consider alternative statin or dose adjustment."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "lisinopril"
+      ],
+      "recommendation": "Monitor blood pressure and renal function."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "prasugrel"
+      ],
+      "recommendation": "Confirm the patient still takes prasugrel before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "clopidogrel"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "acetylsalicylic acid",
+        "amlodipine"
+      ],
+      "recommendation": "Monitor for potential increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "atorvastatin",
+        "clopidogrel"
+      ],
+      "recommendation": "Confirm the patient still takes atorvastatin before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "atorvastatin",
+        "simvastatin"
+      ],
+      "recommendation": "Confirm the patient still takes atorvastatin before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "acetylsalicylic acid",
+        "metoprolol"
+      ],
+      "recommendation": "Monitor for potential increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "acetylsalicylic acid",
+        "nitroglycerin"
+      ],
+      "recommendation": "Monitor for potential increased bleeding risk."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 420 days ago (73 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure during today's visit.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was 504 days ago. Due annually.",
+      "severity": "low",
+      "action": "Administer or schedule annual flu vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 420 days ago (31.22 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure and record BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-09-17.",
+      "severity": "low",
+      "action": "Conduct or schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-09-17 and a general examination on 2025-09-03. Labs from 2025-09-03 show Glucose 68.83 mg/dL, Creatinine 1.4448 mg/dL, and eGFR 93.064 mL/min/{1.73_m2}. Urine appearance was cloudy. Recent urgent care visits occurred in July and August 2025.",
+  "social_history": [
+    "Received higher education (recorded 1975-07-23)",
+    "Lack of access to transportation (recorded 1975-07-23)",
+    "Transport problem (recorded 1979-08-01)",
+    "Limited social contact (recorded 2017-07-19)",
+    "Part-time employment (recorded 2025-09-03)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 11.86% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $156,373.",
+    "In the patient's ZIP code, 1.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.09% of the labor force is unemployed.",
+    "In the patient's ZIP code, 12.51% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 4.62% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 28.07% of households have no vehicle.",
+    "In the patient's ZIP code, 33.3% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm if patient is still taking aspirin, atorvastatin, lisinopril 5mg, and prasugrel to resolve medication alerts.",
+    "Measure blood pressure to address the overdue monitoring gap.",
+    "Review and manage major drug interactions between amlodipine and simvastatin.",
+    "Assess need for flu vaccine and annual wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "a8f2fc02-6aa0-788e-e1d8-bd6d859fb74d",
+    "patient_name": "Deandre599 Gusikowski974",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 4183,
+    "output_tokens": 2291,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

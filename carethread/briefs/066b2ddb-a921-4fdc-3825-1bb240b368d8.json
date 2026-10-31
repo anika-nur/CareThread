@@ -4,74 +4,98 @@
     {
       "condition": "Obesity",
       "since": "1995-09-05",
-      "relevance": "Chronic condition requiring monitoring; current BMI 28.21 kg/m2."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
       "condition": "Prediabetes",
       "since": "1998-06-23",
-      "relevance": "Chronic condition; recent HbA1c 6.19%."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
       "condition": "Anemia",
       "since": "2000-06-27",
-      "relevance": "Chronic disorder requiring ongoing management."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
       "condition": "Osteoarthritis of knee",
       "since": "2024-09-24",
-      "relevance": "Active pain management; current pain score 0."
+      "relevance": "Recent diagnosis contributing to current pain management needs."
     },
     {
       "condition": "Stress",
       "since": "2025-09-23",
-      "relevance": "Recent finding noted during general examination."
+      "relevance": "Recent finding potentially impacting overall health and adherence."
     }
   ],
   "current_medications": [
     {
       "medication": "Naproxen sodium 220 MG Oral Tablet",
-      "note": "Prescribed 2024-09-24."
+      "note": "Prescribed 2024-09-24 for osteoarthritis."
     }
   ],
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2022-09-06 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Address history of positive depression screen and assess current mental health status.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
-    {
       "gap": "Colonoscopy Overdue: Patient is 68 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
-      "action": "Schedule or refer for colonoscopy.",
+      "action": "Schedule colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
       "gap": "Mammogram Overdue: Female patient, age 68, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
-      "action": "Schedule or refer for mammogram.",
+      "action": "Schedule mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was on 2025-09-23. Due annually.",
+      "severity": "low",
+      "action": "Administer or schedule flu vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-09-23 (28.21 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-10-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2025-10-07 and a general examination on 2025-09-23. Labs from 2025-09-23 show HbA1c 6.19%, BMI 28.21 kg/m2, blood pressure 134/75 mmHg, heart rate 99/min, and glucose 89.28 mg/dL. Pain severity was reported as 0. Influenza vaccine was administered on 2025-09-23.",
-  "sdoh_flags": [
-    "Only received primary school education",
-    "Full-time employment"
+  "recent_activity": "Patient had a check-up on 2025-10-07 and a general examination on 2025-09-23. Labs from 2025-09-23 show HbA1c 6.19%, BMI 28.21 kg/m2, BP 134/75 mmHg, and glucose 89.28 mg/dL. Influenza vaccine was administered on 2025-09-23.",
+  "social_history": [
+    "Only received primary school education (recorded 1976-08-10)",
+    "Full-time employment (recorded 2021-08-31)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.35% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $189,355.",
+    "In the patient's ZIP code, 1.87% of residents have no health insurance.",
+    "In the patient's ZIP code, 5.09% of the labor force is unemployed.",
+    "In the patient's ZIP code, 2.41% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.56% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 2.35% of households have no vehicle.",
+    "In the patient's ZIP code, 50.0% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address high-severity care gap: Depression follow-up missing since 2022.",
-    "Address medium-severity care gap: Colonoscopy overdue.",
-    "Address medium-severity care gap: Mammogram overdue.",
-    "Review recent labs and vitals from 2025-09-23."
+    "Address overdue colonoscopy and mammogram screenings.",
+    "Review prediabetes status and HbA1c results to determine if lifestyle interventions or medication are needed.",
+    "Assess current pain management for osteoarthritis and confirm continued use of naproxen.",
+    "Discuss stress management strategies.",
+    "Verify if annual wellness visit components were completed during the 2025-10-07 encounter."
   ],
   "_meta": {
     "patient_id": "066b2ddb-a921-4fdc-3825-1bb240b368d8",
     "patient_name": "Kirsten270 Prosacco716",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 1986,
-    "output_tokens": 925,
+    "input_tokens": 2766,
+    "output_tokens": 1244,
     "finish_reason": "stop",
     "truncated": false
   }

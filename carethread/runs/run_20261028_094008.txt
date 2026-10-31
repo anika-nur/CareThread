@@ -1,0 +1,28 @@
+Running pipeline on 17 patients
+
+[1/17] Kirsten270 Prosacco716... ✅ PASS — 5 gaps, 0 alerts
+[2/17] Minerva230 Ora550 Swift555... ✅ PASS — 4 gaps, 3 alerts
+[3/17] Lekisha909 Vertie683 Botsford977... ✅ PASS — 4 gaps, 0 alerts
+[4/17] Kerry175 Elia719 O'Conner199... ❌ FAIL — 4 gaps, 1 alerts
+    [high] Brief alerts about budesonide ↔ albuterol but this pair was not in detected inte
+[5/17] Susana117 Valencia279 Kirlin939... ✅ PASS — 4 gaps, 1 alerts
+[6/17] Dawna21 Elke785 Monahan736... ✅ PASS — 2 gaps, 0 alerts
+[7/17] Alicia629 Pilar644 Colón139... ✅ PASS — 6 gaps, 0 alerts
+[8/17] Leslie90 Theron432 Toy286... ✅ PASS — 7 gaps, 0 alerts
+[9/17] Carl856 Patti584 Auer97... ✅ PASS — 4 gaps, 0 alerts
+[10/17] Luisa710 Sosa986... ✅ PASS — 8 gaps, 1 alerts
+[11/17] Carlita746 Tenesha164 Pollich983... ✅ PASS — 5 gaps, 1 alerts
+[12/17] Trey250 Sal878 Schinner682... ✅ PASS — 9 gaps, 2 alerts
+[13/17] Deandre599 Gusikowski974... ✅ PASS — 4 gaps, 10 alerts
+[14/17] Abbey813 Kirstin394 Yundt842... ✅ PASS — 5 gaps, 0 alerts
+[15/17] Marcela739 Sonia106 Marín855... ✅ PASS — 6 gaps, 0 alerts
+[16/17] Robyn562 Winnifred2 Okuneva707... ✅ PASS — 4 gaps, 0 alerts
+[17/17] Tamela350 Brianna665 Oberbrunner298... ✅ PASS — 3 gaps, 2 alerts
+
+==================================================
+PIPELINE COMPLETE
+==================================================
+Patients processed: 17
+  PASS: 16  |  WARN: 0  |  FAIL: 1  |  ERROR: 0
+Total tokens: 51,226 in + 27,740 out = 78,966 total
+(backend: colby — no cost incurred)

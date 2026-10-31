@@ -1,0 +1,135 @@
+{
+  "patient_summary": "Marceline716 Judy192 Lowe577 is a 53-year-old female with asthma, chronic sinusitis, prediabetes, obesity, and chronic pain.",
+  "key_conditions": [
+    {
+      "condition": "Asthma",
+      "since": "1993-09-03",
+      "relevance": "Primary respiratory condition requiring ongoing management and recent hospitalization."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1993-11-12",
+      "relevance": "Chronic upper respiratory condition."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1993-11-25",
+      "relevance": "Metabolic risk factor requiring monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2011-12-15",
+      "relevance": "Chronic weight-related condition."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-02-01",
+      "relevance": "Ongoing pain management need."
+    },
+    {
+      "condition": "Chronic low back pain",
+      "since": "2014-02-01",
+      "relevance": "Specific site of chronic pain."
+    },
+    {
+      "condition": "Stress",
+      "since": "2026-03-06",
+      "relevance": "Recent psychological finding."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "120 ACTUAT fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler [Flovent]",
+      "note": "Prescribed 2026-03-05."
+    },
+    {
+      "medication": "albuterol 0.83 MG/ML Inhalation Solution",
+      "note": "Prescribed 2026-03-05."
+    },
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1978-02-16."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "astemizole",
+        "salbutamol"
+      ],
+      "recommendation": "Review interaction between Astemizole 10 MG Oral Tablet and albuterol 0.83 MG/ML Inhalation Solution."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "fluticasone",
+        "salbutamol"
+      ],
+      "recommendation": "Review interaction between 120 ACTUAT fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler [Flovent] and albuterol 0.83 MG/ML Inhalation Solution."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2026-03-06 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule follow-up for positive depression screen.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 53, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Order or refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 53, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Order or refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-03-14.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had an asthma follow-up on 2026-04-08 and a general examination on 2026-03-05. Prior to this, she had an asthma follow-up on 2025-10-10 following an emergency hospital admission for asthma on 2025-10-09. Recent social determinants of health screening on 2026-03-06 indicated a stress level of 'A little bit', private insurance, and an annual income of 113000. She reported being unable to get medicine or health care when needed in the past year.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1991-08-23)",
+    "Received higher education (recorded 1991-08-23)",
+    "Social isolation (recorded 2009-12-03)",
+    "Not in labor force (recorded 2024-02-23)",
+    "Limited social contact (recorded 2026-03-06)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 19.18% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $54,525.",
+    "In the patient's ZIP code, 5.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 10.27% of the labor force is unemployed.",
+    "In the patient's ZIP code, 49.69% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 30.13% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.82% of households have no vehicle.",
+    "In the patient's ZIP code, 63.33% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address high-severity care gap: Follow up on positive PHQ-2 depression screen from 2026-03-06.",
+    "Review moderate drug interaction between astemizole and albuterol.",
+    "Address medium-severity care gaps: Order overdue mammogram and cervical cancer screening.",
+    "Review minor drug interaction between fluticasone and albuterol.",
+    "Address low-severity care gap: Schedule annual wellness visit."
+  ],
+  "_meta": {
+    "patient_id": "741019b8-0a29-527c-ad5a-e7142d0501c0",
+    "patient_name": "Marceline716 Judy192 Lowe577",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2927,
+    "output_tokens": 1630,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

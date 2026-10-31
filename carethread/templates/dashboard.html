@@ -1,59 +1,192 @@
 {% extends "base.html" %}
 {% block title %}Coordinator dashboard — CareThread{% endblock %}
 
+{% macro patient_cell(r) %}
+  <a class="patient-link" href="{{ url_for('patient', patient_id=r.patient_id) }}">{{ r.name }}</a>
+  <span class="muted">{{ r.age }}, {{ r.gender }}</span>
+  <span class="pid"><code>{{ r.mrn }}</code> · DOB {{ r.birth_date }}</span>
+{% endmacro %}
+
+{% macro urgency_pills(r) %}
+  <div class="pills">
+    {% if r.gap_counts.high %}<span class="pill sev-high">{{ r.gap_counts.high }} high</span>{% endif %}
+    {% if r.gap_counts.medium %}<span class="pill sev-med">{{ r.gap_counts.medium }} med</span>{% endif %}
+    {% if r.gap_counts.low %}<span class="pill sev-low">{{ r.gap_counts.low }} low</span>{% endif %}
+    {% if r.major_alerts %}<span class="pill sev-major">{{ r.major_alerts }} major ix</span>{% endif %}
+    {% if r.major_to_confirm %}<span class="pill pill-confirm" title="Major interaction with an old prescription: {{ r.confirm_note }}. Confirm still taking.">{{ r.major_to_confirm }} major to confirm</span>{% endif %}
+    {% if r.alerts - r.major_alerts - r.major_to_confirm %}<span class="pill">{{ r.alerts - r.major_alerts - r.major_to_confirm }} other ix</span>{% endif %}
+    {% if not r.gap_total and not r.alerts %}<span class="muted">nothing flagged</span>{% endif %}
+  </div>
+{% endmacro %}
+
+{% macro brief_status(r) %}
+  {% if not r.has_brief %}
+    <span class="muted no-brief">No brief yet</span>
+  {% else %}
+    <span class="brief-ready">Brief ready</span>
+    {% if r.verdict == 'PASS' %}
+      <span class="verdict pass">verified</span>
+    {% else %}
+      <span class="verdict fail">{{ r.verdict }} — {{ r.issues }} issue{{ '' if r.issues == 1 else 's' }}</span>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
 {% block content %}
 <section class="stats">
-  <div class="stat"><span class="num">{{ totals.patients }}</span>briefs ready</div>
-  <div class="stat"><span class="num sev-high">{{ totals.high_gaps }}</span>high-severity gaps</div>
-  <div class="stat"><span class="num sev-major">{{ totals.major_alerts }}</span>major interactions</div>
-  <div class="stat"><span class="num {{ 'sev-high' if totals.flagged else 'ok' }}">{{ totals.flagged }}</span>flagged by verification</div>
+  <div class="stat"><span class="num">{{ totals.patients }}</span>patients on panel</div>
+  <div class="stat"><span class="num sev-high">{{ totals.high_gap_patients }}</span>patients with high-severity gaps</div>
+  <div class="stat"><span class="num sev-major">{{ totals.major_patients }}</span>patients with current major interactions</div>
+  <div class="stat"><span class="num {{ 'sev-high' if totals.flagged else 'ok' }}">{{ totals.flagged }}<span class="of"> of {{ totals.briefs }} briefs</span></span>flagged by verification</div>
 </section>
 
-<h1>Today's panel</h1>
-<p class="lede">Ranked by clinical urgency: high-severity care gaps first, then
-major drug interactions. Click a patient to open their brief.</p>
+<div class="panel-head">
+  <h1>{{ "Today's schedule" if view == 'schedule' else 'Patient panel' }}</h1>
+  <nav class="view-toggle" aria-label="Dashboard view">
+    <a href="{{ url_for('dashboard') }}" {% if view == 'schedule' %}aria-current="page"{% endif %}>Today's schedule</a>
+    <a href="{{ url_for('dashboard', view='urgency') }}" {% if view == 'urgency' %}aria-current="page"{% endif %}>Panel by urgency</a>
+  </nav>
+</div>
+
+{% if view == 'schedule' %}
+<p class="lede">Appointments in time order. Click a patient to open their brief before the visit.</p>
+<div class="schedule-bar">
+  <p class="demo-note">Demo schedule — appointment times are simulated.</p>
+  <nav class="provider-filter" aria-label="Filter by provider">
+    <span class="muted small">Provider:</span>
+    <a href="{{ url_for('dashboard') }}" {% if not provider %}aria-current="page"{% endif %}>All</a>
+    {% for p in providers %}
+    <a href="{{ url_for('dashboard', provider=p) }}" {% if provider == p %}aria-current="page"{% endif %}>{{ p }}</a>
+    {% endfor %}
+  </nav>
+</div>
 
 <table class="worklist">
   <thead>
     <tr>
+      <th>Time</th>
+      <th>Provider</th>
       <th>Patient</th>
-      <th>Care gaps</th>
-      <th>Interactions</th>
-      <th>Verification</th>
-      <th></th>
+      <th>Visit type</th>
+      <th>Urgency</th>
     </tr>
   </thead>
   <tbody>
-  {% for r in rows %}
+  {% for r in schedule %}
     <tr class="{{ 'row-flagged' if r.verdict != 'PASS' }}">
-      <td>
-        <a class="patient-link" href="{{ url_for('patient', patient_id=r.patient_id) }}">{{ r.name }}</a>
-        <span class="muted">{{ r.age }}, {{ r.gender }}</span>
-        <code class="pid">{{ r.patient_id }}</code>
-      </td>
-      <td class="gapcells">
-        {% if r.gap_counts.high %}<span class="pill sev-high">{{ r.gap_counts.high }} high</span>{% endif %}
-        {% if r.gap_counts.medium %}<span class="pill sev-med">{{ r.gap_counts.medium }} med</span>{% endif %}
-        {% if r.gap_counts.low %}<span class="pill sev-low">{{ r.gap_counts.low }} low</span>{% endif %}
-        {% if not r.gap_total %}<span class="muted">none</span>{% endif %}
-      </td>
-      <td>
-        {% if r.major_alerts %}<span class="pill sev-major">{{ r.major_alerts }} major</span>{% endif %}
-        {% if r.alerts - r.major_alerts %}<span class="pill sev-low">{{ r.alerts - r.major_alerts }} other</span>{% endif %}
-        {% if not r.alerts %}<span class="muted">none</span>{% endif %}
-      </td>
-      <td>
-        {% if r.verdict == 'PASS' %}
-          <span class="verdict pass">verified</span>
-        {% else %}
-          <span class="verdict fail">{{ r.verdict }} — {{ r.issues }} issue{{ '' if r.issues == 1 else 's' }}</span>
-        {% endif %}
-      </td>
-      <td class="muted small">{{ r.model }}</td>
+      <td class="appt-time">{{ r.appt_display }}</td>
+      <td class="provider">{{ r.provider }}</td>
+      <td>{{ patient_cell(r) }}</td>
+      <td class="visit-type">{{ r.visit_type }}</td>
+      <td>{{ urgency_pills(r) }}</td>
     </tr>
   {% else %}
     <tr><td colspan="5" class="muted">No briefs yet. Run <code>run_pipeline.py</code>.</td></tr>
   {% endfor %}
   </tbody>
 </table>
+
+{% else %}
+<p class="lede">Every living patient, ranked by clinical urgency: high-severity
+care gaps first, then current major drug interactions, then total gaps. A major
+interaction involving a drug last prescribed over 5 years ago is shown "to confirm"
+and doesn't raise the rank. Gaps and interactions come from the clinic's rules; a
+brief isn't needed to be listed.</p>
+
+<div class="panel-tools">
+  <input type="search" id="panel-search" class="panel-search"
+         placeholder="Search name or MRN" aria-label="Search patients by name or MRN">
+  <nav class="panel-filter" aria-label="Filter patients">
+    {% for key, label, count in filters %}
+    <button type="button" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">
+      {{ label }} <span class="count">{{ count }}</span>
+    </button>
+    {% endfor %}
+  </nav>
+</div>
+
+<table class="worklist" id="panel">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Why they rank here</th>
+      <th>Brief</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in rows %}
+    <tr class="{{ 'row-flagged' if r.has_brief and r.verdict != 'PASS' }}"
+        data-search="{{ r.name | lower }} {{ r.mrn | lower }}" data-filters="{{ r.filters }}"
+        {% if loop.index > page_size %}hidden{% endif %}>
+      <td>{{ patient_cell(r) }}</td>
+      <td>
+        {{ urgency_pills(r) }}
+        {% if r.reason %}<div class="reason">{{ r.reason }}</div>{% endif %}
+      </td>
+      <td class="brief-status">{{ brief_status(r) }}</td>
+    </tr>
+  {% endfor %}
+  <tr class="panel-empty" {% if rows %}hidden{% endif %}><td colspan="3" class="muted">No patients match.</td></tr>
+  </tbody>
+</table>
+<div class="panel-more">
+  <span class="muted small" id="panel-count" role="status"></span>
+  <button type="button" id="panel-more" class="more-btn">Show {{ page_size }} more</button>
+</div>
+
+<script>
+  // Search, filter and "Show more" all run over rows already on the page.
+  // Search and filter are kept in the URL, so Back from a patient restores them.
+  (function () {
+    var PAGE = {{ page_size }};
+    var rows = Array.prototype.slice.call(document.querySelectorAll("#panel tbody tr[data-search]"));
+    var search = document.getElementById("panel-search");
+    var buttons = document.querySelectorAll(".panel-filter button");
+    var more = document.getElementById("panel-more");
+    var count = document.getElementById("panel-count");
+    var empty = document.querySelector(".panel-empty");
+    var params = new URLSearchParams(location.search);
+    var filter = params.get("filter");
+    if (!Array.prototype.some.call(buttons, function (b) { return b.dataset.filter === filter; })) filter = "all";
+    var shown = PAGE;
+    search.value = params.get("q") || "";
+
+    function render() {
+      var q = search.value.trim().toLowerCase();
+      var matches = rows.filter(function (r) {
+        return r.dataset.filters.split(" ").indexOf(filter) !== -1 &&
+               (!q || r.dataset.search.indexOf(q) !== -1);
+      });
+      rows.forEach(function (r) { r.hidden = true; });
+      matches.slice(0, shown).forEach(function (r) { r.hidden = false; });
+      buttons.forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.filter === filter));
+      });
+      var visible = Math.min(shown, matches.length);
+      count.textContent = "Showing " + visible + " of " + matches.length +
+                          (matches.length === 1 ? " patient" : " patients");
+      more.hidden = visible >= matches.length;
+      empty.hidden = matches.length > 0;
+
+      params.set("view", "urgency");
+      if (filter === "all") params.delete("filter"); else params.set("filter", filter);
+      if (q) params.set("q", search.value.trim()); else params.delete("q");
+      history.replaceState(null, "", "?" + params.toString());
+    }
+
+    search.addEventListener("input", function () { shown = PAGE; render(); });
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () { filter = b.dataset.filter; shown = PAGE; render(); });
+    });
+    more.addEventListener("click", function () { shown += PAGE; render(); });
+    render();
+  })();
+</script>
+{% endif %}
+{% endblock %}
+
+{% block footer_note %}
+<div class="model-note">
+  {% if models %}Briefs generated by {{ models }} · {% endif %}<a href="{{ url_for('feedback_summary') }}">Feedback summary</a>
+</div>
 {% endblock %}

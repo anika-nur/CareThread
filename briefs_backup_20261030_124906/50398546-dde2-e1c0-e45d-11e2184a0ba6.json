@@ -1,0 +1,153 @@
+{
+  "patient_summary": "Darcel357 Randi364 Quigley282 is a 61-year-old female with prediabetes, chronic kidney disease stage 1, essential hypertension, and chronic pain.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "1995-06-07",
+      "relevance": "Metabolic risk factor requiring monitoring and management."
+    },
+    {
+      "condition": "Chronic kidney disease stage 1",
+      "since": "2026-06-24",
+      "relevance": "Recent diagnosis requiring renal function monitoring and medication review."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2018-05-09",
+      "relevance": "Chronic condition requiring blood pressure control."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-01-31",
+      "relevance": "Ongoing symptom affecting quality of life and medication choices."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2015-04-22",
+      "relevance": "Cardiovascular risk factor managed with statin therapy."
+    },
+    {
+      "condition": "Obesity",
+      "since": "2009-05-06",
+      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Sleep apnea",
+      "since": "2017-05-11",
+      "relevance": "Comorbid condition affecting cardiovascular and metabolic health."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-06-25 for hyperlipidemia."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2026-06-24 for hypertension."
+    },
+    {
+      "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
+      "note": "Prescribed 2026-06-24 for glycemic control."
+    },
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2023-03-04 for chronic pain."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2013-05-22."
+    },
+    {
+      "medication": "Alteplase 100 MG Injection",
+      "note": "Prescribed 2013-05-22."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 10 MG Oral Tablet"
+      ],
+      "recommendation": "Review for potential increased risk of myopathy/rhabdomyolysis; consider alternative statin or dose adjustment."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Clopidogrel 75 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Clopidogrel 75 MG Oral Tablet",
+        "Naproxen sodium 220 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased risk of gastrointestinal bleeding."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Naproxen sodium 220 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for increased bleeding risk."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 61 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 61, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 61, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-02.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a follow-up encounter on 2026-06-25 and a general examination on 2026-06-24. Recent labs from 2026-06-25 include social determinants of health screenings, noting food insecurity and a household income of 41326 /a. Immunizations for influenza and Td were administered on 2026-06-24.",
+  "social_history": [
+    "Received higher education (recorded 1983-06-16)",
+    "Victim of intimate partner abuse (recorded 1993-07-01)",
+    "Full-time employment (recorded 2026-06-25)"
+  ],
+  "community_context": [],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Review moderate drug interactions involving alteplase, clopidogrel, and naproxen for bleeding risk.",
+    "Schedule overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Address food insecurity identified in recent social history screening."
+  ],
+  "_meta": {
+    "patient_id": "50398546-dde2-e1c0-e45d-11e2184a0ba6",
+    "patient_name": "Darcel357 Randi364 Quigley282",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3145,
+    "output_tokens": 1554,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}{{ name }} — CareThread{% endblock %}
+{% from "macros.html" import cite, cite_script, confirm_tag, drug_list, source_chip %}
+
+{% macro alert_item(a) %}
+  <div class="item">
+    <div class="item-head">
+      <span class="pill sev-{{ 'major' if a.severity == 'major' else 'med' }}">{{ a.severity }}</span>
+      {{ drug_list(a.drug_tags) }}
+      {{ cite(a.sources) }}
+    </div>
+  </div>
+{% endmacro %}
+
+{% block content %}
+<a class="back" href="{{ url_for('dashboard', view='urgency') }}">← panel</a>
+
+<header class="brief-head">
+  <h1>{{ name }}</h1>
+  <div class="ident">
+    <span>{{ data.demographics.age }} y</span>
+    <span>{{ data.demographics.gender | capitalize }}</span>
+    <span>DOB {{ data.demographics.birth_date }}</span>
+    <span><code>{{ mrn }}</code></span>
+  </div>
+  <p class="no-brief-note">AI summary not generated for this patient.</p>
+  <p class="legend">Everything below comes straight from the record and the
+  clinic's rules, not the AI. 'source' buttons show the record each item came from.</p>
+</header>
+
+<section class="card safety {{ 'has-alerts' if major_alerts }}">
+  <h2>Safety alerts</h2>
+  {% for a in major_alerts %}{{ alert_item(a) }}
+  {% else %}<p class="muted">No major drug interactions.</p>{% endfor %}
+</section>
+
+<section class="card">
+  <h2>Care gaps</h2>
+  {% for g in gaps %}
+  <div class="gap-row">
+    <span class="pill sev-{{ g.severity }}">{{ g.severity }}</span>
+    <div class="gap-main">
+      <strong>{{ g.name }}</strong>
+      {% if g.last_done %}{{ source_chip(g.sources) }}{% endif %}
+      {% if g.guideline %}<span class="guideline">{{ g.guideline | guideline_tooltips }}</span>{% endif %}
+    </div>
+    <span class="gap-when {{ 'never' if g.when == 'never on record' }}">{{ g.when }}</span>
+    <div class="gap-cite">{{ cite(g.sources, g.note, g.search_note) }}</div>
+  </div>
+  {% else %}<p class="muted">No care gaps detected.</p>{% endfor %}
+</section>
+
+<div class="two-col">
+  <section class="card compact-list">
+    <h2>Key conditions</h2>
+    {% for c in conditions %}
+    <div class="item">
+      <div class="item-head"><strong>{{ c.name }}</strong> {{ cite(c.sources) }}</div>
+      {% if c.since %}<div class="item-body">Since {{ c.since[:10] }}</div>{% endif %}
+    </div>
+    {% else %}<p class="muted">No active conditions recorded.</p>{% endfor %}
+  </section>
+  <section class="card compact-list">
+    <h2>Current medications</h2>
+    {% for m in medications %}
+    <div class="item">
+      <div class="item-head">
+        <strong>{{ m.name }}</strong>
+        {{ source_chip(m.sources) }}
+        {% if m.confirm %}{{ confirm_tag(m.confirm) }}{% endif %}
+        {{ cite(m.sources) }}
+      </div>
+      {% if m.prescribed %}<div class="item-body">Prescribed {{ m.prescribed[:10] }}</div>{% endif %}
+    </div>
+    {% else %}<p class="muted">No active medications recorded.</p>{% endfor %}
+  </section>
+</div>
+
+{% if other_alerts %}
+<details class="card other-ix">
+  <summary><h2>Other interactions ({{ other_alerts | length }})</h2></summary>
+  {% for a in other_alerts %}{{ alert_item(a) }}{% endfor %}
+</details>
+{% endif %}
+
+<script>
+{{ cite_script() }}
+</script>
+{% endblock %}

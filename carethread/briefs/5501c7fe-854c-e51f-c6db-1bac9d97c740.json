@@ -2,39 +2,39 @@
   "patient_summary": "Emerita401 Rayna237 Reilly981 is a 47-year-old female with obesity, chronic pain, prediabetes, and anemia.",
   "key_conditions": [
     {
-      "condition": "Body mass index 30+ - obesity",
+      "condition": "Body mass index 30+ - obesity (finding)",
       "since": "2003-10-28",
-      "relevance": "Chronic condition requiring ongoing management and monitoring."
+      "relevance": "Chronic condition requiring ongoing management and screening."
     },
     {
-      "condition": "Chronic pain",
+      "condition": "Chronic pain (finding)",
       "since": "2014-02-06",
-      "relevance": "Long-standing condition affecting quality of life and function."
+      "relevance": "Long-standing pain affecting quality of life."
     },
     {
-      "condition": "Chronic low back pain",
-      "since": "2014-02-06",
-      "relevance": "Specific site of chronic pain."
-    },
-    {
-      "condition": "Chronic neck pain",
+      "condition": "Chronic low back pain (finding)",
       "since": "2014-02-06",
       "relevance": "Specific site of chronic pain."
     },
     {
-      "condition": "Prediabetes",
+      "condition": "Chronic neck pain (finding)",
+      "since": "2014-02-06",
+      "relevance": "Specific site of chronic pain."
+    },
+    {
+      "condition": "History of tubal ligation (situation)",
+      "since": "2014-06-29",
+      "relevance": "Reproductive history."
+    },
+    {
+      "condition": "Prediabetes (finding)",
       "since": "2016-03-22",
       "relevance": "Risk factor for type 2 diabetes requiring monitoring."
     },
     {
-      "condition": "Anemia",
+      "condition": "Anemia (disorder)",
       "since": "2016-03-22",
-      "relevance": "Chronic disorder requiring monitoring."
-    },
-    {
-      "condition": "Lack of access to transportation",
-      "since": "1997-02-25",
-      "relevance": "Social determinant impacting care access."
+      "relevance": "Chronic condition requiring monitoring."
     }
   ],
   "current_medications": [],
@@ -59,9 +59,9 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 592 days ago (29.56 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-01-21 (29.56 kg/m2). Due annually.",
       "severity": "low",
-      "action": "Perform BMI screening.",
+      "action": "Perform annual BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
     },
     {
@@ -71,24 +71,30 @@
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2025-02-04 and a general examination on 2025-01-21. Labs from 2025-01-21 show Hemoglobin A1c 6.26 %, Body Weight 82.5 kg, BMI 29.56 kg/m2, Systolic BP 117 mm[Hg], Diastolic BP 81 mm[Hg], Heart rate 68 /min, Respiratory rate 16 /min, Glucose 71.12 mg/dL, and Pain severity 1 {score}. Influenza vaccination was administered on 2025-01-21.",
-  "sdoh_flags": [
-    "Lack of access to transportation",
-    "Transport problem"
+  "recent_activity": "Patient had a check-up on 2025-02-04 and a general examination on 2025-01-21. Labs from 2025-01-21 show HbA1c 6.26%, BMI 29.56 kg/m2, weight 82.5 kg, height 167.1 cm, pain severity 1/10, BP 117/81 mmHg, heart rate 68/min, respiratory rate 16/min, and glucose 71.12 mg/dL. Influenza vaccine administered 2025-01-21.",
+  "social_history": [
+    "Risk activity involvement (recorded 1992-01-28)",
+    "Received higher education (recorded 1997-02-25)",
+    "Lack of access to transportation (recorded 1997-02-25)",
+    "Transport problem (recorded 1998-03-03)",
+    "Full-time employment (recorded 2024-07-23)"
   ],
+  "community_context": [],
   "priority_actions": [
     "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
-    "Review chronic pain management and current status.",
-    "Monitor prediabetes and obesity with recent lab values.",
-    "Assess transportation barriers impacting care access."
+    "Review prediabetes status and HbA1c 6.26% (2025-01-21) for lifestyle or pharmacologic intervention.",
+    "Assess chronic pain management given recent pain score of 1/10 (2025-01-21).",
+    "Monitor anemia and obesity (BMI 29.56 kg/m2, 2025-01-21).",
+    "Complete annual wellness visit and BMI screening."
   ],
   "_meta": {
     "patient_id": "5501c7fe-854c-e51f-c6db-1bac9d97c740",
     "patient_name": "Emerita401 Rayna237 Reilly981",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2252,
-    "output_tokens": 1112,
+    "input_tokens": 2797,
+    "output_tokens": 1234,
     "finish_reason": "stop",
     "truncated": false
   }

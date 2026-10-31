@@ -1,40 +1,40 @@
 {
-  "patient_summary": "Judy Lowe is a 53-year-old female with asthma, chronic sinusitis, prediabetes, obesity, and chronic low back pain.",
+  "patient_summary": "Marceline716 Judy192 Lowe577 is a 53-year-old female with asthma, chronic sinusitis, prediabetes, obesity, and chronic pain.",
   "key_conditions": [
     {
       "condition": "Asthma",
       "since": "1993-09-03",
-      "relevance": "Primary reason for recent emergency admission and ongoing follow-up."
+      "relevance": "Primary respiratory condition requiring ongoing management and recent hospitalization."
     },
     {
       "condition": "Chronic sinusitis",
       "since": "1993-11-12",
-      "relevance": "Chronic respiratory condition."
+      "relevance": "Chronic upper respiratory condition."
     },
     {
       "condition": "Prediabetes",
       "since": "1993-11-25",
-      "relevance": "Metabolic risk factor."
+      "relevance": "Metabolic risk factor requiring monitoring."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2011-12-15",
-      "relevance": "Chronic metabolic and musculoskeletal risk factor."
+      "relevance": "Contributes to respiratory and metabolic risk."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-02-01",
+      "relevance": "Ongoing pain management needs."
     },
     {
       "condition": "Chronic low back pain",
       "since": "2014-02-01",
-      "relevance": "Chronic pain management."
+      "relevance": "Specific site of chronic pain."
     },
     {
-      "condition": "Housing unsatisfactory",
-      "since": "1991-08-23",
-      "relevance": "Social determinant of health."
-    },
-    {
-      "condition": "Social isolation",
-      "since": "2009-12-03",
-      "relevance": "Social determinant of health."
+      "condition": "Stress",
+      "since": "2026-03-06",
+      "relevance": "Recent psychological factor."
     }
   ],
   "current_medications": [
@@ -48,7 +48,7 @@
     },
     {
       "medication": "Astemizole 10 MG Oral Tablet",
-      "note": "Prescribed 1978-02-16."
+      "note": "Prescribed 1978-02-16; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -59,7 +59,7 @@
         "astemizole",
         "salbutamol"
       ],
-      "recommendation": "Review interaction between Astemizole 10 MG Oral Tablet and albuterol 0.83 MG/ML Inhalation Solution."
+      "recommendation": "Confirm the patient still takes Astemizole 10 MG Oral Tablet before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -68,7 +68,7 @@
         "fluticasone",
         "salbutamol"
       ],
-      "recommendation": "Review interaction between 120 ACTUAT fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler [Flovent] and albuterol 0.83 MG/ML Inhalation Solution."
+      "recommendation": "Monitor for potential interaction between fluticasone and albuterol."
     }
   ],
   "care_gaps": [
@@ -89,37 +89,40 @@
       "severity": "medium",
       "action": "Order or refer for cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-03-14.",
-      "severity": "low",
-      "action": "Schedule annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had an emergency hospital admission for asthma on 2025-10-09, followed by an asthma follow-up on 2025-10-10. A general examination occurred on 2026-03-05, and an asthma follow-up on 2026-04-08. Recent screening data from 2026-03-06 includes a PHQ-2 score of 4.0, stress level of 'A little bit', and report of inability to get medicine or health care when needed.",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Social isolation",
-    "Limited social contact",
-    "Stress",
-    "Not in labor force",
-    "Unable to get medicine or health care when needed in past 1 year"
+  "recent_activity": "Patient had an asthma follow-up on 2026-04-08 and a general examination on 2026-03-05. Prior to this, she had an asthma follow-up on 2025-10-10 and an emergency hospital admission for asthma on 2025-10-09. Recent labs from 2026-03-06 include social determinants of health screenings and a reported household income of 113000 /a. Immunizations include influenza and zoster vaccines administered in 2025 and 2026.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1991-08-23)",
+    "Received higher education (recorded 1991-08-23)",
+    "Social isolation (recorded 2009-12-03)",
+    "Not in labor force (recorded 2024-02-23)",
+    "Limited social contact (recorded 2026-03-06)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 19.18% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $54,525.",
+    "In the patient's ZIP code, 5.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 10.27% of the labor force is unemployed.",
+    "In the patient's ZIP code, 49.69% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 30.13% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.82% of households have no vehicle.",
+    "In the patient's ZIP code, 63.33% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address positive depression screen (PHQ-2 4.0) with follow-up or referral.",
-    "Review moderate drug interaction between astemizole and albuterol.",
-    "Order overdue mammogram.",
-    "Order overdue cervical cancer screening.",
-    "Address social determinants: housing, social isolation, and access to medicine/health care."
+    "Address high-severity care gap: Follow up on positive PHQ-2 depression screen from 2026-03-06.",
+    "Confirm if patient still takes Astemizole 10 MG Oral Tablet to resolve moderate drug interaction alert with albuterol.",
+    "Address medium-severity care gap: Order or refer for overdue mammogram.",
+    "Address medium-severity care gap: Order or refer for overdue cervical cancer screening.",
+    "Review asthma management plan following recent emergency hospitalization and follow-up visits."
   ],
   "_meta": {
     "patient_id": "741019b8-0a29-527c-ad5a-e7142d0501c0",
     "patient_name": "Marceline716 Judy192 Lowe577",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2533,
-    "output_tokens": 1316,
+    "input_tokens": 3089,
+    "output_tokens": 1522,
     "finish_reason": "stop",
     "truncated": false
   }

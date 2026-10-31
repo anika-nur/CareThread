@@ -1,50 +1,30 @@
 {
-  "patient_summary": "Kam191 Nubia715 Wilkinson796 is a 47-year-old female with obesity, social isolation, and stress.",
+  "patient_summary": "Kam191 Nubia715 Wilkinson796 is a 47-year-old female with obesity, stress, and a history of miscarriage.",
   "key_conditions": [
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "1998-08-15",
+      "relevance": "Historical obstetric event."
+    },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2023-01-20",
-      "relevance": "Chronic condition requiring monitoring and management."
-    },
-    {
-      "condition": "Social isolation",
-      "since": "2025-01-24",
-      "relevance": "Social determinant affecting health outcomes and care engagement."
+      "relevance": "Chronic condition requiring monitoring and lifestyle intervention."
     },
     {
       "condition": "Stress",
       "since": "2025-01-24",
-      "relevance": "Psychosocial factor impacting overall well-being."
-    },
-    {
-      "condition": "Not in labor force",
-      "since": "2025-01-24",
-      "relevance": "Employment status affecting socioeconomic stability."
-    },
-    {
-      "condition": "Risk activity involvement",
-      "since": "1996-02-23",
-      "relevance": "Historical finding regarding risk behaviors."
-    },
-    {
-      "condition": "Only received primary school education",
-      "since": "1997-02-28",
-      "relevance": "Educational level impacting health literacy."
-    },
-    {
-      "condition": "Past pregnancy history of miscarriage",
-      "since": "1998-08-15",
-      "relevance": "Reproductive history."
+      "relevance": "Current psychosocial factor impacting health."
     }
   ],
   "current_medications": [
     {
       "medication": "Vitamin B12 5 MG/ML Injectable Solution",
-      "note": "Prescribed 2008-08-22."
+      "note": "Prescribed 2008-08-22; confirm the patient still takes it."
     },
     {
       "medication": "Astemizole 10 MG Oral Tablet",
-      "note": "Prescribed 1980-04-02."
+      "note": "Prescribed 1980-04-02; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [],
@@ -68,9 +48,9 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 589 days ago (28.2 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-01-24 (28.2 kg/m2). Due annually.",
       "severity": "low",
-      "action": "Measure BMI.",
+      "action": "Perform annual BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
     },
     {
@@ -80,25 +60,38 @@
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a procedure on 2026-07-10 and consultations on 2026-04-01 and 2025-04-06. Most recent labs from 2025-01-24 show BMI 28.2 kg/m2, Cholesterol 273.21 mg/dL, and Triglycerides 108.11 mg/dL. Influenza vaccination was administered on 2025-01-24.",
-  "sdoh_flags": [
-    "Social isolation",
-    "Not in labor force",
-    "Only received primary school education"
+  "recent_activity": "Patient had a recent encounter on 2026-07-10 and a consultation on 2026-04-01. Most recent labs from 2025-01-24 show BMI 28.2 kg/m2, BP 113/74 mmHg, Cholesterol 273.21 mg/dL, and Triglycerides 108.11 mg/dL. Influenza vaccination was administered on 2025-01-24.",
+  "social_history": [
+    "Risk activity involvement (recorded 1996-02-23)",
+    "Only received primary school education (recorded 1997-02-28)",
+    "Not in labor force (recorded 2025-01-24)",
+    "Social isolation (recorded 2025-01-24)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 6.15% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $173,854.",
+    "In the patient's ZIP code, 1.74% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.31% of the labor force is unemployed.",
+    "In the patient's ZIP code, 2.05% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 1.12% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 6.05% of households have no vehicle.",
+    "In the patient's ZIP code, 49.39% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue colonoscopy, mammogram, and cervical screening.",
-    "Assess and manage obesity and stress.",
-    "Update BMI and conduct annual wellness visit.",
-    "Review social determinants of health including isolation and employment status."
+    "Confirm the patient still takes Vitamin B12 5 MG/ML Injectable Solution.",
+    "Confirm the patient still takes Astemizole 10 MG Oral Tablet.",
+    "Address overdue cervical screening, mammogram, and colonoscopy.",
+    "Perform annual BMI screening and wellness visit.",
+    "Discuss stress management and social isolation."
   ],
   "_meta": {
     "patient_id": "b8d0afb2-163b-6a8c-fc56-4431b24026d3",
     "patient_name": "Kam191 Nubia715 Wilkinson796",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2109,
-    "output_tokens": 1154,
+    "input_tokens": 2835,
+    "output_tokens": 1286,
     "finish_reason": "stop",
     "truncated": false
   }

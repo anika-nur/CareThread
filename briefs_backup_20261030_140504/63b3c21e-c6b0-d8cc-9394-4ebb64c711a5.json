@@ -1,0 +1,85 @@
+{
+  "patient_summary": "Carl856 Patti584 Auer97 is a 54-year-old female with essential hypertension, chronic sinusitis, and a history of tubal ligation.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2009-08-16",
+      "relevance": "Primary condition requiring ongoing blood pressure monitoring and management."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1976-11-17",
+      "relevance": "Long-standing respiratory condition."
+    },
+    {
+      "condition": "History of tubal ligation",
+      "since": "2008-01-13",
+      "relevance": "Relevant to reproductive history and screening context."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "1992-10-10",
+      "relevance": "Relevant to obstetric history."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-11-16."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 347 days ago (125 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Monitor blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 54, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 54, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-11-16 where vitals were recorded: BP 125/98 mm[Hg], HR 61 /min, RR 15 /min, Weight 61.6 kg, Height 150 cm, BMI 27.38 kg/m2, and pain severity 4/10. She received an influenza vaccine on 2025-11-16. Previous visits occurred in 2024, 2023, and 2022 for check-ups and general examinations.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1990-07-22)",
+    "Received higher education (recorded 1990-07-22)",
+    "Limited social contact (recorded 2017-10-01)",
+    "Has a criminal record (recorded 2017-10-01)",
+    "Full-time employment (recorded 2022-10-30)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 5.17% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $144,485.",
+    "In the patient's ZIP code, 4.24% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.41% of the labor force is unemployed.",
+    "In the patient's ZIP code, 5.48% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 7.9% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.9% of households have no vehicle.",
+    "In the patient's ZIP code, 41.26% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue mammogram and cervical cancer screening.",
+    "Review blood pressure management given the last reading was 347 days ago.",
+    "Discuss social determinants of health, including housing and social contact, to assess current needs."
+  ],
+  "_meta": {
+    "patient_id": "63b3c21e-c6b0-d8cc-9394-4ebb64c711a5",
+    "patient_name": "Carl856 Patti584 Auer97",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2591,
+    "output_tokens": 1121,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -4,48 +4,48 @@
     {
       "condition": "Essential hypertension",
       "since": "2018-12-18",
-      "relevance": "Primary driver for current antihypertensive regimen and BP monitoring gaps."
+      "relevance": "Primary condition requiring ongoing management and monitoring."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2019-12-24",
-      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+      "relevance": "Contributes to metabolic risk and cardiovascular disease."
     },
     {
       "condition": "Hyperlipidemia",
       "since": "2024-01-16",
-      "relevance": "Indication for statin therapy; interacts with amlodipine."
+      "relevance": "Requires lipid management to reduce cardiovascular risk."
     },
     {
       "condition": "Metabolic syndrome X",
       "since": "2025-01-21",
-      "relevance": "Cluster of conditions including hypertension, obesity, and prediabetes."
+      "relevance": "Cluster of conditions increasing risk for diabetes and heart disease."
     },
     {
       "condition": "Prediabetes",
       "since": "2025-01-21",
-      "relevance": "Requires monitoring of glucose levels and lifestyle interventions."
+      "relevance": "Requires monitoring to prevent progression to type 2 diabetes."
     }
   ],
   "current_medications": [
     {
-      "medication": "21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System [NuvaRing]",
+      "medication": "NuvaRing (ethinyl estradiol/etonogestrel)",
       "note": "Prescribed 2026-08-01."
     },
     {
-      "medication": "Simvastatin 10 MG Oral Tablet",
+      "medication": "Simvastatin 10 MG",
       "note": "Prescribed 2026-02-05."
     },
     {
-      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "medication": "Hydrochlorothiazide 25 MG",
       "note": "Prescribed 2026-01-27."
     },
     {
-      "medication": "lisinopril 10 MG Oral Tablet",
+      "medication": "lisinopril 10 MG",
       "note": "Prescribed 2026-01-27."
     },
     {
-      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "medication": "amLODIPine 2.5 MG",
       "note": "Prescribed 2026-01-27."
     }
   ],
@@ -62,61 +62,61 @@
   ],
   "care_gaps": [
     {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2022-01-04 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Schedule follow-up for positive depression screen.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
-    {
-      "gap": "Blood Pressure Overdue: Last BP reading was 221 days ago (134 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2026-01-27 (134 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Measure blood pressure today.",
+      "action": "Check blood pressure today.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
       "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
-      "action": "Refer for colonoscopy.",
+      "action": "Schedule colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
       "gap": "Mammogram Overdue: Female patient, age 49, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
-      "action": "Refer for mammogram.",
+      "action": "Schedule mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
     },
     {
       "gap": "Cervical Screening Overdue: Last cervical screening was 7 years ago. Due every 3 years.",
       "severity": "medium",
-      "action": "Perform or refer for cervical cancer screening.",
+      "action": "Perform or schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2019-01-01.",
-      "severity": "low",
-      "action": "Conduct annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
   "recent_activity": "Patient had a consultation on 2026-08-01 and a follow-up on 2026-02-05. Labs from 2026-02-05 show Glucose 64.89 mg/dL, Creatinine 2.6778 mg/dL, and eGFR 84.163 mL/min. Influenza vaccination was administered on 2026-01-27.",
-  "sdoh_flags": [
-    "Has a criminal record",
-    "Full-time employment"
+  "social_history": [
+    "Received higher education (recorded 1995-01-31)",
+    "Has a criminal record (recorded 2015-07-07)",
+    "Full-time employment (recorded 2023-01-10)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 5.17% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $109,884.",
+    "In the patient's ZIP code, 1.11% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.57% of the labor force is unemployed.",
+    "In the patient's ZIP code, 8.88% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.87% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.19% of households have no vehicle.",
+    "In the patient's ZIP code, 42.39% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
+    "Check blood pressure (last done 2026-01-27; due every 6 months).",
     "Address major drug interaction between amlodipine and simvastatin.",
-    "Measure blood pressure to address overdue monitoring gap.",
-    "Follow up on positive depression screen from 2022.",
-    "Refer for overdue colonoscopy, mammogram, and cervical screening.",
-    "Conduct annual wellness visit."
+    "Schedule overdue colonoscopy.",
+    "Schedule overdue mammogram.",
+    "Perform or schedule overdue cervical screening."
   ],
   "_meta": {
     "patient_id": "8d81343a-05ac-3044-a16e-73955e310045",
     "patient_name": "Carlita746 Tenesha164 Pollich983",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2441,
-    "output_tokens": 1458,
+    "input_tokens": 3013,
+    "output_tokens": 1405,
     "finish_reason": "stop",
     "truncated": false
   }

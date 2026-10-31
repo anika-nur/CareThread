@@ -1,30 +1,30 @@
 {
-  "patient_summary": "Minerva230 Ora550 Swift555 is a 64-year-old female with a history of asthma, essential hypertension, prediabetes, and a recent diagnosis of malignant neoplasm of breast.",
+  "patient_summary": "Minerva230 Ora550 Swift555 is a 64-year-old female with a history of asthma, hypertension, prediabetes, and recent breast cancer.",
   "key_conditions": [
     {
       "condition": "Malignant neoplasm of breast",
       "since": "2024-01-21",
-      "relevance": "Recent diagnosis with a lab qualifier indicating 'Worsening' response to treatment in April 2026."
+      "relevance": "Recent diagnosis with worsening response to treatment noted in 2026-04-21."
     },
     {
       "condition": "Asthma",
       "since": "1982-02-07",
-      "relevance": "Chronic condition with a recent emergency hospital admission in June 2026."
+      "relevance": "Recent emergency hospital admission in 2026-06-18 and ongoing management."
     },
     {
       "condition": "Essential hypertension",
       "since": "2004-06-20",
-      "relevance": "Chronic condition managed with losartan; recent BP reading was 123/87 mmHg."
+      "relevance": "Managed with losartan; BP monitoring overdue."
     },
     {
       "condition": "Prediabetes",
       "since": "2009-07-19",
-      "relevance": "Chronic metabolic condition; HbA1c was 6.06% in October 2025."
+      "relevance": "HbA1c 6.06% recorded in 2025-10-19."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2023-10-08",
-      "relevance": "BMI recorded as 30.19 kg/m2 in October 2025."
+      "relevance": "BMI 30.19 kg/m2 recorded in 2025-10-19."
     }
   ],
   "current_medications": [
@@ -42,7 +42,7 @@
     },
     {
       "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
-      "note": "Prescribed 1966-10-29."
+      "note": "Prescribed 1966-10-29; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -53,7 +53,7 @@
         "diphenhydramine",
         "losartan"
       ],
-      "recommendation": "Monitor for potential interaction between diphenhydramine and losartan."
+      "recommendation": "Confirm the patient still takes diphenhydramine before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -62,7 +62,7 @@
         "budesonide",
         "losartan"
       ],
-      "recommendation": "Monitor for potential interaction between budesonide and losartan."
+      "recommendation": "Monitor for potential interaction effects."
     },
     {
       "type": "drug_interaction",
@@ -71,26 +71,20 @@
         "budesonide",
         "salbutamol"
       ],
-      "recommendation": "Monitor for potential interaction between budesonide and albuterol (salbutamol)."
+      "recommendation": "Monitor for potential interaction effects."
     }
   ],
   "care_gaps": [
     {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 3.0 on 2017-09-03 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Address history of positive depression screen and assess current mental health status.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
-    {
-      "gap": "Blood Pressure Overdue: Last BP reading was 321 days ago (123 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-10-19 (123 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Obtain current blood pressure measurement.",
+      "action": "Check blood pressure today.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
       "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
-      "action": "Discuss and schedule colonoscopy screening.",
+      "action": "Discuss and schedule colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
@@ -98,32 +92,49 @@
       "severity": "medium",
       "action": "Discuss and schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-10-19 (30.19 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure BMI today.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
     }
   ],
-  "recent_activity": "Patient had a postoperative follow-up on 2026-07-31. In June 2026, she had an asthma follow-up and an emergency hospital admission for asthma. In April 2026, she had two follow-up visits, one of which noted a 'Worsening' response to cancer treatment. Labs from October 2025 show HbA1c 6.06%, BMI 30.19 kg/m2, and BP 123/87 mmHg. She received an influenza vaccine in October 2025.",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Transport problem",
-    "Lack of access to transportation",
-    "Social isolation",
-    "Limited social contact",
-    "Unemployed"
+  "recent_activity": "Patient had a postoperative follow-up on 2026-07-31. Recent history includes an emergency hospital admission for asthma on 2026-06-18 and an asthma follow-up on 2026-06-20. Labs from 2025-10-19 show HbA1c 6.06%, BMI 30.19 kg/m2, and BP 123/87 mm[Hg]. A 2026-04-21 lab noted response to cancer treatment as 'Worsening'.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1980-01-27)",
+    "Educated to high school level (recorded 1980-01-27)",
+    "Transport problem (recorded 1980-01-27)",
+    "Lack of access to transportation (recorded 1982-02-07)",
+    "Social isolation (recorded 2015-08-23)",
+    "Limited social contact (recorded 2024-10-13)",
+    "Unemployed (recorded 2025-10-19)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 7.9% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $110,989.",
+    "In the patient's ZIP code, 4.71% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.78% of the labor force is unemployed.",
+    "In the patient's ZIP code, 11.27% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 13.52% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 8.47% of households have no vehicle.",
+    "In the patient's ZIP code, 50.1% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Assess current status of breast cancer treatment given 'Worsening' response noted in April 2026.",
-    "Evaluate asthma control and recent emergency admission to optimize inhaler therapy.",
-    "Address medication review due status and moderate drug interactions involving losartan.",
-    "Obtain current blood pressure to address overdue monitoring gap.",
-    "Discuss and schedule overdue colonoscopy and cervical cancer screening.",
-    "Screen for depression given historical positive screen and current social isolation/unemployment."
+    "Confirm if patient still takes diphenhydramine.",
+    "Check blood pressure (overdue since 2025-10-19).",
+    "Discuss worsening cancer treatment response and coordinate with oncology.",
+    "Schedule overdue colonoscopy and cervical screening.",
+    "Measure BMI (overdue since 2025-10-19)."
   ],
   "_meta": {
     "patient_id": "06c75a4a-a52e-d007-3856-a4b3c38f1d75",
     "patient_name": "Minerva230 Ora550 Swift555",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2686,
-    "output_tokens": 1498,
+    "input_tokens": 3340,
+    "output_tokens": 1660,
     "finish_reason": "stop",
     "truncated": false
   }

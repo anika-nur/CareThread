@@ -1,20 +1,15 @@
 {
-  "patient_summary": "Toby274 Lanette41 Grant908 is a 59-year-old female with essential hypertension, stress, and a medication review due.",
+  "patient_summary": "Toby274 Lanette41 Grant908 is a 59-year-old female with essential hypertension and stress.",
   "key_conditions": [
     {
       "condition": "Essential hypertension",
       "since": "2013-10-09",
-      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+      "relevance": "Chronic condition requiring ongoing blood pressure monitoring and management."
     },
     {
       "condition": "Stress",
       "since": "2024-12-11",
-      "relevance": "Psychosocial factor potentially impacting health outcomes and adherence."
-    },
-    {
-      "condition": "Medication review due",
-      "since": "2024-12-11",
-      "relevance": "Indicates need for current medication assessment."
+      "relevance": "Recent finding that may impact overall health and adherence to care."
     }
   ],
   "current_medications": [
@@ -26,47 +21,60 @@
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "Blood Pressure Overdue: Last BP reading was 262 days ago (138 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-12-17 (138 mm[Hg]). Due every 6 months.",
       "severity": "medium",
       "action": "Schedule or perform blood pressure monitoring.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
-      "gap": "Colonoscopy Overdue: Patient is 58 with no colonoscopy on record. Recommended for ages 45-75.",
+      "gap": "Colonoscopy Overdue: Patient is 59 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
       "action": "Refer for colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
-      "gap": "Mammogram Overdue: Female patient, age 58, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "gap": "Mammogram Overdue: Female patient, age 59, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
       "action": "Refer for mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
     },
     {
-      "gap": "Cervical Screening Overdue: Female patient, age 58, with no cervical cancer screening on record. Recommended every 3 years.",
+      "gap": "Cervical Screening Overdue: Female patient, age 59, with no cervical cancer screening on record. Recommended every 3 years.",
       "severity": "medium",
       "action": "Refer for cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2025-12-31 and a general examination on 2025-12-17. Labs from 2025-12-17 show BP 138/102 mm[Hg], BMI 28.19 kg/m2, Cholesterol 91.89 mg/dL, and Triglycerides 129.88 mg/dL. Influenza vaccination was administered on 2025-12-17.",
-  "sdoh_flags": [
-    "Part-time employment",
-    "Has a criminal record"
+  "recent_activity": "Patient had a check-up on 2025-12-31 and a general examination on 2025-12-17. Labs from 2025-12-17 show BP 138/102 mm[Hg], heart rate 89 /min, BMI 28.19 kg/m2, cholesterol 91.89 mg/dL, and triglycerides 129.88 mg/dL. Influenza vaccination was administered on 2025-12-17.",
+  "social_history": [
+    "Received higher education (recorded 1985-11-13)",
+    "Has a criminal record (recorded 2015-10-21)",
+    "Part-time employment (recorded 2025-12-17)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.03% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $108,275.",
+    "In the patient's ZIP code, 2.31% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.48% of the labor force is unemployed.",
+    "In the patient's ZIP code, 11.46% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.79% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 3.08% of households have no vehicle.",
+    "In the patient's ZIP code, 54.38% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue blood pressure monitoring and review current lisinopril therapy.",
-    "Initiate referrals for overdue colonoscopy, mammogram, and cervical cancer screening.",
-    "Conduct medication review as indicated by active condition."
+    "Address blood pressure monitoring gap; last reading 2025-12-17, due every 6 months.",
+    "Refer for colonoscopy; no record on file, recommended for ages 45-75.",
+    "Refer for mammogram; no record on file, recommended every 2 years for ages 40-74.",
+    "Refer for cervical cancer screening; no record on file, recommended every 3 years for ages 21-65."
   ],
   "_meta": {
     "patient_id": "e432f179-e7a7-dbd3-8293-9f3e27e2b504",
     "patient_name": "Toby274 Lanette41 Grant908",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 1958,
-    "output_tokens": 843,
+    "input_tokens": 2608,
+    "output_tokens": 1121,
     "finish_reason": "stop",
     "truncated": false
   }

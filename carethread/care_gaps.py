@@ -8,6 +8,7 @@ and returns a gap dict if the screening is overdue.
 
 import sqlite3
 from datetime import datetime, timedelta
+from config import DB_PATH
 
 
 TODAY = datetime.now().strftime("%Y-%m-%d")
@@ -43,6 +44,13 @@ FLU_CVX_CODES = ["140", "141", "150", "155", "158", "161", "88",
 
 # Smoking cessation is a CarePlan activity in Synthea, not a Procedure.
 SMOKING_CESSATION_CODES = ["225323000", "710081004"]
+
+# Wellness visits are Encounter.type SNOMED codes. Synthea's encounter class is
+# AMB for every ambulatory visit, so it can't tell a wellness visit apart.
+# Synthea emits 162673000 (general examination of patient), 185349003
+# (encounter for check up) and 410620009 (well child visit); 444971000124105
+# (annual wellness visit) is the canonical alternate.
+WELLNESS_ENCOUNTER_CODES = ["162673000", "185349003", "410620009", "444971000124105"]
 
 
 def get_active_conditions(conn, patient_id):
@@ -325,46 +333,53 @@ def gap_depression_followup(conn, patient_id):
     """
     RULE: Patients who screened positive for depression should have
     a follow-up encounter within 30 days.
-    Checks for: PHQ-2 score >= 3 (LOINC 55758-7) with no encounter within 30 days after.
+    Checks for: most recent PHQ-2 score >= 3 (LOINC 55758-7) with no encounter
+    within 30 days after. Only the latest screen counts: an old positive
+    screen followed by a negative one is no longer an open gap.
     Source: UDS Depression Screening and Follow-Up measure.
     """
-    # Get all PHQ-2 scores
+    # Most recent PHQ-2 screen with a numeric score
     rows = conn.execute(
         "SELECT value, effective_date FROM observations "
-        "WHERE patient_id=? AND code='55758-7' "
+        "WHERE patient_id=? AND code='55758-7' AND effective_date != '' "
         "ORDER BY effective_date DESC",
         (patient_id,)
     ).fetchall()
 
+    latest = None
     for value_str, screen_date in rows:
         try:
-            score = float(value_str)
+            latest = (float(value_str), screen_date)
+            break
         except (ValueError, TypeError):
             continue
 
-        if score >= 3 and screen_date:
-            # Check for any encounter within 30 days after the screening
-            screen_dt = datetime.strptime(screen_date[:10], "%Y-%m-%d")
-            followup_window = (screen_dt + timedelta(days=30)).strftime("%Y-%m-%d")
+    if not latest or latest[0] < 3:
+        return None
+    score, screen_date = latest
 
-            followup = conn.execute(
-                "SELECT start_date FROM encounters "
-                "WHERE patient_id=? AND start_date > ? AND start_date <= ?",
-                (patient_id, screen_date, followup_window)
-            ).fetchone()
+    # Check for any encounter within 30 days after the screening
+    screen_dt = datetime.strptime(screen_date[:10], "%Y-%m-%d")
+    followup_window = (screen_dt + timedelta(days=30)).strftime("%Y-%m-%d")
 
-            if not followup:
-                return {
-                    "gap_type": "Depression Follow-Up Missing",
-                    "severity": "high",
-                    "description": f"PHQ-2 score of {score} on {screen_date} "
-                                  f"with no follow-up encounter within 30 days.",
-                    "guideline": "UDS: Follow-up within 30 days of positive depression screen",
-                    "qualifying_condition": f"PHQ-2 positive (score {score})",
-                    "last_date": screen_date,
-                    "days_overdue": days_since(followup_window),
-                }
-    return None
+    followup = conn.execute(
+        "SELECT start_date FROM encounters "
+        "WHERE patient_id=? AND start_date > ? AND start_date <= ?",
+        (patient_id, screen_date, followup_window)
+    ).fetchone()
+
+    if followup:
+        return None
+    return {
+        "gap_type": "Depression Follow-Up Missing",
+        "severity": "high",
+        "description": f"PHQ-2 score of {score} on {screen_date} "
+                      f"with no follow-up encounter within 30 days.",
+        "guideline": "UDS: Follow-up within 30 days of positive depression screen",
+        "qualifying_condition": f"PHQ-2 positive (score {score})",
+        "last_date": screen_date,
+        "days_overdue": days_since(followup_window),
+    }
 
 
 def gap_lipid_panel(conn, patient_id):
@@ -678,7 +693,8 @@ def gap_smoking_cessation(conn, patient_id):
 def gap_annual_wellness(conn, patient_id):
     """
     RULE: All patients should have at least one wellness/preventive visit per year.
-    Checks for: Any encounter of type 'wellness' or 'check up' within last 365 days.
+    Checks for: Any encounter coded as a wellness visit (WELLNESS_ENCOUNTER_CODES)
+    within last 365 days.
     Source: General preventive care standard; relevant to UDS visit metrics.
     """
     age = get_patient_age(conn, patient_id)
@@ -687,21 +703,20 @@ def gap_annual_wellness(conn, patient_id):
 
     # Check for any wellness/preventive encounter in the last year
     cutoff = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+    placeholders = ",".join("?" for _ in WELLNESS_ENCOUNTER_CODES)
     wellness = conn.execute(
-        "SELECT start_date FROM encounters WHERE patient_id=? AND start_date >= ? "
-        "AND (encounter_type LIKE '%wellness%' OR encounter_type LIKE '%check up%' "
-        "OR encounter_type LIKE '%preventive%' OR encounter_type LIKE '%annual%')",
-        (patient_id, cutoff)
+        f"SELECT start_date FROM encounters WHERE patient_id=? AND start_date >= ? "
+        f"AND encounter_code IN ({placeholders})",
+        (patient_id, cutoff, *WELLNESS_ENCOUNTER_CODES)
     ).fetchone()
 
     if wellness is None:
         # Check when last wellness visit was
         last = conn.execute(
-            "SELECT start_date FROM encounters WHERE patient_id=? "
-            "AND (encounter_type LIKE '%wellness%' OR encounter_type LIKE '%check up%' "
-            "OR encounter_type LIKE '%preventive%' OR encounter_type LIKE '%annual%') "
-            "ORDER BY start_date DESC LIMIT 1",
-            (patient_id,)
+            f"SELECT start_date FROM encounters WHERE patient_id=? "
+            f"AND encounter_code IN ({placeholders}) "
+            f"ORDER BY start_date DESC LIMIT 1",
+            (patient_id, *WELLNESS_ENCOUNTER_CODES)
         ).fetchone()
 
         return {
@@ -750,7 +765,7 @@ def detect_gaps_for_patient(conn, patient_id):
 
 
 def main():
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
 
     # Deceased patients still carry unmet screening history, but scoring them
     # for future care inflates every measure, so exclude them.
@@ -822,7 +837,7 @@ def main():
              g.get("last_date"), g.get("days_overdue"))
         )
     conn.commit()
-    print(f"\nGaps saved to care_gaps table in carethread.db")
+    print(f"\nGaps saved to care_gaps table in {DB_PATH}")
 
     conn.close()
 

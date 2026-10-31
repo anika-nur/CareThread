@@ -7,6 +7,10 @@ Usage:
     python run_pipeline.py              # top 10 patients by gap count
     python run_pipeline.py --count 50   # top 50 patients
     python run_pipeline.py --all        # all living patients
+    python run_pipeline.py --existing   # regenerate only patients in briefs/
+    python run_pipeline.py --ids ID1,ID2      # regenerate only these patients
+    python run_pipeline.py --ids targets.txt  # ...or the IDs listed in a file
+                                              # (JSON list, or comma/line separated)
 """
 
 import json
@@ -16,10 +20,12 @@ import sqlite3
 import sys
 import time
 from datetime import datetime
+from pathlib import Path
 
 from assemble_patient import assemble_patient_data
 from generate_brief import generate_brief
 from verify_brief import verify_brief
+from config import DB_PATH
 
 
 class Tee:
@@ -57,9 +63,31 @@ def generate_with_retry(patient_data, attempts=3, delay=5):
             time.sleep(delay)
 
 
+def parse_ids(value):
+    """Patient IDs from '--ids': a comma-separated list, or a file holding a
+    JSON list or IDs separated by commas or newlines. Order is kept."""
+    path = Path(value)
+    if path.is_file():
+        text = path.read_text().strip()
+        ids = json.loads(text) if text.startswith("[") else text.replace(",", "\n").split()
+    else:
+        ids = value.split(",")
+    return list(dict.fromkeys(i.strip() for i in ids if i.strip()))
+
+
 def main():
     count = 10
     run_all = False
+    existing = "--existing" in sys.argv
+    ids = None
+
+    if "--ids" in sys.argv:
+        idx = sys.argv.index("--ids")
+        if idx + 1 >= len(sys.argv):
+            raise SystemExit("--ids needs a comma-separated list or a file path")
+        ids = parse_ids(sys.argv[idx + 1])
+        if not ids:
+            raise SystemExit("--ids: no patient IDs given")
 
     if "--all" in sys.argv:
         run_all = True
@@ -67,10 +95,29 @@ def main():
         idx = sys.argv.index("--count")
         count = int(sys.argv[idx + 1])
 
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
     os.makedirs("briefs", exist_ok=True)
 
-    if run_all:
+    if ids:
+        # Targeted rerun. Check every ID before generating anything, so a typo
+        # can't leave a half-finished batch.
+        found = {r[0]: r for r in conn.execute(f"""
+            SELECT patient_id, given_name, family_name
+            FROM patients WHERE patient_id IN ({",".join("?" * len(ids))})
+        """, ids)}
+        unknown = [i for i in ids if i not in found]
+        if unknown:
+            conn.close()
+            raise SystemExit(f"--ids: not in the database: {', '.join(unknown)}")
+        patients = [found[i] for i in ids]
+    elif existing:
+        # Same patients as last time, whatever their gap counts are now
+        ids = sorted(p.stem for p in Path("briefs").glob("*.json"))
+        patients = conn.execute(f"""
+            SELECT patient_id, given_name, family_name
+            FROM patients WHERE patient_id IN ({",".join("?" * len(ids))})
+        """, ids).fetchall()
+    elif run_all:
         patients = conn.execute("""
             SELECT patient_id, given_name, family_name
             FROM patients

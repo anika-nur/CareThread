@@ -4,68 +4,58 @@
     {
       "condition": "Prediabetes",
       "since": "2014-12-12",
-      "relevance": "Chronic metabolic condition requiring monitoring."
+      "relevance": "Chronic metabolic condition requiring monitoring and lifestyle intervention."
     },
     {
       "condition": "Misuses drugs",
       "since": "2017-12-15",
-      "relevance": "Substance use disorder requiring ongoing management."
+      "relevance": "Active substance use disorder requiring ongoing assessment and support."
     },
     {
       "condition": "Osteoarthritis of knee",
       "since": "2020-07-02",
-      "relevance": "Chronic pain condition currently managed with naproxen."
+      "relevance": "Chronic pain condition impacting mobility and quality of life."
     },
     {
       "condition": "Stress",
       "since": "2022-10-07",
-      "relevance": "Psychosocial factor impacting overall health."
-    },
-    {
-      "condition": "Unemployed",
-      "since": "2024-10-11",
-      "relevance": "Social determinant affecting access to care and stability."
-    },
-    {
-      "condition": "Social isolation",
-      "since": "2024-10-11",
-      "relevance": "Social determinant impacting mental and physical health."
+      "relevance": "Psychosocial factor potentially impacting overall health and adherence."
     }
   ],
   "current_medications": [
     {
       "medication": "Naproxen sodium 220 MG Oral Tablet",
-      "note": "Prescribed 2020-07-02 for osteoarthritis."
+      "note": "Prescribed 2020-07-02; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     },
     {
       "medication": "Astemizole 10 MG Oral Tablet",
-      "note": "Prescribed 1982-10-22."
+      "note": "Prescribed 1982-10-22; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     }
   ],
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "Colonoscopy Overdue: Patient is 45 with no colonoscopy on record. Recommended for ages 45-75.",
+      "gap": "Colonoscopy Overdue: Patient is 46 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
       "action": "Schedule colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
-      "gap": "Mammogram Overdue: Female patient, age 45, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "gap": "Mammogram Overdue: Female patient, age 46, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
       "action": "Schedule mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
     },
     {
-      "gap": "Cervical Screening Overdue: Female patient, age 45, with no cervical cancer screening on record. Recommended every 3 years.",
+      "gap": "Cervical Screening Overdue: Female patient, age 46, with no cervical cancer screening on record. Recommended every 3 years.",
       "severity": "medium",
       "action": "Schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 694 days ago (28.18 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2024-10-11 (28.18 kg/m2). Due annually.",
       "severity": "low",
-      "action": "Perform annual BMI screening.",
+      "action": "Perform BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
     },
     {
@@ -75,24 +65,28 @@
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a consultation for treatment on 2026-08-07 and routine encounters in July, April, and January 2026. Most recent labs from 2024-10-11 show Hemoglobin A1c 6.21 %, BMI 28.18 kg/m2, Blood Pressure 127/86 mmHg, and Glucose 96.43 mg/dL. Influenza vaccination was administered on 2024-10-11.",
-  "sdoh_flags": [
-    "Unemployed",
-    "Social isolation"
+  "recent_activity": "Patient had a consultation for treatment on 2026-08-07 and routine encounters in July, April, and January 2026. Most recent labs from 2024-10-11 show HbA1c 6.21%, BMI 28.18 kg/m2, BP 127/86 mmHg, and glucose 96.43 mg/dL. Influenza vaccination was administered on 2024-10-11.",
+  "social_history": [
+    "Received higher education (recorded 1998-11-20)",
+    "Unemployed (recorded 2024-10-11)",
+    "Social isolation (recorded 2024-10-11)"
   ],
+  "community_context": [],
   "priority_actions": [
-    "Address overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
-    "Review medication list, specifically the long-standing prescription of Astemizole.",
+    "Confirm the patient still takes Naproxen sodium 220 MG Oral Tablet.",
+    "Confirm the patient still takes Astemizole 10 MG Oral Tablet.",
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
     "Assess current status of drug misuse and stress.",
-    "Update BMI and perform annual wellness visit components."
+    "Perform annual BMI screening and wellness visit."
   ],
   "_meta": {
     "patient_id": "779b0b39-5eb8-6680-c428-121067c4cea8",
     "patient_name": "Myung778 Bogisich202",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2139,
-    "output_tokens": 1120,
+    "input_tokens": 2687,
+    "output_tokens": 1142,
     "finish_reason": "stop",
     "truncated": false
   }

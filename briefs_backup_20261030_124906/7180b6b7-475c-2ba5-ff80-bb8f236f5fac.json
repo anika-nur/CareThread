@@ -1,0 +1,90 @@
+{
+  "patient_summary": "Glenda787 Era940 Kuphal363 is a 45-year-old female with obesity, chronic sinusitis, and stress.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity (finding)",
+      "since": "2003-08-11",
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Chronic sinusitis (disorder)",
+      "since": "2008-04-28",
+      "relevance": "Chronic respiratory condition."
+    },
+    {
+      "condition": "Stress (finding)",
+      "since": "2025-06-23",
+      "relevance": "Recent psychological finding."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1982-09-12."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 45 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 45, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 45, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 439 days ago (31.42 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had five encounters between 2025-11-24 and 2026-08-24. Most recent labs from 2025-06-23 show Body Height 163.5 cm, Body Weight 84 kg, BMI 31.42 kg/m2, Systolic BP 112 mm[Hg], Diastolic BP 83 mm[Hg], Heart rate 73 /min, Respiratory rate 14 /min, Pain severity 2, Tobacco smoking status Never smoked tobacco, and no fear of partner. Immunizations include Influenza (2025-06-23, 2023-06-19, 2021-06-14), Td (2023-06-19), and Hep A (2023-06-19).",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1999-08-02)",
+    "Only received primary school education (recorded 1999-08-02)",
+    "Not in labor force (recorded 2025-06-23)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 12.77% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $74,833.",
+    "In the patient's ZIP code, 11.58% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.88% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.49% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 25.54% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 6.91% of households have no vehicle.",
+    "In the patient's ZIP code, 62.07% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Perform annual BMI screening and wellness visit.",
+    "Review current medication Astemizole and assess need for continuation or alternative."
+  ],
+  "_meta": {
+    "patient_id": "7180b6b7-475c-2ba5-ff80-bb8f236f5fac",
+    "patient_name": "Glenda787 Era940 Kuphal363",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2397,
+    "output_tokens": 1265,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

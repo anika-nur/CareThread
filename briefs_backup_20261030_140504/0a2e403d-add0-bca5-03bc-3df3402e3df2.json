@@ -1,0 +1,84 @@
+{
+  "patient_summary": "Lekisha909 Vertie683 Botsford977 is a 46-year-old female with prediabetes, anemia, obesity, and a history of sepsis.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "2005-06-30",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2005-06-30",
+      "relevance": "Chronic blood disorder requiring monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2022-05-05",
+      "relevance": "Chronic condition impacting metabolic health."
+    },
+    {
+      "condition": "Sepsis",
+      "since": "2019-04-25",
+      "relevance": "History of severe infection."
+    },
+    {
+      "condition": "Stress",
+      "since": "2022-05-05",
+      "relevance": "Psychosocial factor affecting overall health."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 46 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 46, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 46, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-05-14 with labs showing Hemoglobin A1c 5.87 %, Body Weight 79.8 kg, BMI 28.17 kg/m2, Systolic BP 119 mm[Hg], Diastolic BP 81 mm[Hg], and Glucose 64.13 mg/dL. Previous encounters for symptoms occurred in 2025 and 2024. Influenza vaccination was administered on 2026-05-14.",
+  "social_history": [
+    "Received higher education",
+    "Social isolation",
+    "Full-time employment",
+    "Victim of intimate partner abuse"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.8% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $117,072.",
+    "In the patient's ZIP code, 1.39% of residents have no health insurance.",
+    "In the patient's ZIP code, 5.6% of the labor force is unemployed.",
+    "In the patient's ZIP code, 7.98% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.1% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 5.98% of households have no vehicle.",
+    "In the patient's ZIP code, 53.91% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Monitor prediabetes and obesity management.",
+    "Assess social isolation and history of intimate partner abuse for support resources."
+  ],
+  "_meta": {
+    "patient_id": "0a2e403d-add0-bca5-03bc-3df3402e3df2",
+    "patient_name": "Lekisha909 Vertie683 Botsford977",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2636,
+    "output_tokens": 1032,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

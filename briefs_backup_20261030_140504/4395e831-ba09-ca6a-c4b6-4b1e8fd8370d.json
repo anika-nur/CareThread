@@ -1,0 +1,131 @@
+{
+  "patient_summary": "Dannielle300 Twanna669 Prosacco716 is a 59-year-old female with type 2 diabetes, obesity, chronic pain, and fibromyalgia.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2004-10-13",
+      "relevance": "Primary metabolic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "1998-10-07",
+      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-01-31",
+      "relevance": "Active symptom affecting quality of life and functional status."
+    },
+    {
+      "condition": "Fibromyalgia",
+      "since": "2014-01-31",
+      "relevance": "Chronic pain syndrome requiring management."
+    },
+    {
+      "condition": "Neuropathy due to type 2 diabetes mellitus",
+      "since": "2024-01-31",
+      "relevance": "Diabetic complication requiring monitoring."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2005-10-19",
+      "relevance": "Lipid abnormality associated with metabolic syndrome."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2005-10-19",
+      "relevance": "Cluster of conditions increasing cardiovascular risk."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1973-09-22",
+      "relevance": "Long-standing respiratory condition."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-02-05",
+      "relevance": "Recent psychosocial factor."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Ibuprofen 400 MG Oral Tablet",
+      "note": "Prescribed 2026-02-11 for pain management."
+    },
+    {
+      "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2026-02-11 for diabetes management."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "ibuprofen",
+        "metformin"
+      ],
+      "recommendation": "Monitor for potential interaction between ibuprofen and metformin."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 206 days ago (value: 6.03%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 59 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 59, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 59, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Order cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had an ophthalmic exam on 2026-08-26 showing LogMAR visual acuity of 0 in both eyes, intraocular pressure of 16 mmHg in both eyes, and no apparent retinopathy. A general exam on 2026-02-11 recorded HbA1c of 6.03%, weight of 83.4 kg, height of 166.4 cm, and pain severity of 3/10. Previous check-ups occurred in 2026-02-25 and 2025-02-19.",
+  "social_history": [
+    "Risk activity involvement (recorded 1983-09-07)",
+    "Housing unsatisfactory (recorded 1985-09-18)",
+    "Received higher education (recorded 1985-09-18)",
+    "Full-time employment (recorded 2026-02-11)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 15.63% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $70,334.",
+    "In the patient's ZIP code, 1.83% of residents have no health insurance.",
+    "In the patient's ZIP code, 7.13% of the labor force is unemployed.",
+    "In the patient's ZIP code, 26.79% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 12.59% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 12.37% of households have no vehicle.",
+    "In the patient's ZIP code, 49.47% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue HbA1c test (last 206 days ago).",
+    "Refer for overdue colonoscopy.",
+    "Refer for overdue mammogram.",
+    "Order overdue cervical cancer screening.",
+    "Review moderate drug interaction between ibuprofen and metformin."
+  ],
+  "_meta": {
+    "patient_id": "4395e831-ba09-ca6a-c4b6-4b1e8fd8370d",
+    "patient_name": "Dannielle300 Twanna669 Prosacco716",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2894,
+    "output_tokens": 1515,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

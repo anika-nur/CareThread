@@ -1,41 +1,26 @@
 {
-  "patient_summary": "Glenda787 Era940 Kuphal363 is a 45-year-old female with obesity, chronic sinusitis, and social determinants including unsatisfactory housing and limited education.",
+  "patient_summary": "Glenda787 Era940 Kuphal363 is a 45-year-old female with obesity, chronic sinusitis, and stress.",
   "key_conditions": [
     {
-      "condition": "Body mass index 30+ - obesity",
+      "condition": "Body mass index 30+ - obesity (finding)",
       "since": "2003-08-11",
       "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
-      "condition": "Chronic sinusitis",
+      "condition": "Chronic sinusitis (disorder)",
       "since": "2008-04-28",
-      "relevance": "Chronic respiratory condition."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
-      "condition": "Housing unsatisfactory",
-      "since": "1999-08-02",
-      "relevance": "Social determinant of health impacting overall well-being."
-    },
-    {
-      "condition": "Only received primary school education",
-      "since": "1999-08-02",
-      "relevance": "Social determinant of health potentially affecting health literacy."
-    },
-    {
-      "condition": "Not in labor force",
+      "condition": "Stress (finding)",
       "since": "2025-06-23",
-      "relevance": "Social determinant of health."
-    },
-    {
-      "condition": "Stress",
-      "since": "2025-06-23",
-      "relevance": "Psychosocial factor."
+      "relevance": "Recent finding requiring assessment and support."
     }
   ],
   "current_medications": [
     {
       "medication": "Astemizole 10 MG Oral Tablet",
-      "note": "Prescribed 1982-09-12."
+      "note": "Prescribed 1982-09-12; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     }
   ],
   "medication_alerts": [],
@@ -59,7 +44,7 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 439 days ago (31.42 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-06-23 (31.42 kg/m2). Due annually.",
       "severity": "low",
       "action": "Perform BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
@@ -71,25 +56,38 @@
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had five encounters between 2025-11-24 and 2026-08-24. Most recent labs from 2025-06-23 show BMI 31.42 kg/m2, weight 84 kg, height 163.5 cm, BP 112/83 mmHg, heart rate 73 /min, respiratory rate 14 /min, pain severity 2/10, never smoked tobacco, and no fear of partner. Immunizations include influenza (2025-06-23, 2023-06-19, 2021-06-14), Td (2023-06-19), and Hep A (2023-06-19).",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Only received primary school education",
-    "Not in labor force",
-    "Stress"
+  "recent_activity": "Patient had 5 encounters between 2025-11-24 and 2026-08-24. Labs from 2025-06-23 show BMI 31.42 kg/m2, BP 112/83 mmHg, HR 73 /min, RR 14 /min, pain score 2/10, height 163.5 cm, weight 84 kg, never smoked tobacco, and no fear of partner. Immunizations include influenza (2025-06-23, 2023-06-19, 2021-06-14), Td (2023-06-19), and Hep A (2023-06-19).",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1999-08-02)",
+    "Only received primary school education (recorded 1999-08-02)",
+    "Not in labor force (recorded 2025-06-23)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 12.77% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $74,833.",
+    "In the patient's ZIP code, 11.58% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.88% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.49% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 25.54% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 6.91% of households have no vehicle.",
+    "In the patient's ZIP code, 62.07% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
-    "Perform annual BMI screening and wellness visit.",
-    "Review social determinants of health (housing, education, employment, stress) and provide resources."
+    "Confirm the patient still takes Astemizole.",
+    "Schedule colonoscopy.",
+    "Schedule mammogram.",
+    "Schedule cervical cancer screening.",
+    "Perform BMI screening.",
+    "Conduct annual wellness visit."
   ],
   "_meta": {
     "patient_id": "7180b6b7-475c-2ba5-ff80-bb8f236f5fac",
     "patient_name": "Glenda787 Era940 Kuphal363",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2000,
-    "output_tokens": 1155,
+    "input_tokens": 2712,
+    "output_tokens": 1283,
     "finish_reason": "stop",
     "truncated": false
   }

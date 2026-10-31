@@ -1,0 +1,99 @@
+{
+  "patient_summary": "Rosalia943 Jonell764 Haag279 is a 51-year-old female with chronic sinusitis, osteoarthritis of the hip, prediabetes, and a history of miscarriage.",
+  "key_conditions": [
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1977-02-28",
+      "relevance": "Long-standing condition requiring ongoing management."
+    },
+    {
+      "condition": "Osteoarthritis of hip",
+      "since": "2016-04-20",
+      "relevance": "Chronic pain condition currently managed with naproxen."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2023-05-07",
+      "relevance": "Metabolic risk factor requiring monitoring and lifestyle intervention."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2021-03-22",
+      "relevance": "Reproductive history relevant to gynecological care."
+    },
+    {
+      "condition": "Stress",
+      "since": "2026-04-26",
+      "relevance": "Recent finding noted during examination."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2016-04-20 for osteoarthritis."
+    },
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1980-10-03 for sinusitis."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 51 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 51, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 51, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-04-27.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-04-26 and a patient encounter on 2026-04-12. Recent labs from 2026-04-26 include Hemoglobin A1c 6.06 %, BMI 27.77 kg/m2, Systolic BP 101 mm[Hg], Diastolic BP 82 mm[Hg], Heart rate 72 /min, and Pain severity 3. On 2026-04-27, PHQ-2 score was 2 and Total score [HARK] was 0. Immunizations for zoster, influenza, and Td were administered on 2026-04-26.",
+  "social_history": [
+    "Educated to high school level",
+    "Full-time employment"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 2.39% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $233,068.",
+    "In the patient's ZIP code, 0.72% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.79% of the labor force is unemployed.",
+    "In the patient's ZIP code, 3.18% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 1.97% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.72% of households have no vehicle.",
+    "In the patient's ZIP code, 39.51% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Review prediabetes management and recent HbA1c of 6.06 %.",
+    "Assess current pain management for osteoarthritis given recent pain score of 3.",
+    "Discuss stress management and recent PHQ-2 score of 2.",
+    "Complete annual wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "812e6db0-33dc-bed5-487a-86de2374e079",
+    "patient_name": "Rosalia943 Jonell764 Haag279",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2476,
+    "output_tokens": 1308,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

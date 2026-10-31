@@ -1,30 +1,15 @@
 {
-  "patient_summary": "Larraine124 Alycia285 Feil794 is a 24-year-old female with severe anxiety, social isolation, and lack of transportation, currently pregnant.",
+  "patient_summary": "Larraine124 Alycia285 Feil794 is a 25-year-old female with severe anxiety (panic) and stress, currently pregnant.",
   "key_conditions": [
     {
       "condition": "Severe anxiety (panic)",
       "since": "2024-01-03",
-      "relevance": "Active mental health condition requiring management during pregnancy."
-    },
-    {
-      "condition": "Lack of access to transportation",
-      "since": "2019-12-25",
-      "relevance": "Social determinant impacting ability to attend prenatal and follow-up appointments."
-    },
-    {
-      "condition": "Social isolation",
-      "since": "2019-12-25",
-      "relevance": "Social determinant contributing to stress and potential barriers to care."
-    },
-    {
-      "condition": "Unemployed",
-      "since": "2025-07-16",
-      "relevance": "Recent change in employment status affecting financial stability and insurance coverage."
+      "relevance": "Chronic mental health condition requiring ongoing management, particularly during pregnancy."
     },
     {
       "condition": "Stress",
       "since": "2025-07-16",
-      "relevance": "Current psychosocial stressor."
+      "relevance": "Recent finding that may exacerbate anxiety and impact prenatal care."
     }
   ],
   "current_medications": [],
@@ -37,7 +22,7 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 416 days ago (23.62 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-07-16 (23.62 kg/m2). Due annually.",
       "severity": "low",
       "action": "Perform annual BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
@@ -49,25 +34,37 @@
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a prenatal initial visit on 2025-11-05 and a subsequent prenatal visit on 2025-11-28. Pregnancy status was confirmed as 'Pregnant' on 2025-09-10 and 2026-07-22. Most recent vitals from 2025-07-16 show Systolic Blood Pressure 131 mm[Hg], Diastolic Blood Pressure 74 mm[Hg], Heart rate 88 /min, Respiratory rate 14 /min, Weight 64.9 kg, Height 165.8 cm, and BMI 23.62 kg/m2. Pain severity was reported as 1 {score} on 2025-07-16.",
-  "sdoh_flags": [
+  "recent_activity": "Patient had a prenatal initial visit on 2025-11-05 and a subsequent prenatal visit on 2025-11-28. Pregnancy status was confirmed as 'Pregnant' on 2025-09-10 and 2026-07-22. Most recent vitals from 2025-07-16 show BP 131/74 mmHg, HR 88 /min, RR 14 /min, Weight 64.9 kg, Height 165.8 cm, BMI 23.62 kg/m2, and Pain severity 1/10. Immunizations for Influenza and Hep B were administered on 2025-07-16.",
+  "social_history": [
+    "Received higher education",
     "Lack of access to transportation",
     "Social isolation",
     "Unemployed"
   ],
+  "community_context": [
+    "In the patient's ZIP code, 14.1% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $212,664.",
+    "In the patient's ZIP code, 1.49% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.31% of the labor force is unemployed.",
+    "In the patient's ZIP code, 3.69% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 0.4% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 46.26% of households have no vehicle.",
+    "In the patient's ZIP code, 40.94% of renter households pay 30% or more of income on rent."
+  ],
   "priority_actions": [
-    "Address severe anxiety and stress in the context of current pregnancy.",
-    "Assess and mitigate barriers to care related to lack of transportation and social isolation.",
-    "Schedule overdue cervical cancer screening.",
-    "Perform annual BMI screening and wellness visit components."
+    "Address cervical cancer screening, which is overdue (last done 8 years ago).",
+    "Monitor and manage severe anxiety and stress in the context of current pregnancy.",
+    "Assess social determinants of health, specifically lack of transportation and social isolation, to support prenatal care access.",
+    "Perform annual BMI screening and wellness visit as indicated by care gaps."
   ],
   "_meta": {
     "patient_id": "228af19b-f84f-643e-b529-70b05154733a",
     "patient_name": "Larraine124 Alycia285 Feil794",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 1800,
-    "output_tokens": 870,
+    "input_tokens": 2488,
+    "output_tokens": 960,
     "finish_reason": "stop",
     "truncated": false
   }

@@ -1,25 +1,25 @@
 {
-  "patient_summary": "Leslie90 Theron432 Toy286 is a 49-year-old male with type 2 diabetes, hypertension, hypertriglyceridemia, metabolic syndrome, and diabetic neuropathy.",
+  "patient_summary": "Leslie90 Theron432 Toy286 is a 49-year-old male with type 2 diabetes, hypertension, and a history of prediabetes, anemia, and metabolic syndrome.",
   "key_conditions": [
     {
       "condition": "Diabetes mellitus type 2",
       "since": "2014-07-22",
-      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+      "relevance": "Primary driver for HbA1c, nephropathy, and retinopathy monitoring."
     },
     {
       "condition": "Essential hypertension",
       "since": "2014-07-22",
-      "relevance": "Comorbid cardiovascular risk factor."
+      "relevance": "Requires regular blood pressure monitoring and management."
     },
     {
       "condition": "Neuropathy due to type 2 diabetes mellitus",
       "since": "2020-08-25",
-      "relevance": "Diabetic complication affecting quality of life and pain management."
+      "relevance": "Complication of diabetes requiring ongoing assessment."
     },
     {
       "condition": "Hypertriglyceridemia",
       "since": "2015-07-28",
-      "relevance": "Cardiometabolic risk factor."
+      "relevance": "Cardiometabolic risk factor requiring lipid panel monitoring."
     },
     {
       "condition": "Metabolic syndrome X",
@@ -29,34 +29,44 @@
     {
       "condition": "Osteoarthritis of hip",
       "since": "2020-10-17",
-      "relevance": "Chronic pain source impacting mobility."
+      "relevance": "Chronic pain and mobility consideration."
     },
     {
       "condition": "Anemia",
       "since": "1995-06-27",
-      "relevance": "Chronic condition requiring monitoring."
+      "relevance": "Chronic condition requiring periodic monitoring."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1995-06-27",
+      "relevance": "Historical precursor to current type 2 diabetes."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-09-23",
+      "relevance": "Recent finding potentially impacting overall health management."
     }
   ],
   "current_medications": [
     {
       "medication": "lisinopril 10 MG Oral Tablet",
-      "note": "Prescribed 2025-09-23 for hypertension."
+      "note": "Prescribed 2025-09-23."
     },
     {
       "medication": "amLODIPine 2.5 MG Oral Tablet",
-      "note": "Prescribed 2025-09-23 for hypertension."
+      "note": "Prescribed 2025-09-23."
     }
   ],
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "HbA1c Overdue: Last HbA1c was 347 days ago (value: 6.83%). Due every 180 days.",
-      "severity": "medium",
+      "gap": "HbA1c Overdue: Last HbA1c was on 2025-09-23 (value: 6.83%). Due every 6 months.",
+      "severity": "high",
       "action": "Order HbA1c test.",
       "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
     },
     {
-      "gap": "Blood Pressure Overdue: Last BP reading was 347 days ago (121 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-09-23 (121 mm[Hg]). Due every 6 months.",
       "severity": "medium",
       "action": "Measure blood pressure.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
@@ -68,32 +78,62 @@
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-10-01.",
+      "gap": "Lipid Panel Overdue: Last lipid panel was on 2025-09-23. Due annually.",
+      "severity": "medium",
+      "action": "Order lipid panel.",
+      "source": "HEDIS CDC: Annual lipid panel for diabetic patients"
+    },
+    {
+      "gap": "Nephropathy Screening Overdue: Last urine microalbumin was on 2025-09-23. Due annually.",
+      "severity": "medium",
+      "action": "Order urine microalbumin test.",
+      "source": "HEDIS CDC-NP: Annual nephropathy screening for diabetic patients"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-09-23 (27.31 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Calculate BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-09-23.",
       "severity": "low",
       "action": "Schedule or conduct annual wellness visit.",
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a general examination on 2025-09-23 with HbA1c 6.83%, weight 84.5 kg, and pain score 3/10. Ophthalmic exams on 2025-11-26 and 2024-12-31 showed no apparent retinopathy and intraocular pressure of 16 mmHg in both eyes. Most recent encounter was 2026-06-30 for a symptom.",
-  "sdoh_flags": [
-    "Not in labor force",
-    "Stress",
-    "Reports of violence in the environment"
+  "recent_activity": "Patient had a recent encounter for symptoms on 2026-06-30. Ophthalmic exams in 2025-11-26 and 2024-12-31 showed no apparent retinopathy and intraocular pressure of 16 mm[Hg] in both eyes. Labs from 2025-09-23 included HbA1c 6.83%, weight 84.5 kg, height 175.9 cm, and pain score 3/10. Influenza vaccination was administered on 2025-09-23.",
+  "social_history": [
+    "Received higher education (recorded 1995-06-27)",
+    "Not in labor force (recorded 2025-09-23)",
+    "Reports of violence in the environment (recorded 2025-09-23)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 6.51% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $95,603.",
+    "In the patient's ZIP code, 14.82% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.92% of the labor force is unemployed.",
+    "In the patient's ZIP code, 5.65% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 11.16% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.54% of households have no vehicle.",
+    "In the patient's ZIP code, 51.79% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address social determinant of health flags: violence in environment, stress, and unemployment.",
-    "Order HbA1c and measure blood pressure to close overdue monitoring gaps.",
-    "Refer for colonoscopy screening.",
-    "Review current antihypertensive regimen (lisinopril, amlodipine) given recent prescription dates and lack of recent BP data.",
-    "Assess pain management for osteoarthritis and diabetic neuropathy."
+    "Order HbA1c test as it is overdue and high severity.",
+    "Measure blood pressure as it is overdue.",
+    "Refer for colonoscopy as it is overdue for age 49.",
+    "Order lipid panel and urine microalbumin test as they are overdue.",
+    "Calculate BMI and schedule annual wellness visit.",
+    "Address recent stress finding and reports of violence in the environment."
   ],
   "_meta": {
     "patient_id": "61314a1c-3140-fe6c-66c3-6b5ee303b58c",
     "patient_name": "Leslie90 Theron432 Toy286",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2377,
-    "output_tokens": 1154,
+    "input_tokens": 3193,
+    "output_tokens": 1689,
     "finish_reason": "stop",
     "truncated": false
   }

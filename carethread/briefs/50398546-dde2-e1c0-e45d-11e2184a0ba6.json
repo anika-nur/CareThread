@@ -1,71 +1,71 @@
 {
-  "patient_summary": "Darcel357 Randi364 Quigley282 is a 61-year-old female with prediabetes, hypertension, hyperlipidemia, chronic pain, and newly diagnosed CKD stage 1.",
+  "patient_summary": "Darcel357 Randi364 Quigley282 is a 61-year-old female with prediabetes, chronic kidney disease stage 1, essential hypertension, hyperlipidemia, and chronic pain.",
   "key_conditions": [
     {
       "condition": "Prediabetes",
       "since": "1995-06-07",
-      "relevance": "Long-standing metabolic risk factor; now on insulin."
-    },
-    {
-      "condition": "Essential hypertension",
-      "since": "2018-05-09",
-      "relevance": "Managed with amlodipine; contributes to CKD risk."
-    },
-    {
-      "condition": "Hyperlipidemia",
-      "since": "2015-04-22",
-      "relevance": "Managed with simvastatin; cardiovascular risk."
+      "relevance": "Metabolic risk factor requiring monitoring and management."
     },
     {
       "condition": "Chronic kidney disease stage 1",
       "since": "2026-06-24",
-      "relevance": "New diagnosis; requires monitoring and medication review."
+      "relevance": "Recent diagnosis requiring renal function monitoring and medication review."
     },
     {
-      "condition": "Disorder of kidney due to diabetes mellitus",
-      "since": "2026-06-24",
-      "relevance": "Etiology of CKD; linked to prediabetes/diabetes history."
+      "condition": "Essential hypertension",
+      "since": "2018-05-09",
+      "relevance": "Chronic condition managed with antihypertensive therapy."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2015-04-22",
+      "relevance": "Cardiovascular risk factor managed with statin therapy."
     },
     {
       "condition": "Chronic pain",
       "since": "2014-01-31",
-      "relevance": "Includes low back and neck pain; managed with naproxen."
+      "relevance": "Ongoing symptom managed with analgesics."
     },
     {
-      "condition": "Obesity",
-      "since": "2009-05-06",
-      "relevance": "BMI 30+; contributes to metabolic syndrome and pain."
+      "condition": "Osteoarthritis of knee",
+      "since": "2023-03-04",
+      "relevance": "Contributing factor to chronic pain and mobility."
     },
     {
       "condition": "Sleep apnea",
       "since": "2017-05-11",
-      "relevance": "Comorbid with metabolic syndrome and hypertension."
+      "relevance": "Comorbid condition affecting cardiovascular and metabolic health."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2017-05-03",
+      "relevance": "Cluster of conditions increasing cardiovascular and diabetes risk."
     }
   ],
   "current_medications": [
     {
       "medication": "Simvastatin 10 MG Oral Tablet",
-      "note": "Prescribed 2026-06-25 for hyperlipidemia."
+      "note": "Prescribed 2026-06-25."
     },
     {
       "medication": "amLODIPine 2.5 MG Oral Tablet",
-      "note": "Prescribed 2026-06-24 for hypertension."
+      "note": "Prescribed 2026-06-24."
     },
     {
       "medication": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",
-      "note": "Prescribed 2026-06-24 for glycemic control."
+      "note": "Prescribed 2026-06-24."
     },
     {
       "medication": "Naproxen sodium 220 MG Oral Tablet",
-      "note": "Prescribed 2023-03-04 for chronic pain/osteoarthritis."
+      "note": "Prescribed 2023-03-04."
     },
     {
       "medication": "Clopidogrel 75 MG Oral Tablet",
-      "note": "Prescribed 2013-05-22; long-term use."
+      "note": "Prescribed 2013-05-22; confirm the patient still takes it."
     },
     {
       "medication": "Alteplase 100 MG Injection",
-      "note": "Prescribed 2013-05-22; long-term use."
+      "note": "Prescribed 2013-05-22; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -76,7 +76,7 @@
         "amLODIPine 2.5 MG Oral Tablet",
         "Simvastatin 10 MG Oral Tablet"
       ],
-      "recommendation": "Review for potential increased risk of myopathy/rhabdomyolysis; consider alternative statin or dose adjustment."
+      "recommendation": "Review interaction between amlodipine and simvastatin; consider dose adjustment or alternative statin."
     },
     {
       "type": "drug_interaction",
@@ -85,7 +85,7 @@
         "Alteplase 100 MG Injection",
         "Clopidogrel 75 MG Oral Tablet"
       ],
-      "recommendation": "Monitor for increased bleeding risk."
+      "recommendation": "Confirm the patient still takes Alteplase 100 MG Injection before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -94,7 +94,7 @@
         "Clopidogrel 75 MG Oral Tablet",
         "Naproxen sodium 220 MG Oral Tablet"
       ],
-      "recommendation": "Monitor for increased risk of GI bleeding; consider gastroprotection."
+      "recommendation": "Confirm the patient still takes Clopidogrel 75 MG Oral Tablet before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -103,7 +103,7 @@
         "Alteplase 100 MG Injection",
         "Naproxen sodium 220 MG Oral Tablet"
       ],
-      "recommendation": "Monitor for increased bleeding risk."
+      "recommendation": "Confirm the patient still takes Alteplase 100 MG Injection before acting on this interaction."
     }
   ],
   "care_gaps": [
@@ -124,33 +124,28 @@
       "severity": "medium",
       "action": "Schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-02.",
-      "severity": "low",
-      "action": "Conduct or schedule annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a follow-up encounter on 2026-06-25 and a general examination on 2026-06-24. Recent labs from 2026-06-25 include social determinant screenings (food insecurity reported, no transportation barriers, safe housing, no recent fear of partner) and income data ($41,326/year). Immunizations for influenza and Td were administered on 2026-06-24. New diagnoses of CKD stage 1 and diabetic kidney disorder were recorded on 2026-06-24, with new prescriptions for amlodipine and insulin.",
-  "sdoh_flags": [
-    "Food insecurity: Unable to get food when needed in past 1 year.",
-    "Income: $41,326/year (below 200% FPL for family of 1 in MA)."
+  "recent_activity": "Patient had a follow-up encounter on 2026-06-25 and a general examination on 2026-06-24. Recent labs from 2026-06-25 include social determinants of health screenings, noting food insecurity and a household income of 41326 /a. Immunizations for influenza and Td were administered on 2026-06-24.",
+  "social_history": [
+    "Received higher education (recorded 1983-06-16)",
+    "Victim of intimate partner abuse (recorded 1993-07-01)",
+    "Full-time employment (recorded 2026-06-25)"
   ],
+  "community_context": [],
   "priority_actions": [
-    "Address major drug interaction between amlodipine and simvastatin; consider statin switch or dose adjustment.",
-    "Review new CKD stage 1 diagnosis and diabetic kidney disorder; assess need for nephrology referral or medication adjustments (e.g., naproxen use in CKD).",
-    "Address moderate drug interactions involving alteplase, clopidogrel, and naproxen; evaluate bleeding risk and need for gastroprotection.",
-    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
-    "Address food insecurity with social work or community resource referral."
+    "Confirm if patient still takes Clopidogrel 75 MG Oral Tablet and Alteplase 100 MG Injection.",
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Schedule overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Review recent diagnosis of chronic kidney disease stage 1 and disorder of kidney due to diabetes mellitus."
   ],
   "_meta": {
     "patient_id": "50398546-dde2-e1c0-e45d-11e2184a0ba6",
     "patient_name": "Darcel357 Randi364 Quigley282",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2892,
-    "output_tokens": 1724,
+    "input_tokens": 3326,
+    "output_tokens": 1577,
     "finish_reason": "stop",
     "truncated": false
   }

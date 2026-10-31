@@ -1,30 +1,30 @@
 {
-  "patient_summary": "Felice694 Padberg411 is a 57-year-old female with a complex history including type 2 diabetes, chronic congestive heart failure, ischemic heart disease, and a history of intimate partner abuse.",
+  "patient_summary": "Felice694 Padberg411 is a 57-year-old female with a complex history including type 2 diabetes, chronic congestive heart failure, ischemic heart disease, and hypertension.",
   "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2000-04-09",
+      "relevance": "Primary metabolic condition requiring ongoing management and monitoring."
+    },
     {
       "condition": "Chronic congestive heart failure",
       "since": "2021-11-12",
-      "relevance": "Primary driver for current diuretic and beta-blocker therapy."
+      "relevance": "Major cardiovascular condition impacting medication regimen and fluid status."
     },
     {
       "condition": "Ischemic heart disease",
       "since": "2012-06-03",
-      "relevance": "Indicates need for anti-anginal and antiplatelet management."
-    },
-    {
-      "condition": "Diabetes mellitus type 2",
-      "since": "2000-04-09",
-      "relevance": "Long-standing condition requiring glucose monitoring and complication screening."
+      "relevance": "Chronic cardiovascular disease requiring secondary prevention."
     },
     {
       "condition": "Essential hypertension",
       "since": "2003-04-13",
-      "relevance": "Managed with multiple antihypertensive agents."
+      "relevance": "Chronic condition contributing to cardiovascular risk."
     },
     {
-      "condition": "Victim of intimate partner abuse",
-      "since": "2016-06-26",
-      "relevance": "Critical social determinant requiring safety assessment and support."
+      "condition": "Nonproliferative diabetic retinopathy due to type II diabetes mellitus",
+      "since": "2012-07-10",
+      "relevance": "Diabetic complication requiring regular ophthalmic evaluation."
     }
   ],
   "current_medications": [
@@ -58,27 +58,27 @@
     },
     {
       "medication": "Simvastatin 20 MG Oral Tablet",
-      "note": "Prescribed 2012-06-10."
+      "note": "Prescribed 2012-06-10; confirm the patient still takes it."
     },
     {
       "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
-      "note": "Prescribed 2012-06-10."
+      "note": "Prescribed 2012-06-10; confirm the patient still takes it."
     },
     {
       "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
-      "note": "Prescribed 2012-06-10."
+      "note": "Prescribed 2012-06-10; confirm the patient still takes it."
     },
     {
       "medication": "Clopidogrel 75 MG Oral Tablet",
-      "note": "Prescribed 2004-08-20."
+      "note": "Prescribed 2004-08-20; confirm the patient still takes it."
     },
     {
       "medication": "Alteplase 100 MG Injection",
-      "note": "Prescribed 2004-08-20."
+      "note": "Prescribed 2004-08-20; confirm the patient still takes it."
     },
     {
       "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
-      "note": "Prescribed 1973-01-12."
+      "note": "Prescribed 1973-01-12; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -89,7 +89,7 @@
         "amLODIPine 2.5 MG Oral Tablet",
         "Simvastatin 20 MG Oral Tablet"
       ],
-      "recommendation": "Review necessity of concurrent use; consider dose adjustment or alternative statin."
+      "recommendation": "Confirm the patient still takes Simvastatin 20 MG Oral Tablet before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -137,33 +137,37 @@
       "severity": "medium",
       "action": "Schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-08-31.",
-      "severity": "low",
-      "action": "Schedule annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a follow-up encounter on 2026-08-30 and a general examination on 2026-08-23. Labs from 2026-08-30 show Glucose 124.83 mg/dL, Creatinine 2.8535 mg/dL, and eGFR 76.498 mL/min. Influenza vaccination was administered on 2026-08-23.",
-  "sdoh_flags": [
+  "recent_activity": "Patient had a follow-up encounter on 2026-08-30 and a general examination on 2026-08-23. Labs from 2026-08-30 show Glucose 124.83 mg/dL, Creatinine 2.8535 mg/dL, and eGFR 76.498 mL/min. Patient received an influenza vaccination on 2026-08-23.",
+  "social_history": [
+    "Educated to high school level",
     "Victim of intimate partner abuse",
-    "Stress"
+    "Full-time employment"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 9.64% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $98,418.",
+    "In the patient's ZIP code, 5.51% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.31% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.26% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 11.07% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 20.26% of households have no vehicle.",
+    "In the patient's ZIP code, 53.6% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address major drug interaction between amlodipine and simvastatin.",
-    "Assess safety and support needs related to history of intimate partner abuse.",
-    "Review renal function (Creatinine 2.8535 mg/dL, eGFR 76.498 mL/min) in context of heart failure and diabetes.",
-    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
-    "Review current antihypertensive regimen for potential polypharmacy and side effects."
+    "Confirm the patient still takes Simvastatin 20 MG Oral Tablet, Alteplase 100 MG Injection, Clopidogrel 75 MG Oral Tablet, Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray, 24 HR metoprolol succinate 100 MG Extended Release Oral Tablet, and Chlorpheniramine Maleate 2 MG/ML Oral Solution.",
+    "Address the major drug interaction between amLODIPine and Simvastatin 20 MG Oral Tablet if the patient is still taking the older simvastatin prescription.",
+    "Review recent lab results, specifically Creatinine 2.8535 mg/dL and eGFR 76.498 mL/min, in the context of chronic kidney disease and heart failure.",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening."
   ],
   "_meta": {
     "patient_id": "7292d8f3-a4b3-991c-42cc-a370fa0b266e",
     "patient_name": "Felice694 Padberg411",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 3156,
-    "output_tokens": 1895,
+    "input_tokens": 3823,
+    "output_tokens": 1989,
     "finish_reason": "stop",
     "truncated": false
   }

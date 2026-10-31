@@ -1,0 +1,97 @@
+{
+  "patient_summary": "Kerry175 Elia719 O'Conner199 is a 47-year-old female with asthma, prediabetes, and a history of miscarriage, currently pregnant.",
+  "key_conditions": [
+    {
+      "condition": "Asthma",
+      "since": "1999-10-23",
+      "relevance": "Chronic respiratory condition requiring ongoing management and recent hospitalization."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2023-03-04",
+      "relevance": "Metabolic condition requiring monitoring, especially during pregnancy."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2018-06-11",
+      "relevance": "Relevant obstetric history for current pregnancy management."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "budesonide 0.25 MG/ML Inhalation Suspension",
+      "note": "Prescribed 2026-03-21."
+    },
+    {
+      "medication": "albuterol 0.83 MG/ML Inhalation Solution",
+      "note": "Prescribed 2026-03-21."
+    },
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1979-10-26; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "budesonide",
+        "albuterol"
+      ],
+      "recommendation": "Monitor for potential additive effects or reduced efficacy; no specific action required per detection layer."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 4 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had an emergency hospital admission for asthma on 2026-07-02, followed by an asthma follow-up on 2026-07-04 and a general encounter on 2026-08-15. Labs from 2026-08-08 indicate the patient is pregnant. Previous labs from 2026-03-21 show Hemoglobin A1c 6.25%, BMI 29.11 kg/m2, and blood pressure 104/80 mmHg. Influenza vaccination was administered on 2026-03-21.",
+  "social_history": [
+    "Educated to high school level (recorded 1997-10-11)",
+    "Not in labor force (recorded 2026-03-21)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 10.56% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $85,638.",
+    "In the patient's ZIP code, 3.02% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.54% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.23% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 6.08% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 5.61% of households have no vehicle.",
+    "In the patient's ZIP code, 50.13% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm the patient still takes Chlorpheniramine Maleate 2 MG/ML Oral Solution.",
+    "Address current pregnancy status and manage asthma/prediabetes in the context of pregnancy.",
+    "Schedule overdue cervical cancer screening.",
+    "Schedule overdue mammogram.",
+    "Schedule overdue colonoscopy."
+  ],
+  "_meta": {
+    "patient_id": "0bc260df-9e46-9f06-5bd7-b95c932e6492",
+    "patient_name": "Kerry175 Elia719 O'Conner199",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2593,
+    "output_tokens": 1249,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

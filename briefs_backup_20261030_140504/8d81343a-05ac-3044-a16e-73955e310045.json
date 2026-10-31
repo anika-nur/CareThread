@@ -1,0 +1,121 @@
+{
+  "patient_summary": "Carlita746 Tenesha164 Pollich983 is a 49-year-old female with essential hypertension, obesity, hyperlipidemia, metabolic syndrome, and prediabetes.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2018-12-18",
+      "relevance": "Primary condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2019-12-24",
+      "relevance": "Contributing factor to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2024-01-16",
+      "relevance": "Requires lipid management and monitoring."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2025-01-21",
+      "relevance": "Cluster of conditions increasing cardiovascular and diabetes risk."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2025-01-21",
+      "relevance": "Requires monitoring to prevent progression to type 2 diabetes."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System [NuvaRing]",
+      "note": "Prescribed 2026-08-01."
+    },
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-02-05."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2026-01-27."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2026-01-27."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2026-01-27."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 10 MG Oral Tablet"
+      ],
+      "recommendation": "Review interaction between amlodipine and simvastatin; consider dose adjustment or alternative statin."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 275 days ago (134 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Obtain current blood pressure reading.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 49, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 7 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a consultation on 2026-08-01, a follow-up on 2026-02-05, and a general examination on 2026-01-27. Labs from 2026-02-05 show Glucose 64.89 mg/dL, Creatinine 2.6778 mg/dL, and eGFR 84.163 mL/min. Patient received influenza vaccinations in 2026, 2025, 2024, 2023, and 2022.",
+  "social_history": [
+    "Received higher education (recorded 1995-01-31)",
+    "Has a criminal record (recorded 2015-07-07)",
+    "Full-time employment (recorded 2023-01-10)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 5.17% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $109,884.",
+    "In the patient's ZIP code, 1.11% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.57% of the labor force is unemployed.",
+    "In the patient's ZIP code, 8.88% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.87% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.19% of households have no vehicle.",
+    "In the patient's ZIP code, 42.39% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Obtain current blood pressure reading (overdue by 95 days).",
+    "Schedule overdue colonoscopy, mammogram, and cervical screening.",
+    "Review recent lab values, including Creatinine 2.6778 mg/dL and eGFR 84.163 mL/min."
+  ],
+  "_meta": {
+    "patient_id": "8d81343a-05ac-3044-a16e-73955e310045",
+    "patient_name": "Carlita746 Tenesha164 Pollich983",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2915,
+    "output_tokens": 1572,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

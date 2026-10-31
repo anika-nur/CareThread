@@ -77,6 +77,11 @@ def _lab_src(l):
                 l.get("loinc_code", ""))
 
 
+def _enc_src(e):
+    return _src("encounters", e["type"],
+                f"{e['class']} encounter on {e['date']}", e.get("date", ""))
+
+
 def _gap_src(g):
     bits = [g.get("guideline", "")]
     if g.get("days_overdue"):
@@ -124,12 +129,22 @@ def _ix_sources(ix, data):
     return sources
 
 
+def canonical_drugs(text):
+    """Swap each US drug alias for the DDInter name the interaction table
+    uses, so 'albuterol' in a brief can match 'salbutamol' in the record."""
+    text = str(text).lower()
+    for alias, canonical in SYNONYMS.items():
+        text = re.sub(rf"\b{re.escape(alias)}\b", canonical, text)
+    return text
+
+
 def trace_alerts(brief, data):
     out = []
     for item in brief.get("medication_alerts", []):
-        pair = " ".join(item.get("drugs", []))
+        pair = canonical_drugs(" ".join(item.get("drugs", [])))
         m = best_match(pair, data["drug_interactions"],
-                       key=lambda ix: f"{ix['drug_a_generic']} {ix['drug_b_generic']}")
+                       key=lambda ix: canonical_drugs(
+                           f"{ix['drug_a_generic']} {ix['drug_b_generic']}"))
         out.append({**item, "sources": _ix_sources(m, data) if m else []})
     return out
 
@@ -154,6 +169,18 @@ def _names_drug(text_words, generic):
     or the US name it was matched from ('albuterol' for 'salbutamol')."""
     names = [generic] + [us for us, inn in SYNONYMS.items() if inn == generic]
     return any(words(n) <= text_words for n in names)
+
+
+def trace_social(brief, data):
+    """Social history entries trace to the patient's social findings."""
+    out = []
+    for text in brief.get("social_history", []):
+        m = best_match(text, data.get("social_history", []),
+                       key=lambda s: s["finding"])
+        sources = [_src("conditions", m["finding"], f"Recorded {m['since']}",
+                        m["since"], m["snomed_code"])] if m else []
+        out.append({"text": text, "sources": sources})
+    return out
 
 
 def trace_actions(brief, data):
@@ -181,10 +208,37 @@ def trace_actions(brief, data):
 
         # Actions that quote a value ("creatinine 2.7633") cite that lab
         numbers = set(NUMBER.findall(text))
-        labs = [l for l in data["recent_labs"]
-                if str(l["value"]).strip() in numbers]
-        out.append({"text": text, "sources": [_lab_src(l) for l in labs]})
+        sources = [_lab_src(l) for l in data["recent_labs"]
+                   if str(l["value"]).strip() in numbers]
+        # ...or name a coded result ("worsening response to cancer treatment"),
+        # or a kind of visit ("recent postoperative status")
+        if not sources:
+            coded = [l for l in data["recent_labs"] if not NUMBER.fullmatch(
+                str(l["value"]).strip())]
+            obs = best_match(text, coded, key=lambda l: l["test"])
+            if obs:
+                sources.append(_lab_src(obs))
+            enc = next((e for e in data["recent_encounters"]
+                        if (ew := _encounter_words(e["type"]))
+                        and ew <= words(text)), None)
+            if enc:
+                sources.append(_enc_src(enc))
+        out.append({"text": text, "sources": sources})
     return out
+
+
+# Words every encounter type shares; matching on them would tie any action
+# to any visit ("check blood pressure" ↔ "Encounter for check up").
+_GENERIC_ENCOUNTER = {"follow", "up", "visit", "encounter", "procedure",
+                      "regime", "therapy", "check", "admission", "hospital",
+                      "general", "examination", "patient"}
+
+
+def _encounter_words(encounter_type):
+    """Distinctive words of an encounter type: 'Postoperative follow-up
+    visit (procedure)' → {'postoperative'}."""
+    return {w for w in words(encounter_type)
+            if w not in _GENERIC_ENCOUNTER and len(w) >= 6}
 
 
 # ── Prose tracing: numbers and condition names inside sentences ──────────
@@ -270,8 +324,9 @@ def annotate_brief(brief, data):
     alerts = trace_alerts(brief, data)
     gaps = trace_gaps(brief, data)
     actions = trace_actions(brief, data)
+    social = trace_social(brief, data)
 
-    traceable = conditions + medications + alerts + gaps + actions
+    traceable = conditions + medications + alerts + gaps + actions + social
     traced = sum(1 for item in traceable if item.get("sources"))
 
     return {
@@ -283,7 +338,9 @@ def annotate_brief(brief, data):
         "medication_alerts": alerts,
         "care_gaps": gaps,
         "priority_actions": actions,
-        "sdoh_flags": brief.get("sdoh_flags", []),
+        "social_history": social,
+        "community_context": brief.get("community_context", []),
+        "sdoh_flags": brief.get("sdoh_flags", []),   # briefs from before the split
         "coverage": {
             "traced": traced,
             "total": len(traceable),

@@ -1,0 +1,140 @@
+{
+  "patient_summary": "Susana117 Valencia279 Kirlin939 is a 64-year-old female with a history of prediabetes, anemia, chronic sinusitis, obstructive sleep apnea, essential hypertension, obesity, metabolic syndrome, and hyperlipidemia.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "1993-10-13",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1993-10-13",
+      "relevance": "Chronic condition associated with Vitamin B12 injection history."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1998-05-23",
+      "relevance": "Chronic respiratory condition."
+    },
+    {
+      "condition": "Obstructive sleep apnea syndrome",
+      "since": "1998-08-15",
+      "relevance": "Chronic sleep disorder."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "1999-10-20",
+      "relevance": "Chronic cardiovascular condition managed with antihypertensives."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2002-06-19",
+      "relevance": "Chronic metabolic risk factor."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2005-11-23",
+      "relevance": "Cluster of conditions increasing cardiovascular risk."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2022-02-23",
+      "relevance": "Chronic lipid disorder managed with statin."
+    },
+    {
+      "condition": "Stress",
+      "since": "2024-03-06",
+      "relevance": "Recent psychological finding."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-03-25."
+    },
+    {
+      "medication": "losartan potassium 25 MG Oral Tablet",
+      "note": "Prescribed 2026-03-18."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2026-03-18."
+    },
+    {
+      "medication": "Vitamin B12 5 MG/ML Injectable Solution",
+      "note": "Prescribed 1993-10-20; started over 5 years ago and never re-prescribed."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1965-06-26; started over 5 years ago and never re-prescribed."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "diphenhydramine",
+        "losartan"
+      ],
+      "recommendation": "Confirm the patient still takes diphenhydramine before acting on this interaction."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 224 days ago (128 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Obtain blood pressure reading.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 64, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2026-04-01, a follow-up on 2026-03-25, and a general examination on 2026-03-18. Labs from 2026-03-25 show Glucose 86.12 mg/dL, Urea nitrogen 15.78 mg/dL, Creatinine 3.2555 mg/dL, Calcium 9.54 mg/dL, Sodium 137.97 mmol/L, Potassium 3.94 mmol/L, Chloride 106.69 mmol/L, Carbon dioxide 27.33 mmol/L, GFR 79.58 mL/min, and Protein 7.149 g/dL. Influenza vaccination was administered on 2026-03-18.",
+  "social_history": [
+    "Received higher education (recorded 1980-09-24)",
+    "Part-time employment (recorded 2026-03-18)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 10.77% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $136,382.",
+    "In the patient's ZIP code, 1.86% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.6% of the labor force is unemployed.",
+    "In the patient's ZIP code, 11.02% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 4.52% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.89% of households have no vehicle.",
+    "In the patient's ZIP code, 38.66% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm if the patient still takes diphenhydrAMINE Hydrochloride 25 MG Oral Tablet to assess the moderate interaction with losartan.",
+    "Obtain a current blood pressure reading as the last one was 224 days ago.",
+    "Discuss and schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Review recent lab results, specifically Creatinine 3.2555 mg/dL and GFR 79.58 mL/min, in the context of her hypertension and medication regimen."
+  ],
+  "_meta": {
+    "patient_id": "14e22325-d564-a4f9-ccf4-330df1df656f",
+    "patient_name": "Susana117 Valencia279 Kirlin939",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3102,
+    "output_tokens": 1710,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

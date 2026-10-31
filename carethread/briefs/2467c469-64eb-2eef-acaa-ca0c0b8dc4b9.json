@@ -9,7 +9,7 @@
     {
       "condition": "Prediabetes",
       "since": "1993-05-08",
-      "relevance": "Risk factor for type 2 diabetes, requiring regular A1c monitoring."
+      "relevance": "Risk factor for type 2 diabetes; requires regular HbA1c monitoring."
     },
     {
       "condition": "Body mass index 30+ - obesity",
@@ -30,19 +30,19 @@
   "current_medications": [
     {
       "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
-      "note": "Prescribed 2025-09-27 for hypertension."
+      "note": "Prescribed 2025-09-27."
     },
     {
       "medication": "ferrous sulfate 325 MG Oral Tablet",
-      "note": "Prescribed 1993-11-06."
+      "note": "Prescribed 1993-11-06; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "Blood Pressure Overdue: Last BP reading was 343 days ago (120 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-09-27 (120 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Schedule or perform blood pressure monitoring.",
+      "action": "Schedule or perform blood pressure check.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
@@ -54,7 +54,7 @@
     {
       "gap": "Mammogram Overdue: Female patient, age 61, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
-      "action": "Schedule mammogram.",
+      "action": "Refer for mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
     },
     {
@@ -64,30 +64,49 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-10-05.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-09-27 (29.81 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-09-27.",
       "severity": "low",
       "action": "Conduct annual wellness visit.",
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a general examination on 2025-09-27 where labs were drawn. Recent labs from 2025-09-27 include Hemoglobin A1c 6.04 %, Body Weight 76.2 kg, BMI 29.81 kg/m2, Diastolic Blood Pressure 105 mm[Hg], Systolic Blood Pressure 120 mm[Hg], and Glucose 93.06 mg/dL. Influenza vaccination was administered on 2025-09-27. Previous encounters include check-ups and symptom visits in 2024.",
-  "sdoh_flags": [
-    "Refugee status",
-    "Has a criminal record"
+  "recent_activity": "Patient had a general examination on 2025-09-27 where HbA1c was 6.04%, BMI was 29.81 kg/m2, BP was 120/105 mmHg, and glucose was 93.06 mg/dL. Previous visits include check-ups and symptom encounters in 2024. Influenza vaccination was administered on 2025-09-27.",
+  "social_history": [
+    "Received higher education (recorded 1983-04-23)",
+    "Refugee (recorded 2010-07-03)",
+    "Full-time employment (recorded 2023-09-16)",
+    "Has a criminal record (recorded 2024-09-21)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 6.42% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $117,198.",
+    "In the patient's ZIP code, 7.02% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.72% of the labor force is unemployed.",
+    "In the patient's ZIP code, 4.56% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.57% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.0% of households have no vehicle.",
+    "In the patient's ZIP code, 55.29% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
-    "Review blood pressure management given recent diastolic reading of 105 mm[Hg] and overdue BP monitoring gap.",
-    "Discuss metabolic syndrome and prediabetes management, including lifestyle modifications.",
-    "Conduct annual wellness visit to address overall preventive care needs."
+    "Confirm the patient still takes ferrous sulfate.",
+    "Address overdue blood pressure monitoring (last 2025-09-27, due every 6 months).",
+    "Refer for overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Perform annual BMI screening and wellness visit."
   ],
   "_meta": {
     "patient_id": "2467c469-64eb-2eef-acaa-ca0c0b8dc4b9",
     "patient_name": "Alicia629 Pilar644 Col\u00f3n139",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2278,
-    "output_tokens": 1147,
+    "input_tokens": 3039,
+    "output_tokens": 1476,
     "finish_reason": "stop",
     "truncated": false
   }

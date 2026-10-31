@@ -1,84 +1,107 @@
 {
-  "patient_summary": "Abbey813 Kirstin394 Yundt842 is a 67-year-old female with type 2 diabetes, essential hypertension, obesity, and a history of intimate partner abuse.",
+  "patient_summary": "Abbey813 Kirstin394 Yundt842 is a 67-year-old female with type 2 diabetes, essential hypertension, obesity, and anemia.",
   "key_conditions": [
     {
       "condition": "Diabetes mellitus type 2",
       "since": "2007-11-01",
-      "relevance": "Chronic metabolic condition requiring ongoing monitoring and management."
+      "relevance": "Primary chronic condition requiring ongoing monitoring and management."
     },
     {
       "condition": "Essential hypertension",
       "since": "2007-11-01",
-      "relevance": "Chronic cardiovascular risk factor requiring blood pressure monitoring."
+      "relevance": "Comorbid cardiovascular risk factor managed with lisinopril."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "1987-12-16",
-      "relevance": "Long-standing weight-related condition contributing to metabolic syndrome."
+      "relevance": "Long-standing metabolic risk factor."
     },
     {
-      "condition": "Victim of intimate partner abuse",
-      "since": "2023-01-26",
-      "relevance": "Social determinant of health impacting safety and care planning."
+      "condition": "Anemia",
+      "since": "1981-12-09",
+      "relevance": "Chronic condition requiring periodic monitoring."
     },
     {
-      "condition": "Medication review due",
-      "since": "2025-02-05",
-      "relevance": "Indicates need for current medication assessment."
+      "condition": "Hypertriglyceridemia",
+      "since": "2008-11-05",
+      "relevance": "Metabolic disorder associated with diabetes and cardiovascular risk."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2008-11-05",
+      "relevance": "Cluster of conditions increasing cardiovascular and diabetes risk."
     }
   ],
   "current_medications": [
     {
       "medication": "lisinopril 10 MG Oral Tablet",
-      "note": "Prescribed 2026-02-11."
+      "note": "Prescribed 2026-02-11 for hypertension."
     }
   ],
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "HbA1c Overdue: Last HbA1c was 206 days ago (value: 6.86%). Due every 180 days.",
+      "gap": "HbA1c Overdue: Last HbA1c was on 2026-02-11 (value: 6.86%). Due every 6 months.",
       "severity": "medium",
-      "action": "Order HbA1c test.",
+      "action": "Schedule HbA1c test.",
       "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
     },
     {
-      "gap": "Blood Pressure Overdue: Last BP reading was 206 days ago (133 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2026-02-11 (133 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Measure blood pressure.",
+      "action": "Schedule blood pressure monitoring.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
-      "gap": "Colonoscopy Overdue: Patient is 66 with no colonoscopy on record. Recommended for ages 45-75.",
+      "gap": "Colonoscopy Overdue: Patient is 67 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
       "action": "Refer for colonoscopy.",
       "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
     },
     {
-      "gap": "Mammogram Overdue: Female patient, age 66, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "gap": "Mammogram Overdue: Female patient, age 67, with no mammogram on record. Recommended every 2 years for ages 40-74.",
       "severity": "medium",
       "action": "Refer for mammogram.",
       "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Diabetic Eye Exam Overdue: Last eye exam was 1 years ago. Due annually.",
+      "severity": "medium",
+      "action": "Schedule annual diabetic eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2026-02-25 and a general examination on 2026-02-11 where lisinopril was prescribed. Recent social determinants screening on 2026-02-12 indicated food insecurity but no current fear of partner or transportation barriers. Immunizations for influenza and pneumococcal disease were administered in February 2026.",
-  "sdoh_flags": [
-    "Food insecurity: Unable to get food when really needed in past 1 year",
-    "History of intimate partner abuse",
-    "Limited social contact"
+  "recent_activity": "Patient had a check-up on 2026-02-25 and a general examination on 2026-02-11 where lisinopril was prescribed. Recent labs from 2026-02-12 include social determinants of health screenings and an HbA1c of 6.86% from 2026-02-11. Immunizations for influenza and pneumococcal vaccines were administered on 2026-02-11.",
+  "social_history": [
+    "Received higher education (recorded 1977-12-01)",
+    "Limited social contact (recorded 2021-01-14)",
+    "Victim of intimate partner abuse (recorded 2023-01-26)",
+    "Part-time employment (recorded 2026-02-12)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 24.96% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $61,411.",
+    "In the patient's ZIP code, 4.27% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.89% of the labor force is unemployed.",
+    "In the patient's ZIP code, 26.25% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 10.96% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.03% of households have no vehicle.",
+    "In the patient's ZIP code, 59.67% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address food insecurity with social work referral or resource list.",
-    "Order overdue HbA1c and measure blood pressure.",
-    "Discuss and refer for overdue colonoscopy and mammogram.",
-    "Review current medications and assess for medication review needs."
+    "Address food insecurity reported in 2026-02-12 screening by connecting patient to local food resources.",
+    "Schedule overdue colonoscopy and mammogram.",
+    "Schedule annual diabetic eye exam.",
+    "Monitor blood pressure and HbA1c per 6-month intervals."
   ],
   "_meta": {
     "patient_id": "d6a95bf9-a19f-2c1c-75fc-ed2f332b0440",
     "patient_name": "Abbey813 Kirstin394 Yundt842",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2340,
-    "output_tokens": 971,
+    "input_tokens": 3038,
+    "output_tokens": 1331,
     "finish_reason": "stop",
     "truncated": false
   }

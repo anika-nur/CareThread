@@ -17,3 +17,7 @@ carethread/clh_2023_zipcode_2_0.xlsx
 # Local editor / OS files
 .DS_Store
 .claude/settings.local.json
+.playwright-mcp/
+
+# Local backups (contain full database copies)
+carethread/backups/

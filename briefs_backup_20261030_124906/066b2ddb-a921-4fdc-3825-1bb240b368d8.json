@@ -1,0 +1,101 @@
+{
+  "patient_summary": "Kirsten270 Prosacco716 is a 68-year-old female with obesity, prediabetes, anemia, osteoarthritis of the knee, and stress.",
+  "key_conditions": [
+    {
+      "condition": "Obesity",
+      "since": "1995-09-05",
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1998-06-23",
+      "relevance": "Risk factor for type 2 diabetes; requires regular A1c monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2000-06-27",
+      "relevance": "Chronic disorder requiring periodic evaluation."
+    },
+    {
+      "condition": "Osteoarthritis of knee",
+      "since": "2024-09-24",
+      "relevance": "Recent diagnosis contributing to pain and mobility considerations."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-09-23",
+      "relevance": "Recent finding impacting overall well-being."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2024-09-24 for osteoarthritis."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 68 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 68, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was 400 days ago. Due annually.",
+      "severity": "low",
+      "action": "Administer or schedule flu vaccine.",
+      "source": "CDC ACIP: Annual flu vaccine for adults 65+"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 400 days ago (28.21 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-10-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2025-10-07 and a general examination on 2025-09-23. Labs from 2025-09-23 show Hemoglobin A1c 6.19%, BMI 28.21 kg/m2, Systolic BP 134 mmHg, Diastolic BP 75 mmHg, Heart rate 99 /min, and Glucose 89.28 mg/dL. Pain severity was reported as 0. Influenza vaccine was administered on 2025-09-23.",
+  "social_history": [
+    "Only received primary school education (recorded 1976-08-10)",
+    "Full-time employment (recorded 2021-08-31)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.35% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $189,355.",
+    "In the patient's ZIP code, 1.87% of residents have no health insurance.",
+    "In the patient's ZIP code, 5.09% of the labor force is unemployed.",
+    "In the patient's ZIP code, 2.41% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.56% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 2.35% of households have no vehicle.",
+    "In the patient's ZIP code, 50.0% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy and mammogram screenings.",
+    "Review recent lab results including A1c 6.19% and BMI 28.21 kg/m2.",
+    "Assess current pain management for osteoarthritis given recent naproxen prescription.",
+    "Discuss stress management strategies.",
+    "Verify if annual wellness visit components were completed during the 2025-10-07 encounter."
+  ],
+  "_meta": {
+    "patient_id": "066b2ddb-a921-4fdc-3825-1bb240b368d8",
+    "patient_name": "Kirsten270 Prosacco716",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2594,
+    "output_tokens": 1314,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

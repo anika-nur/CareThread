@@ -1,25 +1,20 @@
 {
-  "patient_summary": "Kerry175 Elia719 O'Conner199 is a 47-year-old female with asthma, prediabetes, and a recent pregnancy status of pregnant.",
+  "patient_summary": "Kerry175 Elia719 O'Conner199 is a 47-year-old female with asthma, prediabetes, and a history of miscarriage, currently pregnant.",
   "key_conditions": [
     {
       "condition": "Asthma",
       "since": "1999-10-23",
-      "relevance": "Chronic respiratory condition requiring ongoing management and recent emergency admission."
+      "relevance": "Chronic respiratory condition requiring ongoing management and recent hospitalization."
     },
     {
       "condition": "Prediabetes",
       "since": "2023-03-04",
-      "relevance": "Metabolic condition requiring monitoring, especially in the context of pregnancy."
-    },
-    {
-      "condition": "Pregnancy",
-      "since": "2026-08-08",
-      "relevance": "Current physiological state identified in recent lab results."
+      "relevance": "Metabolic condition requiring monitoring, especially during pregnancy."
     },
     {
       "condition": "Past pregnancy history of miscarriage",
       "since": "2018-06-11",
-      "relevance": "Reproductive history relevant to current pregnancy care."
+      "relevance": "Relevant obstetric history for current pregnancy management."
     }
   ],
   "current_medications": [
@@ -33,7 +28,7 @@
     },
     {
       "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
-      "note": "Prescribed 1979-10-26."
+      "note": "Prescribed 1979-10-26; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -42,18 +37,12 @@
       "severity": "minor",
       "drugs": [
         "budesonide",
-        "salbutamol"
+        "albuterol"
       ],
-      "recommendation": "Monitor for potential interaction between budesonide and salbutamol (albuterol)."
+      "recommendation": "Monitor for potential additive effects or reduced efficacy; no specific action required per detection layer."
     }
   ],
   "care_gaps": [
-    {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 4.0 on 2019-02-09 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Schedule follow-up for positive depression screen.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
     {
       "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
       "severity": "medium",
@@ -69,35 +58,39 @@
     {
       "gap": "Cervical Screening Overdue: Last cervical screening was 4 years ago. Due every 3 years.",
       "severity": "medium",
-      "action": "Schedule cervical cancer screening.",
+      "action": "Perform cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-03-29.",
-      "severity": "low",
-      "action": "Schedule annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had an emergency hospital admission for asthma on 2026-07-02, followed by an asthma follow-up on 2026-07-04 and a general encounter on 2026-08-15. Recent labs from 2026-08-08 indicate pregnancy status. Labs from 2026-03-21 show Hemoglobin A1c 6.25 %, BMI 29.11 kg/m2, and blood pressure 104/80 mmHg. Influenza vaccination was administered on 2026-03-21.",
-  "sdoh_flags": [
-    "Not in labor force",
-    "Educated to high school level"
+  "recent_activity": "Patient had an emergency hospital admission for asthma on 2026-07-02, followed by an asthma follow-up on 2026-07-04 and a general encounter on 2026-08-15. Labs from 2026-08-08 indicate the patient is pregnant. Previous labs from 2026-03-21 show Hemoglobin A1c 6.25%, BMI 29.11 kg/m2, and blood pressure 104/80 mmHg. Influenza vaccination was administered on 2026-03-21.",
+  "social_history": [
+    "Educated to high school level (recorded 1997-10-11)",
+    "Not in labor force (recorded 2026-03-21)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 10.56% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $85,638.",
+    "In the patient's ZIP code, 3.02% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.54% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.23% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 6.08% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 5.61% of households have no vehicle.",
+    "In the patient's ZIP code, 50.13% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address current pregnancy status and review asthma management in the context of pregnancy.",
-    "Follow up on the 2019 positive depression screen (PHQ-2 score 4.0).",
-    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical screening.",
-    "Review medication safety, specifically the minor interaction between budesonide and albuterol/salbutamol.",
-    "Schedule annual wellness visit."
+    "Confirm the patient still takes Chlorpheniramine Maleate 2 MG/ML Oral Solution.",
+    "Address current pregnancy status and manage asthma/prediabetes in the context of pregnancy.",
+    "Schedule overdue cervical cancer screening.",
+    "Schedule overdue mammogram.",
+    "Schedule overdue colonoscopy."
   ],
   "_meta": {
     "patient_id": "0bc260df-9e46-9f06-5bd7-b95c932e6492",
     "patient_name": "Kerry175 Elia719 O'Conner199",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2097,
-    "output_tokens": 1243,
+    "input_tokens": 2593,
+    "output_tokens": 1249,
     "finish_reason": "stop",
     "truncated": false
   }

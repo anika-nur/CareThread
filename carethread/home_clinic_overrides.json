@@ -1,0 +1,4 @@
+{
+  "_about": "Pins a patient's home clinic when the rule in sources.py (most wellness visits in the last 3 years) picks the wrong organization. Key: patient_id. group_id: an organizations.group_id. Give a reason for every entry.",
+  "overrides": {}
+}

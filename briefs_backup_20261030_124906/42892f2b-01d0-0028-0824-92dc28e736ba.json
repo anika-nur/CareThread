@@ -1,0 +1,90 @@
+{
+  "patient_summary": "Magda24 Teresia279 Pacocha935 is a 64-year-old female with obesity, prediabetes, and anemia.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity (finding)",
+      "since": "2006-03-17",
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Prediabetes (finding)",
+      "since": "2008-03-21",
+      "relevance": "Chronic condition requiring monitoring to prevent progression to diabetes."
+    },
+    {
+      "condition": "Anemia (disorder)",
+      "since": "2008-03-21",
+      "relevance": "Chronic condition requiring monitoring and potential treatment."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "doxycycline hyclate 100 MG",
+      "note": "Prescribed 1969-09-17."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1966-12-15."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 64, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2021-05-07.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-05-22 with labs showing Hemoglobin A1c 5.89 %, Body Weight 74.1 kg, BMI 27.72 kg/m2, Systolic BP 121 mm[Hg], Diastolic BP 74 mm[Hg], Heart rate 87 /min, Respiratory rate 13 /min, and Glucose 66.63 mg/dL. Pain severity was reported as 4. Influenza vaccination was administered on 2026-05-22. Previous visits include general examinations in 2025 and 2024, and symptom encounters in 2026 and 2023.",
+  "social_history": [
+    "Received higher education (recorded 1980-04-25)",
+    "Victim of intimate partner abuse (recorded 1987-05-08)",
+    "Full-time employment (recorded 2026-05-22)",
+    "Limited social contact (recorded 2026-05-22)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 7.19% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $89,411.",
+    "In the patient's ZIP code, 2.77% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.62% of the labor force is unemployed.",
+    "In the patient's ZIP code, 12.31% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.75% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.2% of households have no vehicle.",
+    "In the patient's ZIP code, 57.05% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Review and manage chronic conditions: obesity, prediabetes, and anemia.",
+    "Conduct annual wellness visit.",
+    "Assess social determinants of health, including limited social contact and history of intimate partner abuse."
+  ],
+  "_meta": {
+    "patient_id": "42892f2b-01d0-0028-0824-92dc28e736ba",
+    "patient_name": "Magda24 Teresia279 Pacocha935",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2441,
+    "output_tokens": 1247,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

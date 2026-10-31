@@ -1,0 +1,33 @@
+Running pipeline on 23 patients
+
+[1/23] Gertrudis163 Ina660 Klocko335... ✅ PASS — 2 gaps, 0 alerts
+[2/23] Lekisha909 Vertie683 Botsford977... ✅ PASS — 3 gaps, 0 alerts
+[3/23] Kerry175 Elia719 O'Conner199... ✅ PASS — 3 gaps, 1 alerts
+[4/23] Andra606 Prohaska837... ✅ PASS — 4 gaps, 1 alerts
+[5/23] Gabriela205 María Soledad68 Elizondo706... ✅ PASS — 4 gaps, 0 alerts
+[6/23] Magda24 Teresia279 Pacocha935... ✅ PASS — 3 gaps, 0 alerts
+[7/23] Darcel357 Randi364 Quigley282... ✅ PASS — 3 gaps, 4 alerts
+[8/23] Carl856 Patti584 Auer97... ✅ PASS — 3 gaps, 0 alerts
+[9/23] Felice694 Padberg411... ✅ PASS — 3 gaps, 4 alerts
+[10/23] Marceline716 Judy192 Lowe577... ✅ PASS — 3 gaps, 2 alerts
+[11/23] Rosalia943 Jonell764 Haag279... ✅ PASS — 3 gaps, 0 alerts
+[12/23] Natalia964 Inés791 Zarate81... ✅ PASS — 3 gaps, 0 alerts
+[13/23] Carlita746 Tenesha164 Pollich983... ✅ PASS — 4 gaps, 1 alerts
+[14/23] Yoshie761 Marcela739 Rath779... ✅ PASS — 3 gaps, 0 alerts
+[15/23] Robyn562 Winnifred2 Okuneva707... ✅ PASS — 3 gaps, 0 alerts
+[16/23] Alicia629 Pilar644 Colón139... ✅ PASS — 6 gaps, 0 alerts
+[17/23] Leslie90 Theron432 Toy286... ✅ PASS — 7 gaps, 0 alerts
+[18/23] Luisa710 Sosa986... ✅ PASS — 8 gaps, 1 alerts
+[19/23] Trey250 Sal878 Schinner682... ✅ PASS — 9 gaps, 2 alerts
+[20/23] Maire384 Cremin516... ✅ PASS — 5 gaps, 0 alerts
+[21/23] Sau887 Fawn386 Hermann103... ✅ PASS — 4 gaps, 3 alerts
+[22/23] Ramon749 Cary869 Will178... ✅ PASS — 6 gaps, 4 alerts
+[23/23] Kacy732 Cherrie404 Zulauf375... ✅ PASS — 4 gaps, 0 alerts
+
+==================================================
+PIPELINE COMPLETE
+==================================================
+Patients processed: 23
+  PASS: 23  |  WARN: 0  |  FAIL: 0  |  ERROR: 0
+Total tokens: 67,694 in + 33,348 out = 101,042 total
+(backend: colby — no cost incurred)

@@ -10,6 +10,18 @@ Requires: pip install openpyxl
 import sqlite3
 import pandas as pd
 import sys
+from config import DB_PATH
+
+
+def load_labels(sdoh_file):
+    """Column name → AHRQ description, from the workbook's Layout sheet."""
+    if not sdoh_file.endswith((".xlsx", ".xls")):
+        return {}
+    xls = pd.ExcelFile(sdoh_file)
+    if "Layout" not in xls.sheet_names:
+        return {}
+    layout = pd.read_excel(xls, sheet_name="Layout")
+    return dict(zip(layout["name"], layout["label"]))
 
 
 def load_sdoh_file(sdoh_file):
@@ -53,57 +65,45 @@ def main():
         print(sdoh.columns.tolist()[:20])
         return
 
-    # Select the SDOH columns most relevant to FQHC patient populations
-    # These use the ACS_ naming convention from the AHRQ database
+    # Select the SDOH columns most relevant to FQHC patient populations.
+    # Names are from the 2023 AHRQ ZIP file (checked against its Layout sheet).
     sdoh_columns = {
         "ZIPCODE":                          "zip_code",
         "ACS_PCT_UNINSURED_ZC":             "pct_uninsured",
-        "ACS_MEDIAN_HH_INC_ZC":            "median_household_income",
-        "ACS_PCT_HH_PUB_ASSIST_ZC":        "pct_public_assistance",
-        "ACS_PCT_UNEMPLOY_ZC":             "pct_unemployed",
-        "ACS_PCT_LT_HS_ZC":               "pct_less_than_high_school",
-        "ACS_PCT_POVERTY_ZC":              "pct_poverty",
-        "ACS_PCT_NO_VEH_ZC":              "pct_no_vehicle",
-        "ACS_PCT_RENTER_HH_COST_30PCT_ZC": "pct_rent_burdened",
+        "ACS_MEDIAN_HH_INC_ZC":             "median_household_income",
+        "ACS_PCT_HH_PUB_ASSIST_ZC":         "pct_public_assistance",
+        "ACS_PCT_UNEMPLOY_ZC":              "pct_unemployed",
+        "ACS_PCT_LT_HS_ZC":                 "pct_less_than_high_school",
+        "ACS_PCT_PERSON_INC_BELOW99_ZC":    "pct_poverty",
+        "ACS_PCT_HU_NO_VEH_ZC":             "pct_no_vehicle",
+        "ACS_PCT_RENTER_HU_COST_30PCT_ZC":  "pct_rent_burdened",
     }
 
-    # Find which of these columns actually exist in the file
-    # (column names can vary slightly between years — _ZC suffix may differ)
-    found_cols = {}
-    for orig_name, friendly_name in sdoh_columns.items():
-        if orig_name in sdoh.columns:
-            found_cols[orig_name] = friendly_name
-        else:
-            # Try without the _ZC suffix or with slight variations
-            for col in sdoh.columns:
-                base = orig_name.replace("_ZC", "")
-                if base in col:
-                    found_cols[col] = friendly_name
-                    break
+    # Exact names only. A substring fallback used to live here, and it can
+    # quietly pick a race- or age-specific breakdown (ACS_PCT_POV_WHITE_ZC)
+    # in place of the overall rate. A renamed column should stop the run.
+    missing = [c for c in sdoh_columns if c not in sdoh.columns]
+    if missing:
+        print("\nERROR: these columns are not in the file:")
+        for c in missing:
+            print(f"  {c} ({sdoh_columns[c]})")
+        print("Look up the current names in the file's Layout sheet and "
+              "update sdoh_columns.")
+        sys.exit(1)
 
-    if len(found_cols) <= 1:
-        print("\nCould not find expected SDOH columns.")
-        print("Searching for any columns with relevant keywords...\n")
-        for col in sdoh.columns:
-            col_upper = col.upper()
-            if any(kw in col_upper for kw in [
-                "UNINSURED", "POVERTY", "INCOME", "UNEMPLOY",
-                "VEHICLE", "FOOD", "ASSIST", "RENTER"
-            ]):
-                print(f"  Found: {col}")
-        print("\nUpdate the sdoh_columns dict in this script with the exact names above.")
-        return
-
-    print(f"\nMatched {len(found_cols)} SDOH columns:")
+    labels = load_labels(sdoh_file)
+    found_cols = sdoh_columns
+    print(f"\nMatched {len(found_cols) - 1} SDOH indicator columns:")
     for orig, friendly in found_cols.items():
-        print(f"  {orig} → {friendly}")
+        if orig != "ZIPCODE":
+            print(f"  {friendly:26} ← {orig:33} {labels.get(orig, '')}")
 
     # Extract and rename
     sdoh_slim = sdoh[list(found_cols.keys())].rename(columns=found_cols)
     sdoh_slim = sdoh_slim.drop_duplicates(subset=["zip_code"])
 
     # Connect to database
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
 
     # Save SDOH table
     conn.execute("DROP TABLE IF EXISTS sdoh")

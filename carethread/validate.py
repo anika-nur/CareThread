@@ -4,6 +4,7 @@ Prints a mini pre-visit summary for manual review.
 """
 
 import sqlite3
+from config import DB_PATH
 
 
 def summarize_patient(conn, patient_id):
@@ -74,7 +75,7 @@ def summarize_patient(conn, patient_id):
 
 
 def main():
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
 
     # Find patients with the most gaps (best demo candidates)
     top_patients = conn.execute("""

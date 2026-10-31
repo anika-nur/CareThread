@@ -1,5 +1,5 @@
 {
-  "patient_summary": "Melania287 Welch179 is a 45-year-old female with chronic pain, chronic intractable migraine, and dependent drug abuse.",
+  "patient_summary": "Melania287 Welch179 is a 45-year-old female with chronic pain, chronic intractable migraine, dependent drug abuse, and chronic low back pain.",
   "key_conditions": [
     {
       "condition": "Chronic pain",
@@ -12,19 +12,24 @@
       "relevance": "Chronic neurological condition contributing to pain burden."
     },
     {
-      "condition": "Dependent drug abuse",
-      "since": "2014-11-25",
-      "relevance": "Critical factor in medication safety and pain management strategy."
+      "condition": "Impacted molars",
+      "since": "1995-06-19",
+      "relevance": "Dental condition potentially contributing to pain."
     },
     {
       "condition": "Chronic low back pain",
       "since": "2014-02-06",
-      "relevance": "Additional source of chronic pain."
+      "relevance": "Musculoskeletal condition requiring pain management."
+    },
+    {
+      "condition": "Dependent drug abuse",
+      "since": "2014-11-25",
+      "relevance": "Critical factor in medication safety and monitoring."
     },
     {
       "condition": "Stress",
       "since": "2023-07-11",
-      "relevance": "Psychosocial factor potentially impacting pain perception and treatment adherence."
+      "relevance": "Psychosocial factor impacting overall health."
     }
   ],
   "current_medications": [
@@ -45,7 +50,7 @@
         "fentanyl",
         "hydrocodone"
       ],
-      "recommendation": "Review necessity of concurrent opioid therapy given major interaction risk."
+      "recommendation": "Review necessity of concurrent opioid therapy due to major interaction risk."
     }
   ],
   "care_gaps": [
@@ -68,23 +73,33 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     }
   ],
-  "recent_activity": "Patient had a general examination on 2026-04-28 where vitals were recorded: BP 123/69 mmHg, HR 98/min, RR 12/min, Weight 67 kg, Height 154.6 cm, BMI 28.03 kg/m2. Pain severity was reported as 0/10. Tobacco status is never smoked. Recent encounters include problem-focused visits in June and May 2026. Influenza vaccination was administered on 2026-04-28.",
-  "sdoh_flags": [
-    "Only received primary school education",
-    "Part-time employment"
+  "recent_activity": "Patient had 5 encounters between April and June 2026, including a general examination on 2026-04-28. Labs from 2026-04-28 show BMI 28.03 kg/m2, BP 123/69 mmHg, HR 98 /min, and pain severity score of 0. Influenza vaccination was administered on 2026-04-28.",
+  "social_history": [
+    "Only received primary school education (recorded 1999-01-05)",
+    "Part-time employment (recorded 2026-04-28)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.26% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $76,382.",
+    "In the patient's ZIP code, 0.99% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.24% of the labor force is unemployed.",
+    "In the patient's ZIP code, 10.5% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.13% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 2.32% of households have no vehicle.",
+    "In the patient's ZIP code, 37.42% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
     "Address major drug interaction between fentanyl and hydrocodone.",
-    "Discuss and schedule overdue preventive screenings: colonoscopy, mammogram, and cervical screening.",
-    "Review pain management plan given history of dependent drug abuse and current opioid regimen."
+    "Discuss and schedule overdue colonoscopy, mammogram, and cervical screening.",
+    "Monitor pain management strategy given dependent drug abuse history."
   ],
   "_meta": {
     "patient_id": "2222a05e-def9-3c48-d5b1-b083ce581f67",
     "patient_name": "Melania287 Welch179",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2113,
-    "output_tokens": 994,
+    "input_tokens": 2469,
+    "output_tokens": 1253,
     "finish_reason": "stop",
     "truncated": false
   }

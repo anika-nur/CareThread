@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Feedback summary — CareThread{% endblock %}
+
+{% block content %}
+<a class="back" href="{{ url_for('dashboard') }}">← panel</a>
+<h1>Feedback summary</h1>
+<p class="demo-note">Demo — feedback is stored locally.</p>
+
+<section class="stats">
+  <div class="stat"><span class="num">{{ total }}</span>items with feedback</div>
+  {% for key, label in labels.items() %}
+  <div class="stat"><span class="num">{{ counts[key] }}</span>{{ label | lower }}</div>
+  {% endfor %}
+</section>
+
+<div class="card metric">
+  <h2>How often is the brief wrong or incomplete?</h2>
+  {% if total %}
+    <p class="metric-num">{{ miss_pct }}%</p>
+    <p class="muted">{{ misses }} of {{ total }} items with feedback were marked
+    "Not applicable" or "Already done elsewhere". Items nobody responded to
+    aren't counted, so this is a share of reviewed items, not of all items shown.</p>
+  {% else %}
+    <p class="muted">No feedback yet. Open a brief and respond to a care gap or
+    medication alert.</p>
+  {% endif %}
+</div>
+
+{% if total %}
+<div class="card">
+  <h2>By item type</h2>
+  <table class="worklist fb-table">
+    <thead><tr><th>Item type</th>{% for label in labels.values() %}<th>{{ label }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for t, row in by_type.items() %}
+      <tr><td>{{ t | replace('_', ' ') | capitalize }}</td>{% for key in labels %}<td>{{ row[key] }}</td>{% endfor %}</tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Latest responses</h2>
+  <table class="worklist fb-table">
+    <thead><tr><th>When (UTC)</th><th>Patient</th><th>Item</th><th>Response</th></tr></thead>
+    <tbody>
+    {% for f in recent %}
+      <tr>
+        <td class="small">{{ f.created_at | replace('T', ' ') | replace('+00:00', '') }}</td>
+        <td><a class="patient-link" href="{{ url_for('patient', patient_id=f.patient_id) }}">{{ f.patient_name }}</a></td>
+        <td><span class="muted small">{{ f.item_type | replace('_', ' ') }}</span><br>{{ f.item_text }}</td>
+        <td>{{ labels[f.response] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

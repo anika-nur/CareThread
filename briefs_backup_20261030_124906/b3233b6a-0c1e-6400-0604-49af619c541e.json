@@ -1,0 +1,108 @@
+{
+  "patient_summary": "Maire384 Cremin516 is a 47-year-old female with prediabetes, anemia, and a history of stress.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes",
+      "since": "2004-09-08",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2007-09-19",
+      "relevance": "Chronic disorder requiring ongoing management."
+    },
+    {
+      "condition": "Stress",
+      "since": "2022-10-12",
+      "relevance": "Psychosocial factor impacting overall health."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "1998-05-27",
+      "relevance": "Historical obstetric event."
+    },
+    {
+      "condition": "History of tubal ligation",
+      "since": "2014-12-04",
+      "relevance": "Historical surgical procedure."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Loratadine 10 MG Oral Tablet",
+      "note": "Prescribed 2006-06-05."
+    },
+    {
+      "medication": "NDA020800 0.3 ML Epinephrine 1 MG/ML Auto-Injector",
+      "note": "Prescribed 2006-06-05."
+    },
+    {
+      "medication": "Hydrocortisone 10 MG/ML Topical Cream",
+      "note": "Prescribed 2006-05-24."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 47, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 402 days ago (27.75 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2023-08-09.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "The patient had a recent encounter for symptoms on 2025-11-06 and a general examination on 2025-07-30. Labs from 2025-07-30 show Hemoglobin A1c 5.96 %, Glucose 66.76 mg/dL, BMI 27.75 kg/m2, Systolic BP 96 mm[Hg], Diastolic BP 68 mm[Hg], Heart rate 89 /min, Respiratory rate 13 /min, Pain severity 2 {score}, Height 161.4 cm, and Weight 72.3 kg. An influenza vaccination was administered on 2025-07-30.",
+  "social_history": [
+    "Received higher education (recorded 1997-09-03)",
+    "Part-time employment (recorded 2025-07-30)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 4.06% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $142,564.",
+    "In the patient's ZIP code, 1.57% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.99% of the labor force is unemployed.",
+    "In the patient's ZIP code, 8.98% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 5.3% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.44% of households have no vehicle.",
+    "In the patient's ZIP code, 48.15% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Review recent lab results and vital signs from 2025-07-30.",
+    "Conduct annual wellness visit and BMI screening.",
+    "Assess current stress levels and management strategies."
+  ],
+  "_meta": {
+    "patient_id": "b3233b6a-0c1e-6400-0604-49af619c541e",
+    "patient_name": "Maire384 Cremin516",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2537,
+    "output_tokens": 1412,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

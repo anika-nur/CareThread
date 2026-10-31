@@ -12,6 +12,7 @@ import csv
 import sqlite3
 import sys
 from pathlib import Path
+from config import DB_PATH
 
 # Adjust if your DDInter CSV lives elsewhere
 DDINTER_GLOB = "ddinter_data/*.csv"
@@ -91,7 +92,7 @@ def main():
     print(f"\n=== DDInter source data: {a} ↔ {b} ===")
     find_in_ddinter(a, b)
 
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
     print(f"\n=== Patients on both drugs ===")
     rows = patients_on_both(conn, a, b)
     if not rows:

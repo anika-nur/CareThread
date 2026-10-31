@@ -15,6 +15,7 @@ import sys
 from pathlib import Path
 
 from assemble_patient import assemble_patient_data
+from config import DB_PATH
 
 # Filler words that would otherwise make unrelated items look similar —
 # "Mammogram Overdue" and "HbA1c Overdue" share nothing clinical.
@@ -166,10 +167,10 @@ def check_parse(brief):
         return False
     expected = ["patient_summary", "key_conditions", "current_medications",
                 "medication_alerts", "care_gaps", "recent_activity",
-                "sdoh_flags", "priority_actions"]
+                "social_history", "community_context", "priority_actions"]
     missing = [k for k in expected if k not in brief]
     print("  parsed cleanly" + (f", MISSING KEYS: {missing}" if missing else
-                                ", all 8 keys present"))
+                                f", all {len(expected)} keys present"))
     return True
 
 
@@ -209,7 +210,7 @@ def main():
     brief = json.loads(path.read_text())
     pid = brief.get("_meta", {}).get("patient_id") or path.stem
 
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
     data = assemble_patient_data(conn, pid)
     conn.close()
 

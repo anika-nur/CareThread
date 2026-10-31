@@ -1,30 +1,50 @@
 {
-  "patient_summary": "Dannielle300 Twanna669 Prosacco716 is a 59-year-old female with type 2 diabetes, obesity, fibromyalgia, and chronic low back pain.",
+  "patient_summary": "Dannielle300 Twanna669 Prosacco716 is a 59-year-old female with type 2 diabetes, obesity, chronic pain, and fibromyalgia.",
   "key_conditions": [
     {
       "condition": "Diabetes mellitus type 2",
       "since": "2004-10-13",
-      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
-    },
-    {
-      "condition": "Neuropathy due to type 2 diabetes mellitus",
-      "since": "2024-01-31",
-      "relevance": "Diabetic complication affecting pain management and quality of life."
-    },
-    {
-      "condition": "Fibromyalgia",
-      "since": "2014-01-31",
-      "relevance": "Chronic pain condition contributing to overall symptom burden."
+      "relevance": "Primary driver for HbA1c monitoring and ophthalmic exams."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "1998-10-07",
-      "relevance": "Risk factor for metabolic syndrome and diabetes progression."
+      "relevance": "Contributes to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "2014-01-31",
+      "relevance": "Managed with ibuprofen; requires monitoring for GI/renal side effects."
+    },
+    {
+      "condition": "Fibromyalgia",
+      "since": "2014-01-31",
+      "relevance": "Chronic pain condition requiring ongoing management."
+    },
+    {
+      "condition": "Neuropathy due to type 2 diabetes mellitus",
+      "since": "2024-01-31",
+      "relevance": "Diabetic complication requiring foot care and pain management."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2005-10-19",
+      "relevance": "Cardiometabolic risk factor."
     },
     {
       "condition": "Metabolic syndrome X",
       "since": "2005-10-19",
       "relevance": "Cluster of conditions increasing cardiovascular risk."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1973-09-22",
+      "relevance": "Long-standing respiratory condition."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-02-05",
+      "relevance": "Psychosocial factor impacting overall health."
     }
   ],
   "current_medications": [
@@ -34,7 +54,7 @@
     },
     {
       "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
-      "note": "Prescribed 2026-02-11 for diabetes management."
+      "note": "Prescribed 2026-02-11 for type 2 diabetes management."
     }
   ],
   "medication_alerts": [
@@ -50,7 +70,7 @@
   ],
   "care_gaps": [
     {
-      "gap": "HbA1c Overdue: Last HbA1c was 206 days ago (value: 6.03%). Due every 180 days.",
+      "gap": "HbA1c Overdue: Last HbA1c was on 2026-02-11 (value: 6.03%). Due every 6 months.",
       "severity": "medium",
       "action": "Order HbA1c test.",
       "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
@@ -74,25 +94,38 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     }
   ],
-  "recent_activity": "Patient had an ophthalmic exam on 2026-08-26 showing LogMAR visual acuity of 0 for both eyes, intraocular pressure of 16 mmHg for both eyes, and no apparent retinopathy. A general examination on 2026-02-11 recorded HbA1c of 6.03%, weight of 83.4 kg, height of 166.4 cm, and pain severity of 3/10. Previous check-ups occurred on 2026-02-25 and 2025-02-19.",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Stress"
+  "recent_activity": "Patient had an ophthalmic exam on 2026-08-26 showing no apparent retinopathy and intraocular pressure of 16 mmHg in both eyes. A general examination on 2026-02-11 recorded HbA1c of 6.03%, weight of 83.4 kg, and pain severity of 3/10. Influenza vaccination was administered on 2026-02-11.",
+  "social_history": [
+    "Risk activity involvement (recorded 1983-09-07)",
+    "Housing unsatisfactory (recorded 1985-09-18)",
+    "Received higher education (recorded 1985-09-18)",
+    "Full-time employment (recorded 2026-02-11)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 15.63% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $70,334.",
+    "In the patient's ZIP code, 1.83% of residents have no health insurance.",
+    "In the patient's ZIP code, 7.13% of the labor force is unemployed.",
+    "In the patient's ZIP code, 26.79% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 12.59% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 12.37% of households have no vehicle.",
+    "In the patient's ZIP code, 49.47% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue HbA1c test (due every 180 days, last was 206 days ago).",
-    "Refer for overdue colonoscopy (age 59, no record).",
-    "Refer for overdue mammogram (age 59, no record).",
-    "Order overdue cervical cancer screening (age 59, no record).",
-    "Review moderate drug interaction between ibuprofen and metformin."
+    "Order HbA1c test as it is due every 6 months and last done 2026-02-11.",
+    "Refer for colonoscopy as patient is 59 with no record on file.",
+    "Refer for mammogram as patient is 59 with no record on file.",
+    "Order cervical cancer screening as patient is 59 with no record on file.",
+    "Review ibuprofen and metformin interaction and monitor for adverse effects."
   ],
   "_meta": {
     "patient_id": "4395e831-ba09-ca6a-c4b6-4b1e8fd8370d",
     "patient_name": "Dannielle300 Twanna669 Prosacco716",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2499,
-    "output_tokens": 1185,
+    "input_tokens": 3188,
+    "output_tokens": 1548,
     "finish_reason": "stop",
     "truncated": false
   }

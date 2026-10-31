@@ -4,7 +4,7 @@
     {
       "condition": "Essential hypertension",
       "since": "2009-08-16",
-      "relevance": "Primary chronic condition requiring ongoing management and monitoring."
+      "relevance": "Primary condition requiring ongoing blood pressure monitoring and management."
     },
     {
       "condition": "Chronic sinusitis",
@@ -12,19 +12,14 @@
       "relevance": "Long-standing respiratory condition."
     },
     {
-      "condition": "Housing unsatisfactory",
-      "since": "1990-07-22",
-      "relevance": "Social determinant of health impacting overall well-being."
+      "condition": "History of tubal ligation",
+      "since": "2008-01-13",
+      "relevance": "Relevant to reproductive history and screening context."
     },
     {
-      "condition": "Limited social contact",
-      "since": "2017-10-01",
-      "relevance": "Social determinant of health impacting mental health and support systems."
-    },
-    {
-      "condition": "Medication review due",
-      "since": "2025-11-16",
-      "relevance": "Current administrative flag for today's visit."
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "1992-10-10",
+      "relevance": "Relevant to obstetric history."
     }
   ],
   "current_medications": [
@@ -36,15 +31,9 @@
   "medication_alerts": [],
   "care_gaps": [
     {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 5.0 on 2020-10-18 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Address history of positive depression screen and assess current mental health status.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
-    {
-      "gap": "Blood Pressure Overdue: Last BP reading was 293 days ago (125 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-11-16 (125 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Verify current blood pressure control and update monitoring schedule.",
+      "action": "Schedule or perform blood pressure monitoring.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
@@ -56,36 +45,42 @@
     {
       "gap": "Cervical Screening Overdue: Female patient, age 54, with no cervical cancer screening on record. Recommended every 3 years.",
       "severity": "medium",
-      "action": "Order or refer for cervical cancer screening.",
+      "action": "Order or perform cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-11-24.",
-      "severity": "low",
-      "action": "Conduct or schedule annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a general examination on 2025-11-16 where vitals were recorded: BP 125/98 mmHg, HR 61/min, RR 15/min, Weight 61.6 kg, Height 150 cm, BMI 27.38 kg/m2, and pain score 4/10. She received an influenza vaccine on 2025-11-16. Previous visits occurred in 2024, 2023, and 2022 for check-ups and general examinations. She received a zoster vaccine and Td booster in 2023.",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Limited social contact",
-    "Has a criminal record"
+  "recent_activity": "Patient had a general examination on 2025-11-16 where vitals were recorded: BP 125/98 mmHg, HR 61/min, RR 15/min, Weight 61.6 kg, Height 150 cm, BMI 27.38 kg/m2, and pain severity 4/10. She received an influenza vaccine on 2025-11-16. Previous visits occurred in 2024, 2023, and 2022 for check-ups and general examinations. Immunization history includes zoster and Td vaccines in 2023.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1990-07-22)",
+    "Received higher education (recorded 1990-07-22)",
+    "Limited social contact (recorded 2017-10-01)",
+    "Has a criminal record (recorded 2017-10-01)",
+    "Full-time employment (recorded 2022-10-30)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 5.17% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $144,485.",
+    "In the patient's ZIP code, 4.24% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.41% of the labor force is unemployed.",
+    "In the patient's ZIP code, 5.48% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 7.9% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.9% of households have no vehicle.",
+    "In the patient's ZIP code, 41.26% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address high-severity care gap: Follow up on 2020 positive depression screen (PHQ-2 score 5.0).",
-    "Review and update blood pressure management plan given the medium-severity gap for overdue BP monitoring.",
-    "Order or refer for overdue mammogram and cervical cancer screening.",
-    "Conduct medication review as flagged on 2025-11-16.",
-    "Address social determinants of health: housing and social isolation."
+    "Address overdue cervical cancer screening (USPSTF guideline).",
+    "Address overdue mammogram (USPSTF guideline).",
+    "Monitor blood pressure; last reading 2025-11-16, due every 6 months.",
+    "Review current lisinopril therapy and adherence."
   ],
   "_meta": {
     "patient_id": "63b3c21e-c6b0-d8cc-9394-4ebb64c711a5",
     "patient_name": "Carl856 Patti584 Auer97",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2162,
-    "output_tokens": 1139,
+    "input_tokens": 2689,
+    "output_tokens": 1166,
     "finish_reason": "stop",
     "truncated": false
   }

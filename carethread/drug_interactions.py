@@ -13,6 +13,7 @@ import sqlite3
 import pandas as pd
 import os
 import re
+from config import DB_PATH
 
 
 # DDInter names drugs by INN; Synthea uses the US/USAN name for some of them,
@@ -243,7 +244,7 @@ def main():
     ddinter_lookup, drug_index = load_ddinter()
 
     # Connect to patient database
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
 
     patient_ids = [r[0] for r in conn.execute(
         "SELECT patient_id FROM patients "
@@ -330,7 +331,7 @@ def main():
              ix["drug_a_matched"], ix["drug_b_matched"], ix["severity"])
         )
     conn.commit()
-    print(f"\nInteractions saved to drug_interactions table in carethread.db")
+    print(f"\nInteractions saved to drug_interactions table in {DB_PATH}")
     conn.close()
 
 

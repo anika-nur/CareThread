@@ -1,0 +1,216 @@
+{
+  "patient_summary": "Felice694 Padberg411 is a 57-year-old female with a complex history including type 2 diabetes, chronic congestive heart failure, ischemic heart disease, and hypertension.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2000-04-09",
+      "relevance": "Primary metabolic condition requiring ongoing management and monitoring."
+    },
+    {
+      "condition": "Chronic congestive heart failure",
+      "since": "2021-11-12",
+      "relevance": "Major cardiovascular comorbidity impacting medication regimen and fluid status."
+    },
+    {
+      "condition": "Ischemic heart disease",
+      "since": "2012-06-03",
+      "relevance": "History of coronary artery disease requiring anti-platelet and lipid management."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2003-04-13",
+      "relevance": "Chronic condition contributing to cardiovascular risk."
+    },
+    {
+      "condition": "Nonproliferative diabetic retinopathy due to type II diabetes mellitus",
+      "since": "2012-07-10",
+      "relevance": "Diabetic complication requiring regular ophthalmologic surveillance."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2014-06-15",
+      "relevance": "Cardiovascular risk factor managed with statin therapy."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2003-04-13",
+      "relevance": "Lipid disorder associated with metabolic syndrome."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2005-04-24",
+      "relevance": "Cluster of conditions increasing risk for heart disease and diabetes."
+    },
+    {
+      "condition": "Anemia (disorder)",
+      "since": "1987-03-22",
+      "relevance": "Chronic condition requiring monitoring for potential impact on oxygen delivery."
+    },
+    {
+      "condition": "Localized, primary osteoarthritis of the hand",
+      "since": "2006-01-07",
+      "relevance": "Chronic musculoskeletal condition affecting function."
+    },
+    {
+      "condition": "Gingivitis",
+      "since": "2026-08-23",
+      "relevance": "Recent oral health finding."
+    },
+    {
+      "condition": "Stress (finding)",
+      "since": "2026-08-23",
+      "relevance": "Recent psychosocial finding."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2026-08-30."
+    },
+    {
+      "medication": "carvedilol 25 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "Furosemide 40 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "losartan potassium 50 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "lisinopril 20 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2026-08-23."
+    },
+    {
+      "medication": "Simvastatin 20 MG Oral Tablet",
+      "note": "Prescribed 2012-06-10."
+    },
+    {
+      "medication": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2012-06-10."
+    },
+    {
+      "medication": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "note": "Prescribed 2012-06-10."
+    },
+    {
+      "medication": "Clopidogrel 75 MG Oral Tablet",
+      "note": "Prescribed 2004-08-20."
+    },
+    {
+      "medication": "Alteplase 100 MG Injection",
+      "note": "Prescribed 2004-08-20."
+    },
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1973-01-12."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "major",
+      "drugs": [
+        "amLODIPine 2.5 MG Oral Tablet",
+        "Simvastatin 20 MG Oral Tablet"
+      ],
+      "recommendation": "Review necessity of concurrent use; consider alternative statin or dose adjustment due to increased risk of myopathy."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Clopidogrel 75 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for bleeding risk; verify if alteplase is still indicated or if this is a historical prescription error."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray"
+      ],
+      "recommendation": "Monitor for hypotension; verify clinical indication for concurrent use."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Alteplase 100 MG Injection",
+        "lisinopril 20 MG Oral Tablet"
+      ],
+      "recommendation": "Monitor for hypotension; verify clinical indication for concurrent use."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 57 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 57, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 57, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-08-31.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a follow-up encounter on 2026-08-30 and a general examination on 2026-08-23. Labs from 2026-08-30 show Glucose 124.83 mg/dL, Creatinine 2.8535 mg/dL, and eGFR 76.498 mL/min. Patient received an influenza vaccination on 2026-08-23. Recent encounters include ophthalmic evaluation in Jan 2026 and problem encounters in May 2026 and Nov 2025.",
+  "social_history": [
+    "Educated to high school level",
+    "Victim of intimate partner abuse",
+    "Full-time employment"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 9.64% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $98,418.",
+    "In the patient's ZIP code, 5.51% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.31% of the labor force is unemployed.",
+    "In the patient's ZIP code, 18.26% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 11.07% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 20.26% of households have no vehicle.",
+    "In the patient's ZIP code, 53.6% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address major drug interaction between amlodipine and simvastatin; consider medication adjustment.",
+    "Review and clarify indication for Alteplase, which has multiple moderate interactions with current medications (clopidogrel, nitroglycerin, lisinopril).",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Review recent lab values (Creatinine 2.8535 mg/dL, eGFR 76.498 mL/min) in context of chronic kidney disease and heart failure management.",
+    "Assess and manage recent findings of stress and gingivitis."
+  ],
+  "_meta": {
+    "patient_id": "7292d8f3-a4b3-991c-42cc-a370fa0b266e",
+    "patient_name": "Felice694 Padberg411",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3551,
+    "output_tokens": 2340,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -4,33 +4,33 @@
     {
       "condition": "Osteoporosis",
       "since": "2023-07-11",
-      "relevance": "Active disorder requiring management with alendronic acid."
+      "relevance": "Active disorder requiring management and monitoring."
     },
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2000-08-01",
-      "relevance": "Chronic condition noted in history; recent BMI is 28.06 kg/m2."
+      "relevance": "Chronic finding impacting overall health and medication management."
     },
     {
-      "condition": "Housing unsatisfactory",
-      "since": "1981-07-07",
-      "relevance": "Long-standing social determinant affecting health stability."
+      "condition": "Loss of teeth",
+      "since": "2021-12-21",
+      "relevance": "Disorder affecting oral health and nutrition."
     },
     {
-      "condition": "Limited social contact",
-      "since": "2024-07-16",
-      "relevance": "Recent finding indicating potential isolation or support needs."
+      "condition": "History of tubal ligation",
+      "since": "1988-09-17",
+      "relevance": "Historical surgical procedure."
     },
     {
       "condition": "Stress",
       "since": "2026-07-28",
-      "relevance": "Current finding noted during recent examination."
+      "relevance": "Recent finding noted during examination."
     }
   ],
   "current_medications": [
     {
       "medication": "Alendronic acid 10 MG Oral Tablet",
-      "note": "Prescribed 2026-07-28 for osteoporosis."
+      "note": "Prescribed 2026-07-28."
     }
   ],
   "medication_alerts": [],
@@ -54,24 +54,35 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2026-08-11 and a general examination on 2026-07-28. Labs from 2026-07-28 show BMI 28.06 kg/m2, BP 102/88 mmHg, and pain severity 2/10. Influenza vaccination was administered on 2026-07-28. Alendronic acid was prescribed on 2026-07-28.",
-  "sdoh_flags": [
-    "Housing unsatisfactory",
-    "Limited social contact",
-    "Part-time employment"
+  "recent_activity": "Patient had a check-up on 2026-08-11 and a general examination on 2026-07-28. Labs from 2026-07-28 show BMI 28.06 kg/m2, weight 77.5 kg, height 166.2 cm, BP 102/88 mmHg, heart rate 75 /min, respiratory rate 15 /min, and pain severity 2/10. Patient is an ex-smoker and reported no fear of partner. Influenza vaccine administered 2026-07-28.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1981-07-07)",
+    "Received higher education (recorded 1981-07-07)",
+    "Limited social contact (recorded 2024-07-16)",
+    "Part-time employment (recorded 2026-07-28)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 6.59% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $145,150.",
+    "In the patient's ZIP code, 0.65% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.48% of the labor force is unemployed.",
+    "In the patient's ZIP code, 7.28% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.62% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 12.76% of households have no vehicle.",
+    "In the patient's ZIP code, 41.59% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue cancer screenings (colonoscopy, mammogram, cervical screening).",
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
     "Review osteoporosis management and alendronic acid adherence.",
-    "Assess social determinants: housing stability, social isolation, and stress."
+    "Discuss stress management and limited social contact."
   ],
   "_meta": {
     "patient_id": "1522b9f4-b784-6cb7-6ee6-f2bd65bfb766",
     "patient_name": "Amanda238 Sara501 Dibbert990",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2058,
-    "output_tokens": 889,
+    "input_tokens": 2451,
+    "output_tokens": 1159,
     "finish_reason": "stop",
     "truncated": false
   }

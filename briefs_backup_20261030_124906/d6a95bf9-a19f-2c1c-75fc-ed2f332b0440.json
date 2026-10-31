@@ -1,0 +1,118 @@
+{
+  "patient_summary": "Abbey813 Kirstin394 Yundt842 is a 67-year-old female with a history of type 2 diabetes, hypertension, obesity, and anemia.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes (finding)",
+      "since": "1978-12-06",
+      "relevance": "Historical finding preceding current diabetes diagnosis."
+    },
+    {
+      "condition": "Anemia (disorder)",
+      "since": "1981-12-09",
+      "relevance": "Chronic condition requiring monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity (finding)",
+      "since": "1987-12-16",
+      "relevance": "Contributing factor to metabolic syndrome and cardiovascular risk."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage (situation)",
+      "since": "1989-04-26",
+      "relevance": "Historical obstetric event."
+    },
+    {
+      "condition": "Essential hypertension (disorder)",
+      "since": "2007-11-01",
+      "relevance": "Chronic condition requiring blood pressure management."
+    },
+    {
+      "condition": "Diabetes mellitus type 2 (disorder)",
+      "since": "2007-11-01",
+      "relevance": "Primary chronic condition requiring glycemic control and screening."
+    },
+    {
+      "condition": "Hypertriglyceridemia (disorder)",
+      "since": "2008-11-05",
+      "relevance": "Lipid disorder associated with metabolic syndrome."
+    },
+    {
+      "condition": "Metabolic syndrome X (disorder)",
+      "since": "2008-11-05",
+      "relevance": "Cluster of conditions increasing cardiovascular risk."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2026-02-11."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 259 days ago (value: 6.86%). Due every 180 days.",
+      "severity": "medium",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 259 days ago (133 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 67 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 67, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Diabetic Eye Exam Overdue: Last eye exam was 1 years ago. Due annually.",
+      "severity": "medium",
+      "action": "Refer for diabetic eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
+    }
+  ],
+  "recent_activity": "Patient had a check-up on 2026-02-25 and a general examination on 2026-02-11 where lisinopril was prescribed. Recent labs from 2026-02-12 include social determinants of health screenings and a reported family income of 40824 /a. Immunizations for influenza and pneumococcal vaccines were administered on 2026-02-11.",
+  "social_history": [
+    "Received higher education (recorded 1977-12-01)",
+    "Limited social contact (recorded 2021-01-14)",
+    "Victim of intimate partner abuse (recorded 2023-01-26)",
+    "Part-time employment (recorded 2026-02-12)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 24.96% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $61,411.",
+    "In the patient's ZIP code, 4.27% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.89% of the labor force is unemployed.",
+    "In the patient's ZIP code, 26.25% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 10.96% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 23.03% of households have no vehicle.",
+    "In the patient's ZIP code, 59.67% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Order HbA1c test to address overdue diabetes monitoring.",
+    "Measure blood pressure to address overdue hypertension monitoring.",
+    "Refer for colonoscopy to address overdue cancer screening.",
+    "Refer for mammogram to address overdue cancer screening.",
+    "Refer for diabetic eye exam to address overdue annual screening."
+  ],
+  "_meta": {
+    "patient_id": "d6a95bf9-a19f-2c1c-75fc-ed2f332b0440",
+    "patient_name": "Abbey813 Kirstin394 Yundt842",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2870,
+    "output_tokens": 1488,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

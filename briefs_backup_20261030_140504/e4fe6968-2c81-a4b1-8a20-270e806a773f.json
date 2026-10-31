@@ -1,0 +1,82 @@
+{
+  "patient_summary": "Robyn562 Winnifred2 Okuneva707 is a 56-year-old female with obesity, stress, and a history of miscarriage.",
+  "key_conditions": [
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2010-07-14",
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-08-06",
+      "relevance": "Recent finding that may impact overall health and adherence to care."
+    },
+    {
+      "condition": "Loss of teeth",
+      "since": "2023-08-16",
+      "relevance": "Oral health issue that may affect nutrition and quality of life."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2002-04-12",
+      "relevance": "Historical obstetric event."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Chlorpheniramine Maleate 2 MG/ML Oral Solution",
+      "note": "Prescribed 1973-07-25; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Colonoscopy Overdue: Patient is 56 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 56, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 56, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2026-08-12 where vitals and labs were recorded, including BMI 28.01 kg/m2, blood pressure 93/81 mmHg, heart rate 95 /min, cholesterol 204.67 mg/dL, and triglycerides 106.06 mg/dL. She received an influenza vaccination on the same date. Previous visits include check-ups and symptom encounters in 2025 and 2024.",
+  "social_history": [
+    "Received higher education (recorded 1988-08-31)",
+    "Part-time employment (recorded 2026-08-12)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 11.37% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $65,486.",
+    "In the patient's ZIP code, 16.23% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.79% of the labor force is unemployed.",
+    "In the patient's ZIP code, 6.96% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 8.94% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 6.02% of households have no vehicle.",
+    "In the patient's ZIP code, 47.34% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm the patient still takes Chlorpheniramine Maleate 2 MG/ML Oral Solution.",
+    "Address overdue colonoscopy, mammogram, and cervical cancer screening.",
+    "Discuss stress management strategies."
+  ],
+  "_meta": {
+    "patient_id": "e4fe6968-2c81-a4b1-8a20-270e806a773f",
+    "patient_name": "Robyn562 Winnifred2 Okuneva707",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2526,
+    "output_tokens": 1074,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

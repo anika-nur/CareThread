@@ -1,5 +1,5 @@
 {
-  "patient_summary": "Deandre599 Gusikowski974 is a 69-year-old male with a history of ischemic heart disease, chronic kidney disease, hypertension, and prediabetes.",
+  "patient_summary": "Deandre599 Gusikowski974 is a 69-year-old male with a history of ischemic heart disease, chronic kidney disease, prediabetes, and hypertension.",
   "key_conditions": [
     {
       "condition": "Ischemic heart disease",
@@ -12,19 +12,19 @@
       "relevance": "Requires monitoring of renal function and medication dosing."
     },
     {
-      "condition": "Essential hypertension",
-      "since": "2007-05-23",
-      "relevance": "Chronic condition requiring ongoing blood pressure control."
-    },
-    {
       "condition": "Prediabetes",
       "since": "1988-08-10",
       "relevance": "Long-standing risk factor for metabolic complications."
     },
     {
+      "condition": "Essential hypertension",
+      "since": "2007-05-23",
+      "relevance": "Chronic condition requiring ongoing blood pressure control."
+    },
+    {
       "condition": "History of myocardial infarction",
       "since": "2015-04-18",
-      "relevance": "Significant cardiovascular history impacting current therapy."
+      "relevance": "Prior cardiac event influencing current antithrombotic and lipid management."
     }
   ],
   "current_medications": [
@@ -66,19 +66,19 @@
     },
     {
       "medication": "aspirin 81 MG Oral Tablet",
-      "note": "Prescribed 2015-04-18."
+      "note": "Prescribed 2015-04-18; confirm the patient still takes it."
     },
     {
       "medication": "atorvastatin 80 MG Oral Tablet",
-      "note": "Prescribed 2015-04-18."
+      "note": "Prescribed 2015-04-18; confirm the patient still takes it."
     },
     {
       "medication": "lisinopril 5 MG Oral Tablet",
-      "note": "Prescribed 2015-04-18."
+      "note": "Prescribed 2015-04-18; confirm the patient still takes it."
     },
     {
       "medication": "prasugrel 10 MG Oral Tablet",
-      "note": "Prescribed 2015-04-18."
+      "note": "Prescribed 2015-04-18; confirm the patient still takes it."
     }
   ],
   "medication_alerts": [
@@ -89,7 +89,7 @@
         "clopidogrel",
         "prasugrel"
       ],
-      "recommendation": "Review necessity of dual P2Y12 inhibitor therapy; significant bleeding risk."
+      "recommendation": "Confirm the patient still takes prasugrel before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -98,7 +98,7 @@
         "amlodipine",
         "simvastatin"
       ],
-      "recommendation": "Monitor for myopathy; consider dose adjustment or alternative statin."
+      "recommendation": "Review current dosing and monitor for myopathy."
     },
     {
       "type": "drug_interaction",
@@ -107,7 +107,7 @@
         "acetylsalicylic acid",
         "lisinopril"
       ],
-      "recommendation": "Monitor renal function and blood pressure."
+      "recommendation": "Monitor blood pressure and renal function."
     },
     {
       "type": "drug_interaction",
@@ -116,7 +116,7 @@
         "acetylsalicylic acid",
         "prasugrel"
       ],
-      "recommendation": "Monitor for increased bleeding risk."
+      "recommendation": "Confirm the patient still takes prasugrel before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -125,7 +125,7 @@
         "acetylsalicylic acid",
         "clopidogrel"
       ],
-      "recommendation": "Monitor for increased bleeding risk."
+      "recommendation": "Assess bleeding risk given dual antiplatelet therapy."
     },
     {
       "type": "drug_interaction",
@@ -143,7 +143,7 @@
         "atorvastatin",
         "clopidogrel"
       ],
-      "recommendation": "Monitor for potential interaction effects."
+      "recommendation": "Confirm the patient still takes atorvastatin before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -152,7 +152,7 @@
         "atorvastatin",
         "simvastatin"
       ],
-      "recommendation": "Review need for dual statin therapy; risk of myopathy."
+      "recommendation": "Confirm the patient still takes atorvastatin before acting on this interaction."
     },
     {
       "type": "drug_interaction",
@@ -161,7 +161,7 @@
         "acetylsalicylic acid",
         "metoprolol"
       ],
-      "recommendation": "Monitor for potential effects on antiplatelet activity."
+      "recommendation": "Monitor for potential increased bleeding risk."
     },
     {
       "type": "drug_interaction",
@@ -170,56 +170,69 @@
         "acetylsalicylic acid",
         "nitroglycerin"
       ],
-      "recommendation": "Monitor for potential effects on nitroglycerin efficacy."
+      "recommendation": "Monitor for potential increased bleeding risk."
     }
   ],
   "care_gaps": [
     {
-      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2023-08-23 with no follow-up encounter within 30 days.",
-      "severity": "high",
-      "action": "Schedule follow-up for depression screening results.",
-      "source": "UDS: Follow-up within 30 days of positive depression screen"
-    },
-    {
-      "gap": "Blood Pressure Overdue: Last BP reading was 367 days ago (73 mm[Hg]). Due every 180 days.",
+      "gap": "Blood Pressure Overdue: Last BP reading was on 2025-09-03 (73 mm[Hg]). Due every 6 months.",
       "severity": "medium",
-      "action": "Measure blood pressure during today's visit.",
+      "action": "Obtain current blood pressure measurement.",
       "source": "HEDIS CBP: BP monitoring every 6 months"
     },
     {
-      "gap": "Flu Vaccine Overdue: Last flu vaccine was 451 days ago. Due annually.",
+      "gap": "Flu Vaccine Overdue: Last flu vaccine was on 2025-06-11. Due annually.",
       "severity": "low",
-      "action": "Administer or schedule annual influenza vaccine.",
+      "action": "Administer annual influenza vaccine.",
       "source": "CDC ACIP: Annual flu vaccine for adults 65+"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 367 days ago (31.22 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-09-03 (31.22 kg/m2). Due annually.",
       "severity": "low",
       "action": "Perform annual BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-09-17.",
+      "severity": "low",
+      "action": "Schedule or conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a check-up on 2025-09-17 and a general examination on 2025-09-03. Labs from 2025-09-03 show Glucose 68.83 mg/dL, Creatinine 1.4448 mg/dL, and eGFR 93.064 mL/min/{1.73_m2}. Urine appearance was noted as cloudy. Recent urgent care visits occurred in July and August 2025.",
-  "sdoh_flags": [
-    "Lack of access to transportation",
-    "Transport problem",
-    "Limited social contact",
-    "Stress"
+  "recent_activity": "Patient had a check-up on 2025-09-17 and a general examination on 2025-09-03. Labs from 2025-09-03 show Glucose 68.83 mg/dL, Creatinine 1.4448 mg/dL, and GFR 93.064 mL/min/{1.73_m2}. Urine appearance was noted as cloudy. Recent urgent care visits occurred in August and July 2025.",
+  "social_history": [
+    "Received higher education (recorded 1975-07-23)",
+    "Lack of access to transportation (recorded 1975-07-23)",
+    "Transport problem (recorded 1979-08-01)",
+    "Limited social contact (recorded 2017-07-19)",
+    "Part-time employment (recorded 2025-09-03)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 11.86% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $156,373.",
+    "In the patient's ZIP code, 1.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.09% of the labor force is unemployed.",
+    "In the patient's ZIP code, 12.51% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 4.62% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 28.07% of households have no vehicle.",
+    "In the patient's ZIP code, 33.3% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address major drug interactions: clopidogrel/prasugrel and amlodipine/simvastatin.",
-    "Measure blood pressure to address overdue monitoring gap.",
-    "Follow up on positive depression screen from 2023.",
-    "Administer or schedule annual influenza vaccine.",
-    "Perform annual BMI screening."
+    "Confirm if patient still takes prasugrel, atorvastatin, aspirin, and lisinopril 5mg to resolve major and moderate drug interaction alerts.",
+    "Address major drug interaction between amlodipine and simvastatin.",
+    "Obtain current blood pressure reading as it is overdue.",
+    "Administer annual influenza vaccine.",
+    "Perform annual BMI screening.",
+    "Conduct or schedule annual wellness visit."
   ],
   "_meta": {
     "patient_id": "a8f2fc02-6aa0-788e-e1d8-bd6d859fb74d",
     "patient_name": "Deandre599 Gusikowski974",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 3619,
-    "output_tokens": 2209,
+    "input_tokens": 4359,
+    "output_tokens": 2351,
     "finish_reason": "stop",
     "truncated": false
   }

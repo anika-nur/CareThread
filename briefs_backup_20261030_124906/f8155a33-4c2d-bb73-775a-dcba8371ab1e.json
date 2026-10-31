@@ -1,0 +1,74 @@
+{
+  "patient_summary": "Kacy732 Cherrie404 Zulauf375 is a 43-year-old female with a history of miscarriage and current stress.",
+  "key_conditions": [
+    {
+      "condition": "Past pregnancy history of miscarriage (situation)",
+      "since": "2006-08-08",
+      "relevance": "Historical obstetric event."
+    },
+    {
+      "condition": "Stress (finding)",
+      "since": "2025-03-13",
+      "relevance": "Current psychological finding."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Mammogram Overdue: Female patient, age 43, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 3 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 541 days ago (28.07 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2023-03-30.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had five recent encounters between 2025-08-14 and 2026-08-13. Labs from 2025-03-13 show BMI 28.07 kg/m2, blood pressure 108/85 mmHg, heart rate 67 /min, cholesterol 162.56 mg/dL, and triglycerides 118.72 mg/dL. Immunizations for Influenza, Td, and Hep A were administered on 2025-03-13.",
+  "social_history": [
+    "Risk activity involvement (recorded 2000-04-20)",
+    "Received higher education (recorded 2001-04-26)",
+    "Full-time employment (recorded 2017-05-18)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 7.15% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $133,840.",
+    "In the patient's ZIP code, 3.36% of residents have no health insurance.",
+    "In the patient's ZIP code, 8.11% of the labor force is unemployed.",
+    "In the patient's ZIP code, 6.65% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 7.28% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 2.95% of households have no vehicle.",
+    "In the patient's ZIP code, 60.98% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue mammogram and cervical screening.",
+    "Conduct annual wellness visit and BMI screening.",
+    "Review stress management strategies."
+  ],
+  "_meta": {
+    "patient_id": "f8155a33-4c2d-bb73-775a-dcba8371ab1e",
+    "patient_name": "Kacy732 Cherrie404 Zulauf375",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2248,
+    "output_tokens": 978,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -7,7 +7,11 @@ Usage:
 Output:
     Creates a SQLite database (carethread.db) with tables:
     patients, conditions, medications, observations, encounters, procedures,
-    immunizations, care_plan_activities
+    immunizations, care_plan_activities, organizations
+
+    Every clinical row carries the encounter_id it was recorded in, and every
+    encounter its organization_id, so each record can be traced to the
+    source system it came from (see sources.py).
 
 Note:
     The child tables have no unique constraint, so re-running against an
@@ -21,6 +25,9 @@ import sys
 import sqlite3
 from pathlib import Path
 from datetime import datetime
+
+from config import DB_PATH
+from sources import encounter_role, load_organizations
 
 
 def parse_patient(resource):
@@ -40,6 +47,12 @@ def parse_patient(resource):
         "deceased_date": resource.get("deceasedDateTime", "")[:10]
                  if resource.get("deceasedDateTime") else "",
     }
+
+
+def encounter_ref(resource):
+    """Id of the Encounter a resource was recorded in ('urn:uuid:<id>')."""
+    ref = (resource.get("encounter") or {}).get("reference", "")
+    return ref.rsplit(":", 1)[-1] if ref else ""
 
 
 def get_code(resource):
@@ -74,6 +87,7 @@ def parse_condition(resource, patient_id):
         "abatement_date": resource.get("abatementDateTime", "")[:10]
                           if resource.get("abatementDateTime") else "",
         "clinical_status": clinical_status,
+        "encounter_id": encounter_ref(resource),
     }
 
 
@@ -87,6 +101,7 @@ def parse_medication(resource, patient_id):
         "display": code_info["display"],
         "status": resource.get("status", ""),
         "authored_on": resource.get("authoredOn", "")[:10],
+        "encounter_id": encounter_ref(resource),
     }
 
 
@@ -112,29 +127,36 @@ def parse_observation(resource, patient_id):
         "value": value,
         "unit": unit,
         "effective_date": resource.get("effectiveDateTime", "")[:10],
+        "encounter_id": encounter_ref(resource),
     }
 
 
 def parse_encounter(resource, patient_id):
     """Extract key fields from an Encounter resource."""
     enc_class = resource.get("class", {}).get("code", "")
-    enc_type = ""
+    enc_type, enc_code = "", ""
     types = resource.get("type", [])
     if types:
         codings = types[0].get("coding", [])
         if codings:
             enc_type = codings[0].get("display", "")
+            enc_code = codings[0].get("code", "")   # SNOMED in Synthea
         else:
             enc_type = types[0].get("text", "")
 
     period = resource.get("period", {})
+    # 'Organization?identifier=https://github.com/synthetichealth/synthea|<id>'
+    provider = (resource.get("serviceProvider") or {}).get("reference", "")
     return {
         "patient_id": patient_id,
         "encounter_id": resource.get("id", ""),
         "encounter_class": enc_class,
         "encounter_type": enc_type,
+        "encounter_code": enc_code,
         "start_date": period.get("start", "")[:10],
         "end_date": period.get("end", "")[:10] if period.get("end") else "",
+        "organization_id": provider.rsplit("|", 1)[-1] if provider else "",
+        "role": encounter_role(enc_class, enc_type),
     }
 
 
@@ -149,6 +171,7 @@ def parse_procedure(resource, patient_id):
         "system": code_info["system"],
         "display": code_info["display"],
         "performed_date": performed[:10] if performed else "",
+        "encounter_id": encounter_ref(resource),
     }
 
 
@@ -176,6 +199,7 @@ def parse_immunization(resource, patient_id):
         "display": display,
         "status": resource.get("status", ""),
         "occurrence_date": occurrence[:10] if occurrence else "",
+        "encounter_id": encounter_ref(resource),
     }
 
 
@@ -200,6 +224,7 @@ def parse_care_plan_activities(resource, patient_id):
                 "display": coding.get("display", ""),
                 "status": status,
                 "start_date": start,
+                "encounter_id": encounter_ref(resource),
             })
     return rows
 
@@ -236,6 +261,7 @@ def parse_observation_components(resource, patient_id):
             "value": value,
             "unit": unit,
             "effective_date": effective,
+            "encounter_id": encounter_ref(resource),
         })
     return rows
 
@@ -294,7 +320,7 @@ def process_bundle(filepath):
     return data
 
 
-def create_database(db_path="carethread.db"):
+def create_database(db_path=DB_PATH):
     """Create the SQLite database with the required tables."""
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
@@ -311,44 +337,56 @@ def create_database(db_path="carethread.db"):
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
         display TEXT, onset_date TEXT,
-        abatement_date TEXT, clinical_status TEXT
+        abatement_date TEXT, clinical_status TEXT,
+        encounter_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS medications (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
-        display TEXT, status TEXT, authored_on TEXT
+        display TEXT, status TEXT, authored_on TEXT,
+        encounter_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS observations (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
-        display TEXT, value TEXT, unit TEXT, effective_date TEXT
+        display TEXT, value TEXT, unit TEXT, effective_date TEXT,
+        encounter_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS encounters (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, encounter_id TEXT,
-        encounter_class TEXT, encounter_type TEXT,
-        start_date TEXT, end_date TEXT
+        encounter_class TEXT, encounter_type TEXT, encounter_code TEXT,
+        start_date TEXT, end_date TEXT,
+        organization_id TEXT, role TEXT
+    )""")
+
+    c.execute("""CREATE TABLE IF NOT EXISTS organizations (
+        organization_id TEXT PRIMARY KEY,
+        name TEXT, city TEXT, state TEXT, group_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS procedures (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
-        display TEXT, performed_date TEXT
+        display TEXT, performed_date TEXT,
+        encounter_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS immunizations (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
-        display TEXT, status TEXT, occurrence_date TEXT
+        display TEXT, status TEXT, occurrence_date TEXT,
+        encounter_id TEXT
     )""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS care_plan_activities (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         patient_id TEXT, code TEXT, system TEXT,
-        display TEXT, status TEXT, start_date TEXT
+        display TEXT, status TEXT, start_date TEXT,
+        encounter_id TEXT
     )""")
 
 
@@ -368,6 +406,10 @@ def main():
     conn = create_database()
     c = conn.cursor()
 
+    for org in load_organizations(fhir_dir):
+        c.execute("INSERT OR REPLACE INTO organizations (organization_id,name,"
+                  "city,state,group_id) VALUES (?,?,?,?,?)", tuple(org.values()))
+
     for i, filepath in enumerate(json_files):
         # Skip hospital and practitioner info files
         if "hospitalInformation" in filepath.name or "practitionerInformation" in filepath.name:
@@ -382,31 +424,33 @@ def main():
                       tuple(p.values()))
         for row in data["conditions"]:
             c.execute("INSERT INTO conditions (patient_id,code,system,display,"
-                      "onset_date,abatement_date,clinical_status) VALUES (?,?,?,?,?,?,?)",
+                      "onset_date,abatement_date,clinical_status,encounter_id) "
+                      "VALUES (?,?,?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["medications"]:
             c.execute("INSERT INTO medications (patient_id,code,system,display,"
-                      "status,authored_on) VALUES (?,?,?,?,?,?)",
+                      "status,authored_on,encounter_id) VALUES (?,?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["observations"]:
             c.execute("INSERT INTO observations (patient_id,code,system,display,"
-                      "value,unit,effective_date) VALUES (?,?,?,?,?,?,?)",
+                      "value,unit,effective_date,encounter_id) VALUES (?,?,?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["encounters"]:
             c.execute("INSERT INTO encounters (patient_id,encounter_id,encounter_class,"
-                      "encounter_type,start_date,end_date) VALUES (?,?,?,?,?,?)",
+                      "encounter_type,encounter_code,start_date,end_date,"
+                      "organization_id,role) VALUES (?,?,?,?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["procedures"]:
             c.execute("INSERT INTO procedures (patient_id,code,system,display,"
-                      "performed_date) VALUES (?,?,?,?,?)",
+                      "performed_date,encounter_id) VALUES (?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["immunizations"]:
             c.execute("INSERT INTO immunizations (patient_id,code,system,display,"
-                      "status,occurrence_date) VALUES (?,?,?,?,?,?)",
+                      "status,occurrence_date,encounter_id) VALUES (?,?,?,?,?,?,?)",
                       tuple(row.values()))
         for row in data["care_plan_activities"]:
             c.execute("INSERT INTO care_plan_activities (patient_id,code,system,"
-                      "display,status,start_date) VALUES (?,?,?,?,?,?)",
+                      "display,status,start_date,encounter_id) VALUES (?,?,?,?,?,?,?)",
                       tuple(row.values()))
 
         if (i + 1) % 50 == 0:
@@ -418,12 +462,12 @@ def main():
     print("\n--- Database Summary ---")
     for table in ["patients", "conditions", "medications", "observations",
                   "encounters", "procedures", "immunizations",
-                  "care_plan_activities"]:
+                  "care_plan_activities", "organizations"]:
         count = c.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
         print(f"  {table}: {count} rows")
 
     conn.close()
-    print(f"\nDatabase saved to carethread.db")
+    print(f"\nDatabase saved to {DB_PATH}")
 
 
 if __name__ == "__main__":

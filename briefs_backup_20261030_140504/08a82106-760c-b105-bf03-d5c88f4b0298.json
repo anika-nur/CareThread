@@ -1,0 +1,79 @@
+{
+  "patient_summary": "Gertrudis163 Ina660 Klocko335 is a 59-year-old female with prediabetes, anemia, obesity, and a history of tubal ligation.",
+  "key_conditions": [
+    {
+      "condition": "Prediabetes (finding)",
+      "since": "1989-12-26",
+      "relevance": "Chronic metabolic condition requiring monitoring."
+    },
+    {
+      "condition": "Anemia (disorder)",
+      "since": "1992-12-29",
+      "relevance": "Chronic hematologic condition."
+    },
+    {
+      "condition": "History of tubal ligation (situation)",
+      "since": "1993-10-22",
+      "relevance": "Reproductive history."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity (finding)",
+      "since": "2001-03-06",
+      "relevance": "Chronic weight-related condition."
+    },
+    {
+      "condition": "Stress (finding)",
+      "since": "2023-11-28",
+      "relevance": "Recent psychosocial finding."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Mammogram Overdue: Female patient, age 59, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 59, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had an encounter for symptom on 2026-01-08, preceded by a general examination on 2025-12-09. Urinalysis on 2026-01-08 showed Glucose 7.4318 mg/dL, Ketones not detected, Specific gravity 1.0208, pH 5.5392, Protein 9.8925 mg/dL, Nitrite detected, Hemoglobin +, Leukocyte esterase one plus, Leukocytes 37.669 /HPF, and Erythrocytes 1.2666 /HPF. Influenza vaccination was administered on 2025-12-09.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1985-12-17)",
+    "Received higher education (recorded 1985-12-17)",
+    "Has a criminal record (recorded 1985-12-17)",
+    "Full-time employment (recorded 2023-11-28)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 3.41% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $202,841.",
+    "In the patient's ZIP code, 1.41% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.59% of the labor force is unemployed.",
+    "In the patient's ZIP code, 2.03% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.72% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 5.96% of households have no vehicle.",
+    "In the patient's ZIP code, 49.1% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address recent urinalysis findings from 2026-01-08, including Nitrite detected, Leukocyte esterase one plus, and Leukocytes 37.669 /HPF.",
+    "Schedule overdue mammogram per USPSTF guidelines.",
+    "Schedule overdue cervical cancer screening per USPSTF guidelines.",
+    "Monitor prediabetes and obesity status."
+  ],
+  "_meta": {
+    "patient_id": "08a82106-760c-b105-bf03-d5c88f4b0298",
+    "patient_name": "Gertrudis163 Ina660 Klocko335",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2594,
+    "output_tokens": 1103,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

@@ -1,35 +1,30 @@
 {
-  "patient_summary": "Magda24 Teresia279 Pacocha935 is a 64-year-old female with obesity, prediabetes, anemia, and a history of intimate partner abuse.",
+  "patient_summary": "Magda24 Teresia279 Pacocha935 is a 64-year-old female with obesity, prediabetes, and anemia.",
   "key_conditions": [
     {
-      "condition": "Obesity",
+      "condition": "Body mass index 30+ - obesity (finding)",
       "since": "2006-03-17",
-      "relevance": "Chronic condition requiring monitoring; current BMI is 27.72 kg/m2."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
-      "condition": "Prediabetes",
+      "condition": "Prediabetes (finding)",
       "since": "2008-03-21",
-      "relevance": "Chronic condition requiring monitoring; recent HbA1c is 5.89%."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     },
     {
-      "condition": "Anemia",
+      "condition": "Anemia (disorder)",
       "since": "2008-03-21",
-      "relevance": "Chronic disorder requiring ongoing management."
-    },
-    {
-      "condition": "Victim of intimate partner abuse",
-      "since": "1987-05-08",
-      "relevance": "Historical finding relevant to psychosocial assessment and safety planning."
+      "relevance": "Chronic condition requiring ongoing monitoring and management."
     }
   ],
   "current_medications": [
     {
       "medication": "doxycycline hyclate 100 MG",
-      "note": "Prescribed 1969-09-17."
+      "note": "Prescribed 1969-09-17; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     },
     {
       "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
-      "note": "Prescribed 1966-12-15."
+      "note": "Prescribed 1966-12-15; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
     }
   ],
   "medication_alerts": [],
@@ -51,32 +46,39 @@
       "severity": "medium",
       "action": "Schedule cervical cancer screening.",
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
-    },
-    {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2021-05-07.",
-      "severity": "low",
-      "action": "Conduct annual wellness visit.",
-      "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
-  "recent_activity": "Patient had a general examination on 2026-05-22 with labs showing HbA1c 5.89%, BMI 27.72 kg/m2, blood pressure 121/74 mmHg, and glucose 66.63 mg/dL. She received an influenza vaccination on 2026-05-22. A symptom encounter occurred on 2026-06-27.",
-  "sdoh_flags": [
-    "Limited social contact",
-    "Full-time employment"
+  "recent_activity": "Patient had a general examination on 2026-05-22 with labs showing Hemoglobin A1c 5.89 %, Body Weight 74.1 kg, BMI 27.72 kg/m2, Systolic BP 121 mm[Hg], Diastolic BP 74 mm[Hg], Heart rate 87 /min, Respiratory rate 13 /min, Glucose 66.63 mg/dL, and Pain severity 4 {score}. Influenza vaccination was administered on 2026-05-22. Previous visits include general examinations in 2025 and 2024, and symptom encounters in 2026 and 2023.",
+  "social_history": [
+    "Received higher education (recorded 1980-04-25)",
+    "Victim of intimate partner abuse (recorded 1987-05-08)",
+    "Full-time employment (recorded 2026-05-22)",
+    "Limited social contact (recorded 2026-05-22)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 7.19% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $89,411.",
+    "In the patient's ZIP code, 2.77% of residents have no health insurance.",
+    "In the patient's ZIP code, 3.62% of the labor force is unemployed.",
+    "In the patient's ZIP code, 12.31% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 3.75% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 4.2% of households have no vehicle.",
+    "In the patient's ZIP code, 57.05% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
-    "Address overdue colonoscopy, mammogram, and cervical screening.",
-    "Review prediabetes and obesity management given recent labs.",
-    "Assess limited social contact and psychosocial support needs.",
-    "Complete annual wellness visit components."
+    "Confirm the patient still takes doxycycline hyclate 100 MG.",
+    "Confirm the patient still takes diphenhydrAMINE Hydrochloride 25 MG Oral Tablet.",
+    "Address overdue colonoscopy.",
+    "Address overdue mammogram.",
+    "Address overdue cervical screening."
   ],
   "_meta": {
     "patient_id": "42892f2b-01d0-0028-0824-92dc28e736ba",
     "patient_name": "Magda24 Teresia279 Pacocha935",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2050,
-    "output_tokens": 955,
+    "input_tokens": 2622,
+    "output_tokens": 1204,
     "finish_reason": "stop",
     "truncated": false
   }

@@ -1,0 +1,161 @@
+{
+  "patient_summary": "Minerva230 Ora550 Swift555 is a 64-year-old female with a history of atopic dermatitis, recurrent UTI, asthma, chronic sinusitis, hypertension, prediabetes, anemia, obesity, and recent breast cancer.",
+  "key_conditions": [
+    {
+      "condition": "Malignant neoplasm of breast",
+      "since": "2024-01-21",
+      "relevance": "Recent diagnosis with worsening response to treatment noted in April 2026."
+    },
+    {
+      "condition": "Asthma",
+      "since": "1982-02-07",
+      "relevance": "Recent emergency hospital admission in June 2026 and ongoing follow-up."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2004-06-20",
+      "relevance": "Managed with losartan; BP monitoring overdue."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2009-07-19",
+      "relevance": "HbA1c 6.06% recorded in October 2025."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2023-10-08",
+      "relevance": "BMI 30.19 kg/m2 recorded in October 2025."
+    },
+    {
+      "condition": "Anemia",
+      "since": "2011-07-31",
+      "relevance": "Chronic condition requiring monitoring."
+    },
+    {
+      "condition": "Recurrent urinary tract infection",
+      "since": "1977-03-06",
+      "relevance": "Long-standing history."
+    },
+    {
+      "condition": "Atopic dermatitis",
+      "since": "1971-06-25",
+      "relevance": "Long-standing history."
+    },
+    {
+      "condition": "Chronic sinusitis",
+      "since": "1985-01-23",
+      "relevance": "Long-standing history."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "budesonide 0.25 MG/ML Inhalation Suspension",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "losartan potassium 25 MG Oral Tablet",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "albuterol 0.83 MG/ML Inhalation Solution",
+      "note": "Prescribed 2025-10-19."
+    },
+    {
+      "medication": "diphenhydrAMINE Hydrochloride 25 MG Oral Tablet",
+      "note": "Prescribed 1966-10-29; marked as old prescription, confirm current use."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "diphenhydramine",
+        "losartan"
+      ],
+      "recommendation": "Confirm the patient still takes diphenhydramine before acting on this interaction."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "budesonide",
+        "losartan"
+      ],
+      "recommendation": "Monitor for potential interaction effects."
+    },
+    {
+      "type": "drug_interaction",
+      "severity": "minor",
+      "drugs": [
+        "budesonide",
+        "salbutamol"
+      ],
+      "recommendation": "Monitor for potential interaction effects."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 374 days ago (123 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Check blood pressure today.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 64 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Discuss and schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 64, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Discuss and schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 374 days ago (30.19 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Measure BMI today.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a postoperative follow-up on 2026-07-31. In June 2026, she had an asthma follow-up and an emergency hospital admission for asthma. In April 2026, she had a follow-up visit and a postoperative follow-up. Labs from 2026-04-21 indicate worsening response to cancer treatment. Labs from 2025-10-19 show HbA1c 6.06%, BMI 30.19 kg/m2, BP 123/87 mmHg, and heart rate 97 /min. Influenza vaccination was administered on 2025-10-19.",
+  "social_history": [
+    "Housing unsatisfactory (recorded 1980-01-27)",
+    "Educated to high school level (recorded 1980-01-27)",
+    "Transport problem (recorded 1980-01-27)",
+    "Lack of access to transportation (recorded 1982-02-07)",
+    "Social isolation (recorded 2015-08-23)",
+    "Limited social contact (recorded 2024-10-13)",
+    "Unemployed (recorded 2025-10-19)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 7.9% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $110,989.",
+    "In the patient's ZIP code, 4.71% of residents have no health insurance.",
+    "In the patient's ZIP code, 4.78% of the labor force is unemployed.",
+    "In the patient's ZIP code, 11.27% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 13.52% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 8.47% of households have no vehicle.",
+    "In the patient's ZIP code, 50.1% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Confirm if patient still takes diphenhydramine to assess moderate interaction with losartan.",
+    "Check blood pressure to address overdue monitoring gap.",
+    "Discuss worsening response to cancer treatment and coordinate with oncology.",
+    "Schedule overdue colonoscopy and cervical cancer screening.",
+    "Measure BMI to address annual screening gap.",
+    "Review asthma management following recent emergency admission."
+  ],
+  "_meta": {
+    "patient_id": "06c75a4a-a52e-d007-3856-a4b3c38f1d75",
+    "patient_name": "Minerva230 Ora550 Swift555",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3170,
+    "output_tokens": 1820,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

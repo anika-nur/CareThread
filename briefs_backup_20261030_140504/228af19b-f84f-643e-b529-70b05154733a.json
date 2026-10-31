@@ -1,0 +1,71 @@
+{
+  "patient_summary": "Larraine124 Alycia285 Feil794 is a 25-year-old female with severe anxiety (panic) and stress, currently pregnant.",
+  "key_conditions": [
+    {
+      "condition": "Severe anxiety (panic)",
+      "since": "2024-01-03",
+      "relevance": "Active psychiatric condition requiring management during pregnancy."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-07-16",
+      "relevance": "Recent finding potentially impacting prenatal care and mental health."
+    }
+  ],
+  "current_medications": [],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 8 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 416 days ago (23.62 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Perform annual BMI screening.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-07-30.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a prenatal visit on 2025-11-28 and an initial prenatal visit on 2025-11-05. Labs from 2026-07-22 and 2025-09-10 confirm pregnancy status. Vitals from 2025-07-16 include BP 131/74 mmHg, HR 88/min, RR 14/min, Weight 64.9 kg, Height 165.8 cm, BMI 23.62 kg/m2, and pain score 1/10. Immunizations for Influenza and Hep B were administered in 2025-07-16.",
+  "social_history": [
+    "Received higher education",
+    "Lack of access to transportation",
+    "Social isolation",
+    "Unemployed"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 14.1% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $212,664.",
+    "In the patient's ZIP code, 1.49% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.31% of the labor force is unemployed.",
+    "In the patient's ZIP code, 3.69% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 0.4% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 46.26% of households have no vehicle.",
+    "In the patient's ZIP code, 40.94% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address cervical screening gap (medium severity) during prenatal care.",
+    "Monitor blood pressure (131/74 mmHg) in context of pregnancy.",
+    "Assess mental health status given severe anxiety and stress during pregnancy.",
+    "Address social determinants: transportation access and unemployment.",
+    "Complete annual wellness visit components."
+  ],
+  "_meta": {
+    "patient_id": "228af19b-f84f-643e-b529-70b05154733a",
+    "patient_name": "Larraine124 Alycia285 Feil794",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2192,
+    "output_tokens": 932,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

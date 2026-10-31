@@ -4,9 +4,15 @@ verify_brief.py — Verifies a generated pre-visit brief against source data.
 Checks:
 1. Every condition mentioned exists in the patient's record.
 2. Every medication mentioned is in the active medication list.
-3. Care gaps match what care_gaps.py detected.
+3. Care gaps match what care_gaps.py detected: none dropped, and none
+   listed that the record no longer holds.
 4. Drug interactions match what drug_interactions.py detected.
 5. No fabricated lab values.
+6. Every number in community_context matches the patient's ZIP row in the
+   sdoh table, and there is no community context at all without one.
+7. No day counts ("overdue by 401 days"): they go stale, so any is a WARN,
+   and one that doesn't match the gap record as of the brief's generation
+   date is a FAIL.
 
 Usage:
     python verify_brief.py
@@ -16,7 +22,32 @@ import json
 import os
 import re
 import sqlite3
+from datetime import date, datetime
 from pathlib import Path
+
+from assemble_patient import SDOH_INDICATORS
+from drug_interactions import SYNONYMS
+from config import DB_PATH
+
+
+# Numbers as the model writes them: 9.84, 72,797, $72,797
+_COMMUNITY_NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
+_YEAR = re.compile(r"(19|20)\d{2}")
+
+# Numbers that belong to an indicator's definition, not its value
+# ("30% or more of income on rent", "adults 25+")
+_DEFINITION_NUMBERS = {n for label in SDOH_INDICATORS.values()
+                       for n in _COMMUNITY_NUMBER.findall(label)}
+
+
+def _matches_sdoh(token, values):
+    """True if a number in the brief is one of the ZIP's values, allowing
+    for rounding to however many decimals the brief used."""
+    text = token.replace(",", "")
+    n = float(text)
+    decimals = len(text.split(".")[1]) if "." in text else 0
+    tolerance = 0.5 * 10 ** -decimals + 1e-9
+    return any(abs(float(v) - n) <= tolerance for v in values)
 
 
 # Dose units, forms, routes, salts and esters — everything in a prescription
@@ -30,10 +61,184 @@ _NON_DRUG_WORDS = {
 }
 
 
+# Lay and clinical names for the same condition. A brief may say "breast
+# cancer" where the record says "Malignant neoplasm of breast"; each group
+# is matched as a whole, in either direction.
+CONDITION_SYNONYMS = [
+    {"cancer", "malignant neoplasm", "carcinoma"},
+    {"heart attack", "myocardial infarction"},
+    {"high blood pressure", "hypertension"},
+    {"kidney disease", "chronic kidney disease"},
+    {"diabetes", "diabetes mellitus"},
+]
+
+_CONDITION_FILLER = {"of", "the", "and", "with", "disorder", "finding",
+                     "situation", "history"}
+
+
+def condition_variants(text):
+    """The text plus every rewording the synonym map allows:
+    'breast cancer' → also 'breast malignant neoplasm', 'breast carcinoma'."""
+    text = text.lower()
+    variants = {text}
+    for group in CONDITION_SYNONYMS:
+        for term in group:
+            if re.search(rf"\b{re.escape(term)}\b", text):
+                for alt in group - {term}:
+                    variants.add(re.sub(rf"\b{re.escape(term)}\b", alt, text))
+    return variants
+
+
+def _condition_words(text):
+    return {w for w in re.findall(r"[a-z0-9]+", text) if w not in _CONDITION_FILLER}
+
+
+def condition_in_record(name, source_conditions):
+    """True if a condition named in the brief is one the record holds:
+    substring either way, or every meaningful word present, for the name
+    as written or any synonym rewording of it."""
+    for variant in condition_variants(name):
+        words = _condition_words(variant)
+        for sc in source_conditions:
+            if variant in sc or sc in variant:
+                return True
+            if words and words <= _condition_words(sc):
+                return True
+    return False
+
+
+_GAP_FILLER = {"overdue", "missing", "due"}
+
+
+def gap_in_record(text, source_gaps):
+    """True if a care gap the brief lists has the same gap type as one in
+    the record. The type is the text before the colon (all of it if there
+    is none); failing an exact match, every word of a record gap type
+    (less 'overdue', 'missing') must appear in it."""
+    gap_type = text.split(":")[0].strip().lower()
+    words = set(re.findall(r"[a-z0-9]+", gap_type))
+    for g in source_gaps:
+        source = g["gap"].lower()
+        if gap_type == source:
+            return True
+        key = set(re.findall(r"[a-z0-9]+", source)) - _GAP_FILLER
+        if key and key <= words:
+            return True
+    return False
+
+
+def canonical_drug(name):
+    """A drug name with every US alias swapped for the name DDInter and the
+    interaction table use: 'albuterol 0.83 MG/ML' → 'salbutamol 0.83 MG/ML'."""
+    name = name.lower()
+    for alias, canonical in SYNONYMS.items():
+        name = re.sub(rf"\b{re.escape(alias)}\b", canonical, name)
+    return name
+
+
 def _drug_words(text):
     """Alphabetic tokens of 5+ characters that could be a drug name."""
     return {w for w in re.findall(r"[a-z]{5,}", str(text).lower())
             if w not in _NON_DRUG_WORDS}
+
+
+def load_brief_file(path):
+    """A brief from disk. Briefs written before _meta carried generated_on
+    are dated by the file's modification time."""
+    path = Path(path)
+    brief = json.loads(path.read_text())
+    meta = brief.setdefault("_meta", {})
+    meta.setdefault("generated_on",
+                    date.fromtimestamp(path.stat().st_mtime).isoformat())
+    return brief
+
+
+# ── Day counts (check 7) ─────────────────────────────────────────────────
+
+# "overdue by 401 days", "401 days ago". Intervals ("every 180 days",
+# "within 30 days", "a 90-day supply") are rules, not counts, and don't go stale.
+# Nor are pack sizes in drug names ("Natazia 28 Day", "21 DAY ethinyl
+# estradiol"): a count over one is always "days".
+_DAY_COUNT = re.compile(r"(?<![\w.-])(\d+)(-?)\s*(days?)\b", re.I)
+_INTERVAL_WORDS = re.compile(r"\b(?:every|within|per|each|after)\s+$", re.I)
+
+
+def _gap_interval(gap):
+    """The interval a gap's description states, in days, as the rules count
+    them: 'Due every 180 days', 'Due annually' (365), 'every 2 years' (730)."""
+    text = gap.get("description") or ""
+    if m := re.search(r"every (\d+) days", text):
+        return int(m.group(1))
+    if m := re.search(r"every (\d+) years", text):
+        return 365 * int(m.group(1))
+    return 365 if "annually" in text else None
+
+
+def _valid_day_counts(gaps, on):
+    """Day counts the gap record supports on date `on`: days since each last
+    date, and days overdue. The stored figures are accepted too."""
+    since, overdue = set(), set()
+    for g in gaps:
+        if g.get("days_overdue") is not None:
+            overdue.add(int(g["days_overdue"]))
+        if m := re.search(r"was (\d+) days ago", g.get("description") or ""):
+            since.add(int(m.group(1)))
+        if not g.get("last_date"):
+            continue
+        days = (on - date.fromisoformat(g["last_date"][:10])).days
+        since.add(days)
+        if (interval := _gap_interval(g)) is not None:
+            overdue.add(days - interval)
+    return since, overdue
+
+
+def _strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for v in value.values():
+            yield from _strings(v)
+    elif isinstance(value, list):
+        for v in value:
+            yield from _strings(v)
+
+
+def day_count_issues(brief, gaps):
+    """Check 7: every day count in the brief, as a WARN, or a FAIL when the
+    gap record didn't support it on the brief's generation date."""
+    generated = brief.get("_meta", {}).get("generated_on")
+    on = datetime.strptime(generated, "%Y-%m-%d").date() if generated else date.today()
+    since, overdue = _valid_day_counts(gaps, on)
+    issues = []
+    body = {k: v for k, v in brief.items() if k != "_meta"}
+    for text in _strings(body):
+        for m in _DAY_COUNT.finditer(text):
+            n = int(m.group(1))
+            if (m.group(2) or _INTERVAL_WORDS.search(text[:m.start()])
+                    or (n != 1 and m.group(3).lower() == "day")):
+                continue
+            around = text[max(0, m.start() - 20):m.end() + 12].lower()
+            if "overdue" in around:
+                valid = overdue
+            elif "ago" in around or "since" in around:
+                valid = since
+            else:
+                valid = since | overdue
+            quote = text[max(0, m.start() - 40):m.end() + 20].strip()
+            if any(abs(n - v) <= 1 for v in valid):
+                issues.append({
+                    "type": "day_count",
+                    "severity": "medium",
+                    "detail": f"Day counts go stale; use dates: '{quote}'",
+                })
+            else:
+                issues.append({
+                    "type": "day_count_mismatch",
+                    "severity": "high",
+                    "detail": f"'{n} days' matches no care gap in the record "
+                             f"as of {on.isoformat()}: '{quote}'",
+                })
+    return issues
 
 
 def verify_brief(brief, patient_data):
@@ -54,10 +259,8 @@ def verify_brief(brief, patient_data):
     for cond in brief.get("key_conditions", []):
         checks += 1
         cond_name = cond.get("condition", "").lower()
-        # Check if any source condition contains this name or vice versa
-        matched = any(cond_name in sc or sc in cond_name
-                     for sc in source_conditions)
-        if not matched:
+        # Containment either way, allowing for synonyms ("breast cancer")
+        if not condition_in_record(cond_name, source_conditions):
             issues.append({
                 "type": "hallucinated_condition",
                 "severity": "high",
@@ -108,6 +311,20 @@ def verify_brief(brief, patient_data):
                      f"Some gaps may have been dropped.",
         })
 
+    # Check 3b: Every gap the brief lists must be one the record holds now.
+    # Briefs write "<gap type>: <description>"; a gap the rules no longer
+    # detect (an old positive screen since followed by a negative) fails.
+    for g in brief_gaps:
+        checks += 1
+        text = str(g.get("gap", "")).strip()
+        if not gap_in_record(text, patient_data["care_gaps"]):
+            issues.append({
+                "type": "care_gap_not_in_record",
+                "severity": "high",
+                "detail": "Brief lists a care gap not in the current record: "
+                          f"{text.split(':')[0].strip()}",
+            })
+
     # Check 4: Drug interaction alerts should match detected interactions
     brief_alerts = brief.get("medication_alerts", [])
     for alert in brief_alerts:
@@ -119,7 +336,9 @@ def verify_brief(brief, patient_data):
             # stores the generic ("amlodipine"), or the reverse. Each drug in
             # the alert must match a DIFFERENT drug in the source pair, so
             # two mentions of one drug can't satisfy a pair.
+            # Synonyms count as the same drug (albuterol / salbutamol).
             def same_drug(x, y):
+                x, y = canonical_drug(x), canonical_drug(y)
                 return x in y or y in x
 
             source_pairs = [tuple(si) for si in source_interactions
@@ -144,13 +363,46 @@ def verify_brief(brief, patient_data):
     condition_keywords = ["cancer", "hiv", "hepatitis", "copd", "stroke",
                          "heart failure", "renal failure", "cirrhosis"]
     for kw in condition_keywords:
-        if kw in summary and not any(kw in sc for sc in source_conditions):
+        if kw in summary and not any(v in sc for v in condition_variants(kw)
+                                     for sc in source_conditions):
             issues.append({
                 "type": "hallucinated_condition_in_summary",
                 "severity": "high",
                 "detail": f"Summary mentions '{kw}' but no matching "
                          f"condition in source data.",
             })
+
+    # Check 6: Community (ZIP-level) figures must come from the sdoh table
+    sdoh = patient_data.get("sdoh") or {}
+    sdoh_values = [v for k, v in sdoh.items()
+                   if k in SDOH_INDICATORS and v is not None]
+    zip_code = str(patient_data["demographics"].get("zip_code", ""))
+    for entry in brief.get("community_context", []):
+        checks += 1
+        if not sdoh_values:
+            issues.append({
+                "type": "community_data_without_source",
+                "severity": "high",
+                "detail": f"Brief gives community context ('{entry[:60]}') "
+                         f"but no SDOH data exists for this patient's ZIP.",
+            })
+            continue
+        for token in _COMMUNITY_NUMBER.findall(str(entry)):
+            plain = token.replace(",", "")
+            if (plain == zip_code or plain in _DEFINITION_NUMBERS
+                    or _YEAR.fullmatch(plain)):
+                continue
+            if not _matches_sdoh(token, sdoh_values):
+                issues.append({
+                    "type": "fabricated_community_number",
+                    "severity": "high",
+                    "detail": f"Community context cites {token}, which matches "
+                             f"no SDOH value for ZIP {zip_code}: '{entry[:80]}'",
+                })
+
+    # Check 7: No day counts; any that appear must match the gap record
+    checks += 1
+    issues.extend(day_count_issues(brief, patient_data["care_gaps"]))
 
     # Build report
     report = {
@@ -169,7 +421,7 @@ def verify_brief(brief, patient_data):
 
 
 def main():
-    conn = sqlite3.connect("carethread.db")
+    conn = sqlite3.connect(DB_PATH)
     from assemble_patient import assemble_patient_data
 
     briefs_dir = Path("briefs")
@@ -187,8 +439,7 @@ def main():
     results = {"PASS": 0, "WARN": 0, "FAIL": 0}
 
     for bf in sorted(brief_files):
-        with open(bf) as f:
-            brief = json.load(f)
+        brief = load_brief_file(bf)
 
         pid = brief.get("_meta", {}).get("patient_id")
         name = brief.get("_meta", {}).get("patient_name", "?")

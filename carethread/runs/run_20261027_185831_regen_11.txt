@@ -1,0 +1,15 @@
+Regenerating 11 briefs that failed only on 'Medication review due'
+
+[1/11] Minerva230 Ora550 Swift555... PASS
+[2/11] Susana117 Valencia279 Kirlin939... PASS
+[3/11] Andra606 Prohaska837... PASS
+[4/11] Melania287 Welch179... PASS
+[5/11] Leslie90 Theron432 Toy286... PASS
+[6/11] Carl856 Patti584 Auer97... PASS
+[7/11] Myung778 Bogisich202... PASS
+[8/11] Yoshie761 Marcela739 Rath779... PASS
+[9/11] Sau887 Fawn386 Hermann103... PASS
+[10/11] Abbey813 Kirstin394 Yundt842... PASS
+[11/11] Toby274 Lanette41 Grant908... PASS
+
+PASS: 11 | WARN: 0 | FAIL: 0 | ERROR: 0

@@ -1,5 +1,5 @@
 {
-  "patient_summary": "Fawn Hermann, a 58-year-old female, has prediabetes, obesity, hyperlipidemia, and chronic obstructive bronchitis.",
+  "patient_summary": "Sau887 Fawn386 Hermann103 is a 58-year-old female with prediabetes, obesity, hyperlipidemia, chronic obstructive bronchitis, and stress.",
   "key_conditions": [
     {
       "condition": "Prediabetes",
@@ -9,17 +9,22 @@
     {
       "condition": "Body mass index 30+ - obesity",
       "since": "2012-08-05",
-      "relevance": "Chronic condition contributing to metabolic risk."
+      "relevance": "Chronic condition impacting cardiovascular and metabolic health."
     },
     {
       "condition": "Hyperlipidemia",
       "since": "2018-07-22",
-      "relevance": "Chronic cardiovascular risk factor."
+      "relevance": "Chronic condition managed with statin therapy."
     },
     {
       "condition": "Chronic obstructive bronchitis",
       "since": "2020-07-26",
-      "relevance": "Chronic respiratory condition requiring maintenance therapy."
+      "relevance": "Chronic respiratory condition managed with inhalers."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-08-31",
+      "relevance": "Recent finding potentially impacting overall health."
     }
   ],
   "current_medications": [
@@ -44,7 +49,7 @@
         "salbutamol",
         "salmeterol"
       ],
-      "recommendation": "Review necessity of concurrent beta-agonist therapy."
+      "recommendation": "Review concurrent use of short-acting and long-acting beta-agonists."
     },
     {
       "type": "drug_interaction",
@@ -53,7 +58,7 @@
         "fluticasone",
         "salbutamol"
       ],
-      "recommendation": "Monitor for potential additive effects."
+      "recommendation": "Monitor for potential interactions between corticosteroid and beta-agonist."
     },
     {
       "type": "drug_interaction",
@@ -62,7 +67,7 @@
         "fluticasone",
         "salmeterol"
       ],
-      "recommendation": "Monitor for potential additive effects."
+      "recommendation": "Monitor for potential interactions between corticosteroid and long-acting beta-agonist."
     }
   ],
   "care_gaps": [
@@ -79,23 +84,33 @@
       "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
     },
     {
-      "gap": "BMI Screening Overdue: Last BMI was 370 days ago (29.67 kg/m2). Due annually.",
+      "gap": "BMI Screening Overdue: Last BMI was on 2025-08-31 (29.67 kg/m2). Due annually.",
       "severity": "low",
-      "action": "Perform BMI screening.",
+      "action": "Perform annual BMI screening.",
       "source": "USPSTF/UDS: Annual BMI screening for all adults"
     },
     {
-      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-09-08.",
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2025-08-31.",
       "severity": "low",
       "action": "Conduct annual wellness visit.",
       "source": "Preventive care: Annual wellness visit recommended for all adults"
     }
   ],
   "recent_activity": "Patient had a symptom encounter on 2025-11-04, a follow-up on 2025-09-15, and a general examination on 2025-08-31. Labs from 2025-09-15 show Glucose 88.41 mg/dL, Creatinine 2.7432 mg/dL, and GFR 80.531 mL/min. Influenza vaccination was administered on 2025-08-31.",
-  "sdoh_flags": [
-    "Part-time employment",
-    "Stress",
-    "Has a criminal record"
+  "social_history": [
+    "Received higher education (recorded 1986-09-14)",
+    "Has a criminal record (recorded 2012-08-05)",
+    "Part-time employment (recorded 2025-08-31)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 9.07% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $92,537.",
+    "In the patient's ZIP code, 2.54% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.88% of the labor force is unemployed.",
+    "In the patient's ZIP code, 15.65% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 9.55% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 7.4% of households have no vehicle.",
+    "In the patient's ZIP code, 44.17% of renter households pay 30% or more of income on rent."
   ],
   "priority_actions": [
     "Address moderate drug interaction between salbutamol and salmeterol.",
@@ -107,10 +122,11 @@
   "_meta": {
     "patient_id": "cd6f93d1-108a-b416-0a49-861dd69f2164",
     "patient_name": "Sau887 Fawn386 Hermann103",
+    "generated_on": "2026-10-30",
     "backend": "colby",
     "model": "qwen-3.8-27b",
-    "input_tokens": 2516,
-    "output_tokens": 1200,
+    "input_tokens": 3166,
+    "output_tokens": 1549,
     "finish_reason": "stop",
     "truncated": false
   }

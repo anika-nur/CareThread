@@ -1,0 +1,139 @@
+{
+  "patient_summary": "Leslie90 Theron432 Toy286 is a 49-year-old male with type 2 diabetes, hypertension, and a history of prediabetes, anemia, and metabolic syndrome.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "2014-07-22",
+      "relevance": "Primary driver for current medication management and screening gaps."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2014-07-22",
+      "relevance": "Managed with current antihypertensive therapy."
+    },
+    {
+      "condition": "Neuropathy due to type 2 diabetes mellitus",
+      "since": "2020-08-25",
+      "relevance": "Chronic complication requiring ongoing monitoring."
+    },
+    {
+      "condition": "Osteoarthritis of hip",
+      "since": "2020-10-17",
+      "relevance": "Chronic pain condition noted in recent encounters."
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "since": "2015-07-28",
+      "relevance": "Metabolic risk factor requiring lipid monitoring."
+    },
+    {
+      "condition": "Metabolic syndrome X",
+      "since": "2015-07-28",
+      "relevance": "Cluster of conditions increasing cardiovascular risk."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1995-06-27",
+      "relevance": "Long-standing condition requiring periodic review."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "1995-06-27",
+      "relevance": "Historical finding preceding current diabetes diagnosis."
+    },
+    {
+      "condition": "Stress",
+      "since": "2025-09-23",
+      "relevance": "Recent psychosocial factor potentially impacting health outcomes."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-09-23 for hypertension."
+    },
+    {
+      "medication": "amLODIPine 2.5 MG Oral Tablet",
+      "note": "Prescribed 2025-09-23 for hypertension."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 400 days ago (value: 6.83%). Due every 180 days.",
+      "severity": "high",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 400 days ago (121 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 49 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Lipid Panel Overdue: Last lipid panel was 400 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order lipid panel.",
+      "source": "HEDIS CDC: Annual lipid panel for diabetic patients"
+    },
+    {
+      "gap": "Nephropathy Screening Overdue: Last urine microalbumin was 400 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order urine microalbumin test.",
+      "source": "HEDIS CDC-NP: Annual nephropathy screening for diabetic patients"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 400 days ago (27.31 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Calculate and record BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2024-10-01.",
+      "severity": "low",
+      "action": "Conduct annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a general examination on 2025-09-23 where HbA1c was 6.83%, weight 84.5 kg, and pain severity 3/10. Ophthalmic exams in 2024 and 2025 showed no apparent retinopathy and intraocular pressure of 16 mmHg in both eyes. Most recent encounter was 2026-06-30 for a symptom.",
+  "social_history": [
+    "Received higher education (recorded 1995-06-27)",
+    "Not in labor force (recorded 2025-09-23)",
+    "Reports of violence in the environment (recorded 2025-09-23)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 6.51% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $95,603.",
+    "In the patient's ZIP code, 14.82% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.92% of the labor force is unemployed.",
+    "In the patient's ZIP code, 5.65% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 11.16% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.54% of households have no vehicle.",
+    "In the patient's ZIP code, 51.79% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Order HbA1c test to address high-severity care gap.",
+    "Measure blood pressure to address medium-severity care gap.",
+    "Order lipid panel and urine microalbumin test to address medium-severity care gaps.",
+    "Refer for colonoscopy to address medium-severity care gap.",
+    "Calculate and record BMI to address low-severity care gap.",
+    "Conduct annual wellness visit to address low-severity care gap."
+  ],
+  "_meta": {
+    "patient_id": "61314a1c-3140-fe6c-66c3-6b5ee303b58c",
+    "patient_name": "Leslie90 Theron432 Toy286",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3007,
+    "output_tokens": 1630,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

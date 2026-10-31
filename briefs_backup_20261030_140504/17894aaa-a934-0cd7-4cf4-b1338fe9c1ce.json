@@ -1,0 +1,128 @@
+{
+  "patient_summary": "Andra606 Prohaska837 is a 47-year-old female with chronic intractable migraine, chronic pain, dependent drug abuse, and obesity.",
+  "key_conditions": [
+    {
+      "condition": "Chronic intractable migraine without aura",
+      "since": "1993-02-01",
+      "relevance": "Long-standing neurological condition requiring ongoing management."
+    },
+    {
+      "condition": "Chronic pain",
+      "since": "1993-10-18",
+      "relevance": "Contributing factor to current NSAID use and functional status."
+    },
+    {
+      "condition": "Dependent drug abuse",
+      "since": "1994-02-07",
+      "relevance": "Historical substance use disorder requiring monitoring."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2004-01-06",
+      "relevance": "Chronic metabolic risk factor."
+    },
+    {
+      "condition": "Transformed migraine",
+      "since": "2014-02-06",
+      "relevance": "Progression of migraine phenotype."
+    },
+    {
+      "condition": "Injury of knee",
+      "since": "2026-08-15",
+      "relevance": "Recent acute injury leading to hospitalization and new NSAID prescription."
+    },
+    {
+      "condition": "Injury of medial collateral ligament of knee",
+      "since": "2026-08-15",
+      "relevance": "Specific ligamentous injury associated with recent knee trauma."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Naproxen sodium 220 MG Oral Tablet",
+      "note": "Prescribed 2026-08-15 for recent knee injury."
+    },
+    {
+      "medication": "Natazia 28 Day (dienogest/estradiol valerate)",
+      "note": "Prescribed 2026-06-26."
+    },
+    {
+      "medication": "Ibuprofen 400 MG Oral Tablet [Ibu]",
+      "note": "Prescribed 2026-04-28."
+    },
+    {
+      "medication": "Astemizole 10 MG Oral Tablet",
+      "note": "Prescribed 1982-10-12; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "Ibuprofen 400 MG Oral Tablet [Ibu]",
+        "Naproxen sodium 220 MG Oral Tablet"
+      ],
+      "recommendation": "Review concurrent use of two NSAIDs; consider discontinuing one to reduce gastrointestinal and renal risk."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "Depression Follow-Up Missing: PHQ-2 score of 6.0 on 2026-04-28 with no follow-up encounter within 30 days.",
+      "severity": "high",
+      "action": "Schedule follow-up for positive depression screen.",
+      "source": "UDS: Follow-up within 30 days of positive depression screen"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 47 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Refer for colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 47, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Refer for mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Last cervical screening was 9 years ago. Due every 3 years.",
+      "severity": "medium",
+      "action": "Perform or refer for cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "Patient had a recent ER admission on 2026-08-15 for knee injury, followed by non-urgent orthopedic admission on 2026-08-22 and hospital admission on 2026-08-25. Prior to this, she had a consultation on 2026-06-26 and a general examination on 2026-04-28. Labs from 2026-04-28 show BMI 27.84 kg/m2, BP 89/74 mmHg, and pain severity score of 2. Influenza vaccination is up to date as of 2026-04-28.",
+  "social_history": [
+    "Risk activity involvement (recorded 1994-12-13)",
+    "Educated to high school level (recorded 1996-12-24)",
+    "Part-time employment (recorded 2026-04-28)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 3.12% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $220,089.",
+    "In the patient's ZIP code, 0.47% of residents have no health insurance.",
+    "In the patient's ZIP code, 2.98% of the labor force is unemployed.",
+    "In the patient's ZIP code, 1.58% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 2.8% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 1.86% of households have no vehicle.",
+    "In the patient's ZIP code, 47.03% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address moderate drug interaction between ibuprofen and naproxen; recommend discontinuing one NSAID.",
+    "Follow up on positive PHQ-2 depression screen from 2026-04-28.",
+    "Confirm if patient still takes Astemizole, as it was prescribed over 5 years ago and never re-prescribed.",
+    "Schedule overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Assess recovery and pain management for recent knee injury and MCL injury."
+  ],
+  "_meta": {
+    "patient_id": "17894aaa-a934-0cd7-4cf4-b1338fe9c1ce",
+    "patient_name": "Andra606 Prohaska837",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3040,
+    "output_tokens": 1697,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

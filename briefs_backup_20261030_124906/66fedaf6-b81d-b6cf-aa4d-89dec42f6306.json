@@ -1,0 +1,154 @@
+{
+  "patient_summary": "Luisa710 Sosa986 is a 59-year-old female with a history of type 2 diabetes, hypertension, hyperlipidemia, and severe anxiety.",
+  "key_conditions": [
+    {
+      "condition": "Diabetes mellitus type 2",
+      "since": "1992-09-13",
+      "relevance": "Primary chronic condition requiring ongoing management and screening."
+    },
+    {
+      "condition": "Essential hypertension",
+      "since": "2007-07-15",
+      "relevance": "Comorbid cardiovascular risk factor."
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "since": "2009-07-26",
+      "relevance": "Comorbid cardiovascular risk factor."
+    },
+    {
+      "condition": "Severe anxiety (panic)",
+      "since": "2024-10-20",
+      "relevance": "Recent mental health diagnosis requiring monitoring."
+    },
+    {
+      "condition": "Anemia",
+      "since": "1992-09-13",
+      "relevance": "Chronic condition associated with long-term iron supplementation."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2007-07-15",
+      "relevance": "Contributing factor to metabolic syndrome and diabetes."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Simvastatin 10 MG Oral Tablet",
+      "note": "Prescribed 2025-11-02."
+    },
+    {
+      "medication": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "note": "Prescribed 2025-10-26."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-10-26."
+    },
+    {
+      "medication": "ferrous sulfate 325 MG Oral Tablet",
+      "note": "Prescribed 1992-09-20; started over 5 years ago and never re-prescribed \u2014 confirm the patient still takes it."
+    }
+  ],
+  "medication_alerts": [
+    {
+      "type": "drug_interaction",
+      "severity": "moderate",
+      "drugs": [
+        "lisinopril",
+        "metformin"
+      ],
+      "recommendation": "Monitor for potential interaction between lisinopril and metformin."
+    }
+  ],
+  "care_gaps": [
+    {
+      "gap": "HbA1c Overdue: Last HbA1c was 367 days ago (value: 5.47%). Due every 180 days.",
+      "severity": "high",
+      "action": "Order HbA1c test.",
+      "source": "HEDIS CDC: HbA1c every 6 months for diabetic patients"
+    },
+    {
+      "gap": "Diabetic Eye Exam Overdue: Diabetic patient with no eye exam on record. Diabetic retinopathy can cause preventable blindness.",
+      "severity": "high",
+      "action": "Refer for diabetic eye exam.",
+      "source": "HEDIS CDC-EE: Annual eye exam for diabetic patients"
+    },
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 367 days ago (109 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Measure blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 59, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Order mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 59, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Order cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    },
+    {
+      "gap": "Nephropathy Screening Overdue: Last urine microalbumin was 367 days ago. Due annually.",
+      "severity": "medium",
+      "action": "Order urine microalbumin test.",
+      "source": "HEDIS CDC-NP: Annual nephropathy screening for diabetic patients"
+    },
+    {
+      "gap": "BMI Screening Overdue: Last BMI was 367 days ago (27.89 kg/m2). Due annually.",
+      "severity": "low",
+      "action": "Calculate BMI.",
+      "source": "USPSTF/UDS: Annual BMI screening for all adults"
+    },
+    {
+      "gap": "Annual Wellness Visit Overdue: No preventive/wellness visit in the past year. Last was 2022-10-23.",
+      "severity": "low",
+      "action": "Schedule annual wellness visit.",
+      "source": "Preventive care: Annual wellness visit recommended for all adults"
+    }
+  ],
+  "recent_activity": "Patient had a follow-up encounter on 2025-11-02 and a general examination on 2025-10-26. Labs from 2025-11-02 show Glucose 181.39 mg/dL, Creatinine 2.7633 mg/dL, and GFR 68.798 mL/min. Influenza vaccination was administered on 2025-10-26.",
+  "social_history": [
+    "Received higher education (recorded 1985-09-01)",
+    "Social isolation (recorded 2018-06-17)",
+    "Refugee (recorded 2018-06-17)",
+    "Victim of intimate partner abuse (recorded 2018-09-16)",
+    "Limited social contact (recorded 2023-10-15)",
+    "Not in labor force (recorded 2025-10-26)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 10.1% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $114,378.",
+    "In the patient's ZIP code, 7.93% of residents have no health insurance.",
+    "In the patient's ZIP code, 5.71% of the labor force is unemployed.",
+    "In the patient's ZIP code, 12.1% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 11.05% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 3.95% of households have no vehicle.",
+    "In the patient's ZIP code, 58.09% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Order HbA1c test to address overdue diabetes monitoring.",
+    "Refer for diabetic eye exam to address overdue screening.",
+    "Measure blood pressure to address overdue monitoring.",
+    "Order mammogram to address overdue cancer screening.",
+    "Order cervical cancer screening to address overdue screening.",
+    "Order urine microalbumin test to address overdue nephropathy screening.",
+    "Calculate BMI to address overdue screening.",
+    "Schedule annual wellness visit to address overdue preventive care.",
+    "Confirm the patient still takes ferrous sulfate before acting on any related considerations."
+  ],
+  "_meta": {
+    "patient_id": "66fedaf6-b81d-b6cf-aa4d-89dec42f6306",
+    "patient_name": "Luisa710 Sosa986",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 3318,
+    "output_tokens": 1849,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}

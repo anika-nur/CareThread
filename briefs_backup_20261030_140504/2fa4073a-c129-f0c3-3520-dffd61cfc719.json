@@ -1,0 +1,99 @@
+{
+  "patient_summary": "Gabriela205 Mar\u00eda Soledad68 Elizondo706 is a 55-year-old female with obesity, prediabetes, essential hypertension, and a history of impacted molars.",
+  "key_conditions": [
+    {
+      "condition": "Essential hypertension",
+      "since": "2023-12-13",
+      "relevance": "Active condition requiring blood pressure monitoring and management."
+    },
+    {
+      "condition": "Prediabetes",
+      "since": "2016-12-14",
+      "relevance": "Active condition requiring monitoring of HbA1c and lifestyle interventions."
+    },
+    {
+      "condition": "Body mass index 30+ - obesity",
+      "since": "2008-02-13",
+      "relevance": "Chronic condition contributing to cardiovascular and metabolic risk."
+    },
+    {
+      "condition": "Impacted molars (disorder)",
+      "since": "1990-11-04",
+      "relevance": "Chronic dental condition."
+    },
+    {
+      "condition": "Past pregnancy history of miscarriage",
+      "since": "2003-04-05",
+      "relevance": "Historical obstetric event."
+    }
+  ],
+  "current_medications": [
+    {
+      "medication": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "note": "Prescribed 2025-12-24."
+    },
+    {
+      "medication": "lisinopril 10 MG Oral Tablet",
+      "note": "Prescribed 2025-12-24."
+    }
+  ],
+  "medication_alerts": [],
+  "care_gaps": [
+    {
+      "gap": "Blood Pressure Overdue: Last BP reading was 309 days ago (135 mm[Hg]). Due every 180 days.",
+      "severity": "medium",
+      "action": "Monitor blood pressure.",
+      "source": "HEDIS CBP: BP monitoring every 6 months"
+    },
+    {
+      "gap": "Colonoscopy Overdue: Patient is 55 with no colonoscopy on record. Recommended for ages 45-75.",
+      "severity": "medium",
+      "action": "Schedule colonoscopy.",
+      "source": "USPSTF: Colonoscopy every 10 years for ages 45-75"
+    },
+    {
+      "gap": "Mammogram Overdue: Female patient, age 55, with no mammogram on record. Recommended every 2 years for ages 40-74.",
+      "severity": "medium",
+      "action": "Schedule mammogram.",
+      "source": "USPSTF: Mammography every 2 years for women 40-74"
+    },
+    {
+      "gap": "Cervical Screening Overdue: Female patient, age 55, with no cervical cancer screening on record. Recommended every 3 years.",
+      "severity": "medium",
+      "action": "Schedule cervical cancer screening.",
+      "source": "USPSTF: Cervical cancer screening every 3 years for women 21-65"
+    }
+  ],
+  "recent_activity": "The patient had a general examination on 2025-12-24, during which she received an influenza vaccine. Labs from 2025-12-24 show a Hemoglobin A1c of 6.34 %, BMI of 27.87 kg/m2, systolic blood pressure of 135 mm[Hg], and diastolic blood pressure of 88 mm[Hg]. Screening scores from 2025-12-25 include a PHQ-2 total score of 1 and a DAST-10 total score of 1. Previous encounters include check-ups and follow-ups in 2025 and 2024.",
+  "social_history": [
+    "Risk activity involvement (recorded 1988-01-13)",
+    "Educated to high school level (recorded 1989-01-18)",
+    "Refugee (recorded 2022-12-07)",
+    "Full-time employment (recorded 2024-12-18)"
+  ],
+  "community_context": [
+    "In the patient's ZIP code, 14.29% of residents live below the federal poverty line.",
+    "In the patient's ZIP code, the median household income is $81,975.",
+    "In the patient's ZIP code, 8.84% of residents have no health insurance.",
+    "In the patient's ZIP code, 6.6% of the labor force is unemployed.",
+    "In the patient's ZIP code, 17.18% of households receive public assistance or SNAP.",
+    "In the patient's ZIP code, 24.93% of adults 25+ have no high school diploma.",
+    "In the patient's ZIP code, 6.79% of households have no vehicle.",
+    "In the patient's ZIP code, 65.46% of renter households pay 30% or more of income on rent."
+  ],
+  "priority_actions": [
+    "Address overdue preventive screenings: colonoscopy, mammogram, and cervical cancer screening.",
+    "Review blood pressure management given the last reading of 135/88 mm[Hg] and current antihypertensive therapy.",
+    "Discuss prediabetes management and lifestyle modifications given HbA1c of 6.34 % and BMI of 27.87 kg/m2."
+  ],
+  "_meta": {
+    "patient_id": "2fa4073a-c129-f0c3-3520-dffd61cfc719",
+    "patient_name": "Gabriela205 Mar\u00eda Soledad68 Elizondo706",
+    "backend": "colby",
+    "model": "qwen-3.8-27b",
+    "input_tokens": 2707,
+    "output_tokens": 1359,
+    "finish_reason": "stop",
+    "truncated": false
+  }
+}
