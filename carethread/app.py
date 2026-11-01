@@ -625,32 +625,10 @@ def tag_carethread_view(frag, gaps, alerts):
         a["frag"] = "unknown" if src and src["label"] in unknown else None
 
 
-def clinic_view_rows(frag, data, index):
-    """Gap and alert rows for the clinic-only view: what the rules find in
-    the home clinic's records, gaps the full record closes tagged 'done
-    elsewhere' and gaps done elsewhere earlier tagged with that date, then
-    what only the full record shows, tagged."""
-    done = {gap_key(g["gap"]) for g in frag["done_elsewhere"]}
-    history = {gap_key(h["gap"]): h for h in frag["history"]}
-    gaps = []
-    clinic_rows = add_never_gap_notes(record_gap_rows({"care_gaps": frag["gaps"]}),
-                                      frag["gaps"], 1)
-    for g, row in zip(frag["gaps"], clinic_rows):
-        key, text = None, None
-        if gap_key(g["gap"]) in done:
-            key = "done_elsewhere"
-        elif h := history.get(gap_key(g["gap"])):
-            key = "history"
-            text = f"history elsewhere: last done {h['last_date'][:10]}"
-            if h["source"]:
-                text += f" at {h['source']['org']}"
-        gaps.append({**row, "frag": key, "frag_text": text})
-    missed_rows = add_never_gap_notes(record_gap_rows({"care_gaps": frag["missed"]}),
-                                      frag["missed"], index.organization_count)
-    gaps += [{**row, "frag": "missed"} for row in missed_rows]
-    alerts = ([rule_alert(ix, data) for ix in frag["interactions"]] +
-              [rule_alert(ix, data, "unknown") for ix in frag["unknown"]])
-    return gaps, alerts
+def clinic_view_alerts(frag, data):
+    """Clinic-record alerts, with outside-only alerts marked for comparison."""
+    return ([rule_alert(ix, data) for ix in frag["interactions"]] +
+            [rule_alert(ix, data, "unknown") for ix in frag["unknown"]])
 
 
 def label_sources(sources, index):
@@ -713,15 +691,17 @@ def patient_page(conn, patient_id):
     appt = load_schedule([patient_id])[patient_id]
     social, social_legacy = social_items(annotated)
 
-    gaps = add_never_gap_notes(gap_rows(annotated, data), data["care_gaps"],
-                               index.organization_count if index else None)
-    alerts = annotated["medication_alerts"]
     clinic_only = bool(frag) and request.args.get("view") == "clinic"
     if clinic_only:
-        gaps, alerts = clinic_view_rows(frag, data, index)
+        gaps = []
+        alerts = clinic_view_alerts(frag, data)
         tag_outside_meds(annotated["current_medications"], index)
-    elif frag:
-        tag_carethread_view(frag, gaps, alerts)
+    else:
+        gaps = add_never_gap_notes(gap_rows(annotated, data), data["care_gaps"],
+                                   index.organization_count if index else None)
+        alerts = annotated["medication_alerts"]
+        if frag:
+            tag_carethread_view(frag, gaps, alerts)
     if index:
         for item in gaps + alerts + annotated["current_medications"]:
             label_sources(item["sources"], index)

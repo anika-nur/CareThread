@@ -78,6 +78,7 @@
       <button class="print-btn" type="button">Print brief</button>
     </div>
   </div>
+  {% if not clinic_only %}
   <div class="badges">
     {% if report.verdict == 'PASS' %}
       <span class="verdict pass">verification passed — {{ report.checks_run }} checks</span>
@@ -87,11 +88,11 @@
     <span class="verdict trace">{{ brief.coverage.traced }}/{{ brief.coverage.total }} claims traced ({{ brief.coverage.percent }}%)</span>
   </div>
   <p class="legend">Underlined text and 'source' buttons link each claim to the record it came from.</p>
-  {% if not clinic_only %}<p class="summary">{{ prose(brief.summary) }}</p>{% endif %}
+  <p class="summary">{{ prose(brief.summary) }}</p>
+  {% endif %}
 </header>
 
 {% if frag %}
-{% set n_done, n_unknown, n_missed, n_history = frag.done_elsewhere | length, frag.unknown | length, frag.missed | length, frag.history | length %}
 <section class="card record-view" aria-label="Record view">
   <nav class="view-toggle" aria-label="Which records to use">
     <a href="{{ url_for('patient', patient_id=data.patient_id) }}"
@@ -99,6 +100,8 @@
     <a href="{{ url_for('patient', patient_id=data.patient_id, view='clinic') }}"
        {% if clinic_only %}aria-current="page"{% endif %}>Clinic-only view <span class="sub">home clinic's records</span></a>
   </nav>
+  {% if not clinic_only %}
+  {% set n_done, n_unknown, n_missed, n_history = frag.done_elsewhere | length, frag.unknown | length, frag.missed | length, frag.history | length %}
   <p class="frag-summary">
     With only <strong>{{ frag.home.name }}</strong>'s records:
     <span class="{{ 'zero' if not n_done }}"><b>{{ n_done }}</b> gap{{ '' if n_done == 1 else 's' }} done elsewhere</span> ·
@@ -106,23 +109,11 @@
     <span class="{{ 'zero' if not n_missed }}"><b>{{ n_missed }}</b> gap{{ '' if n_missed == 1 else 's' }} missed by the clinic</span> ·
     <span class="{{ 'zero' if not n_history }}"><b>{{ n_history }}</b> gap{{ '' if n_history == 1 else 's' }} with history elsewhere</span>
   </p>
-  {% if clinic_only %}
-  <p class="frag-scope">Care gaps and interactions below are recomputed by the same rules from the home clinic's records only. The rest of the brief still uses all sources.</p>
+  {% else %}
+  <p class="frag-scope">Care gaps appear in CareThread view. Safety alerts here are based on the home clinic's records, with outside-only alerts marked for comparison.</p>
   {% endif %}
   <p class="muted small frag-note">{{ source_note }}</p>
 </section>
-{% endif %}
-
-{% if clinic_only %}
-{# The AI brief was written from every source, so it stays out of the way here #}
-<details class="card ai-collapsed">
-  <summary>AI brief uses all sources: <a href="{{ url_for('patient', patient_id=data.patient_id) }}">switch to CareThread view</a></summary>
-  <p class="summary">{{ prose(brief.summary) }}</p>
-  <h2>Priority actions</h2>
-  <ol class="actions">
-    {% for a in brief.priority_actions %}<li>{{ a.text }} {{ cite(a.sources) }}</li>{% endfor %}
-  </ol>
-</details>
 {% endif %}
 
 {# In the clinic-only view, alerts only outside records show stay listed but don't count #}
@@ -133,14 +124,14 @@
   {% for a in major_alerts %}{{ alert_item(a) }}{% endfor %}
 </section>
 
-{% if report.issues %}
+{% if not clinic_only and report.issues %}
 <div class="card alertbox">
   <h2>Verification flagged this brief</h2>
   <ul>{% for i in report.issues %}<li><b>{{ i.severity }}</b> — {{ i.detail }}</li>{% endfor %}</ul>
 </div>
 {% endif %}
 
-{% if brief.unmatched_numbers %}
+{% if not clinic_only and brief.unmatched_numbers %}
 <div class="card warnbox">
   Numbers in the prose with no matching stored value:
   {% for n in brief.unmatched_numbers %}<code>{{ n }}</code>{% endfor %}
@@ -158,10 +149,11 @@
 </section>
 {% endif %}
 
+{% if not clinic_only %}
 <section class="card">
-  <h2>Care gaps{% if clinic_only %} <span class="h2-note">· clinic-only records</span>{% endif %}</h2>
+  <h2>Care gaps</h2>
   {% for g in gaps %}
-  <div class="gap-row{{ ' frag-absent' if clinic_only and g.frag == 'missed' }}">
+  <div class="gap-row">
     <span class="pill sev-{{ g.severity }}">{{ g.severity }}</span>
     <div class="gap-main">
       <strong>{{ g.name }}</strong> {{ frag_tag(g.frag, g.frag_text) }}
@@ -170,10 +162,11 @@
     </div>
     <span class="gap-when {{ 'never' if g.when == 'never on record' }}">{{ g.when }}</span>
     <div class="gap-cite">{{ cite(g.sources, g.note, g.search_note) }}</div>
-    {% if not clinic_only %}{{ feedback_buttons('care_gap', g.name) }}{% endif %}
+    {{ feedback_buttons('care_gap', g.name) }}
   </div>
   {% else %}<p class="muted">No care gaps detected.</p>{% endfor %}
 </section>
+{% endif %}
 
 <div class="two-col">
   <section class="card compact-list">
